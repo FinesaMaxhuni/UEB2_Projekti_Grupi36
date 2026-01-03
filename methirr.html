@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="telecomoperator.css">
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="shared.css">
+     <script>
+function clearFields() {
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+}
+</script>
 </head>
 <body>
   <a href="sherbime-shtese.html" class="back">← Kthehu te Shërbime shtesë</a>
@@ -35,13 +41,16 @@
       <img src="pictures/methirr.jpeg" alt="Porosia Më thirr" class="service-photo service-photo-right">
     </div>
   </div>
-  <div class="subscribe-section">
+<div class="subscribe-section">
     <h2>Prano të rejat</h2>
     <p>Abonohu me email për të marrë ofertat më të fundit dhe informacion mbi pakot mobile.</p>
+
     <div class="subscribe-box">
-        <input type="email" placeholder="Shkruani email-in tuaj">
-        <button>Abonohu</button>
+        <input type="email" id="email" placeholder="Email-i juaj" required>
+        <input type="password" id="password" placeholder="Fjalëkalimi" required>
+        <button onclick="clearFields()">Abonohu</button>
     </div>
+</div>
 
   <footer class="footer">
     <div class="footer-grid container">
