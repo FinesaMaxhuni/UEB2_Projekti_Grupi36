@@ -1,0 +1,195 @@
+body {
+  background: linear-gradient(135deg, #0a1929, #0f172a);
+  color: white;
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* KONTAINERI KRYESOR */
+.payment-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 1;
+}
+
+/* TITULLI */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #60a5fa;
+}
+
+/* FORMA E PAGESËS */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+input, select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 0 2px #60a5fa;
+}
+
+/* BUTONI KONFIRMO */
+.btn-submit {
+  background: #60a5fa;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #2563eb;
+}
+
+/* LINKU I KTHIMIT */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ANIMACIONI I NGARKIMIT */
+.loading {
+  display: none;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.error {
+  display: block;
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+/* Spinner rrumbullak i përmirësuar */
+.spinner {
+  width: 70px;
+  height: 70px;
+  border: 6px solid transparent;
+  border-top: 6px solid #60a5fa;
+  border-right: 6px solid #8b5cf6;
+  border-radius: 50%;
+  margin: 20px auto;
+  animation: spin 1s linear infinite, glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(96,165,250,0.4); }
+  to { box-shadow: 0 0 20px rgba(139,92,246,0.8); }
+}
+
+/* MESAZHI I SUKSESIT */
+.success-message {
+  display: none;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-message h3 {
+  color: #4ade80;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  color: #e2e8f0;
+  font-size: 16px;
+}
+
+/* ANIMACIONET */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================= */
+/* 🔹 PJESA E KARTËS KREDITU / DEBITU */
+/* ============================= */
+
+#cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Grupimi horizontal i fushave */
+.card-pair {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Për Data e Skadimit */
+.expiry-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Ndriçim kur forma e kartës është aktive */
+#cardDetails:focus-within {
+  box-shadow: 0 0 10px rgba(96,165,250,0.4);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card-pair {
+    flex-direction: column;
+  }
+}
