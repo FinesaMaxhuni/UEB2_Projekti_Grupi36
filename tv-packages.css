@@ -178,8 +178,6 @@
     width: 90%;
     max-width: 500px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    /* Allow internal scrolling so the bottom button remains reachable
-       on small screens. Keep padding included in height calculations. */
     box-sizing: border-box;
     max-height: calc(100vh - 10%);
     overflow: auto;
@@ -307,8 +305,6 @@
     font-size: 16px;
 }
 
-/* Align checkboxes: show input visually before the channel text
-   even if some labels include the input after the text in the DOM. */
 #channelSelection .channels-grid label {
     display: flex;
     align-items: center;
