@@ -1,0 +1,124 @@
+/* HERO */
+.fiber-hero {
+  background: linear-gradient(135deg, #0a1929, #1a2845);
+  color: white;
+  text-align: center;
+  padding: 100px 20px 80px;
+}
+
+.fiber-hero h1 {
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.fiber-hero p {
+  font-size: 20px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 30px;
+}
+
+/* BUTTON */
+.btn-primary {
+  background: white;
+  color: #0a2540;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:hover {
+  background: #60a5fa;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
+}
+
+/* SECTION TITLES */
+.section-title {
+  color: white;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-desc {
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 50px;
+}
+
+/* PAKO BAZIKE & PREPAID */
+.fiber-plans, .fiber-compare {
+  background: linear-gradient(135deg, #0a1929 0%, #0f172a 100%);
+  padding: 80px 0;
+}
+
+/* TABLES */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.fixe-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fixe-table th {
+  background: #1e3a8a;
+  color: white;
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.fixe-table td {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 12px;
+  color: rgba(255,255,255,0.85);
+}
+
+.fixe-table tr:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* INFO TEXT */
+.fixe-info {
+  margin-top: 40px;
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 12px;
+  color: white;
+}
+
+.fixe-info h3 {
+  color: #60a5fa;
+  margin-bottom: 12px;
+}
+
+.fixe-info ul {
+  list-style: disc;
+  margin-left: 25px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fiber-hero h1 { font-size: 40px; }
+  .fixe-table th, .fixe-table td { font-size: 14px; }
+  .section-title { font-size: 30px; }
+}
+
+
+
+
+
+
