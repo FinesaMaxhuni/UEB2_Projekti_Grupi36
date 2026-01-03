@@ -105,6 +105,37 @@
     </section>
 </main>
 
+<!-- Activation Modal -->
+<div id="activationModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2>Aktivizo Pakon</h2>
+        <div class="success-message" id="successMessage">
+            ✓ Pako u aktivizua me sukses!
+        </div>
+        <form id="activationForm">
+            <input type="text" placeholder="Emri i plotë" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Numri i telefonit" required>
+            <select id="packageSelect" required>
+                <option value="">Zgjidh pakon...</option>
+                <option value="combo-basic">Combo Basic - 14.90€</option>
+                <option value="combo-plus">Combo Plus - 20.90€</option>
+                <option value="combo-sport">Combo Sport - 29.90€</option>
+                <option value="combo-ultra">Combo Ultra - 39.90€</option>
+            </select>
+            <button type="submit" class="modal-btn">Përfundo</button>
+        </form>
+    </div>
+</div>
+
+<!-- Success Popup Modal -->
+<div class="success-popup" id="successPopup">
+    <div id="successPopupText">✓ Pako u aktivizua me sukses!</div>
+</div>
+
+<script src="telecomoperator.js"></script>
+<script src="tv+internet.js"></script>
 
 <!-- FOOTER -->
 <footer class="footer"><div class="container">
