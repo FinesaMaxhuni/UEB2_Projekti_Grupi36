@@ -1,0 +1,88 @@
+.channels-hero {
+    background: linear-gradient(135deg, #266acf 5%, #8e2222 50%, #a8c1e4 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.channels-hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.channels-hero p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.channels-section {
+    padding: 60px 0;
+}
+
+.category-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #194881;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #b11414;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    position: relative;
+    padding-right: 35px;
+}
+
+.category-title:hover {
+    color: #b11414;
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.channel-item {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.channel-item:hover {
+    box-shadow: 0 15px 40px rgba(96, 165, 250, 0.3);
+    transform: translateY(-5px);
+    border-color: #b11414;
+}
+
+.channel-icon {
+    margin-bottom: 20px;
+}
+
+.channel-logo {
+    width: 80px;
+    height: 65px;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.channel-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.channel-info {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
