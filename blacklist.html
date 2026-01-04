@@ -8,12 +8,7 @@
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="shared.css">
   <link rel="stylesheet" href="sherbime-shtese.css">
-     <script>
-function clearFields() {
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
-}
-</script>
+    
 </head>
 <body class="blacklist">
   <a href="sherbime-shtese.html" class="back">↩ Kthehu te Shërbime shtesë</a>
@@ -86,16 +81,24 @@ function clearFields() {
       <div class="blacklist-photo-placeholder"><img src="pictures/block.png" alt="blacklist"></div>
     </aside>
   </main>
-  <div class="subscribe-section">
+
+<div class="subscribe-section">
     <h2>Prano të rejat</h2>
     <p>Abonohu me email për të marrë ofertat më të fundit dhe informacion mbi pakot mobile.</p>
 
-    <div class="subscribe-box">
+    <form class="subscribe-box" onsubmit="clearFields(); return false;">
         <input type="email" id="email" placeholder="Email-i juaj" required>
         <input type="password" id="password" placeholder="Fjalëkalimi" required>
-        <button onclick="clearFields()">Abonohu</button>
-    </div>
+        <button type="submit">Abonohu</button>
+    </form>
 </div>
+
+<script>
+function clearFields() {
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+}
+</script>
 
   <footer class="footer">
     <div class="footer-grid container">

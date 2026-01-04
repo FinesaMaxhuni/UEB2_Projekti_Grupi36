@@ -6,12 +6,7 @@
 <title>Telecom Pakot Visual</title>
 <link rel="stylesheet" href="site.css">
     <link rel="stylesheet" href="shared.css">
-    <script>
-function clearFields() {
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
-}
-</script>
+ 
 
 </head>
 <body>
@@ -70,16 +65,24 @@ function clearFields() {
     </div>
 
 </div>
+
 <div class="subscribe-section">
     <h2>Prano të rejat</h2>
     <p>Abonohu me email për të marrë ofertat më të fundit dhe informacion mbi pakot mobile.</p>
 
-    <div class="subscribe-box">
+    <form class="subscribe-box" onsubmit="clearFields(); return false;">
         <input type="email" id="email" placeholder="Email-i juaj" required>
         <input type="password" id="password" placeholder="Fjalëkalimi" required>
-        <button onclick="clearFields()">Abonohu</button>
-    </div>
+        <button type="submit">Abonohu</button>
+    </form>
 </div>
+
+<script>
+function clearFields() {
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+}
+</script>
 
 
 
