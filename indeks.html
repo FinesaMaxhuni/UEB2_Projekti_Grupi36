@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telecom Pakot Visual</title>
+<link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="shared.css">
+    <script>
+function clearFields() {
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+}
+</script>
+
+</head>
+<body>
+<a href="telecomeoperator.html" class="back">↩ Kthehu te Telecom</a>
+
+
+
+<div class="header-section">
+    <h1>Ofertat më të reja</h1>
+    <p>Ofertat e fundit të telefonisë mobile</p>
+</div>
+
+
+
+
+<div class="video">
+    <video autoplay muted loop playsinline>
+        <source src="videos/GreyNeutralItaly.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+     
+    </div>
+</div>
+
+
+
+<div class="container grid">
+
+    <div class="pjesa" style="background-image: url('pictures/Unlimited.jpg');" onclick="window.location='unlimited.html'">
+        <div class="overlay">
+            <h2>Pakot Unlimited</h2>
+            <p>Komunikoni pa limit me internet, minuta dhe SMS brenda vendit.</p>
+        </div>
+    </div>
+    <div class="pjesa" style="background-image: url('pictures/Start.png');" onclick="window.location='start.html'">
+        <div class="overlay">
+            <h2>Pakot Start</h2>
+            <p>Për përdorues me nevoja të ndryshme, fleksibilitet maksimal dhe zgjedhje të lehta.</p>
+        </div>
+    </div>
+
+    <div class="pjesa" style="background-image: url('pictures/pako trip (1).png');" onclick="window.location='trip.html'">
+        <div class="overlay">
+            <h2>Pako Trip</h2>
+            <p>8GB internet + 300 minuta — oferta Trip për udhëtarët.</p>
+        </div>
+    </div>
+
+    <div class="pjesa" style="background-image: url('pictures/diaspora.png');"  onclick="window.location='diaspora.html'">
+            
+      
+        <div class="overlay">
+            <h2>Pakot Diaspora</h2>
+            <p>Komunikoni me familjarët jashtë vendit me çmime të volitshme dhe mbulim të gjerë.</p>
+        </div>
+    </div>
+
+</div>
+<div class="subscribe-section">
+    <h2>Prano të rejat</h2>
+    <p>Abonohu me email për të marrë ofertat më të fundit dhe informacion mbi pakot mobile.</p>
+
+    <div class="subscribe-box">
+        <input type="email" id="email" placeholder="Email-i juaj" required>
+        <input type="password" id="password" placeholder="Fjalëkalimi" required>
+        <button onclick="clearFields()">Abonohu</button>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Për NetWave</h4>
+                    <ul>
+                        <li><a href="#">Rreth Nesh</a></li>
+                        <li><a href="#">Lajme</a></li>
+                        <li><a href="#">Karriera</a></li>
+                        <li><a href="telecomeoperator.html">Telecom Operator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Shërbimet</h4>
+                    <ul>
+                        <li><a href="#">Internet</a></li>
+                        <li><a href="#">Mobile</a></li>
+                        <li><a href="#">TV</a></li>
+                        <li><a href="sherbime-shtese.html">Shërbime shtesë</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakti</h4>
+                    <ul>
+                        <li><a href="tel:048312252">048/312 252</a></li>
+                        <li><a href="mailto:info@netwave.local">info@netwave.local</a></li>
+                        <li><a href="#">Pikat e shitjes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ndiqni</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <small>&copy; 2025 NetWave. Të gjitha të drejtat e rezervuara.</small>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
