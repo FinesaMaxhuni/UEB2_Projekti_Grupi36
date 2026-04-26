@@ -8,7 +8,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
 <section id="hero" class="hero"><div class="container"><div class="hero-content">
   <h1 class="hero-title">Shërbime të shpejta, të besueshme dhe të përballueshme</h1>
   <p class="hero-subtitle">Internet fibra, paketa mobile dhe TV — për biznes ose shtëpi. Oferta speciale tani.</p>
-  <div class="hero-cta"><a href="pages/pagesa.php" class="btn btn-primary">Paguaj Online</a><a href="#rreth" class="btn btn-secondary">Mëso më shumë</a></div>
+  <div class="hero-cta"><a href="pages/pagesa.php" class="btn btn-primary">Paguaj Online</a><a href="pages/telecomeoperator.php#rreth" class="btn btn-secondary">Mëso më shumë</a></div>
 </div></div></section>
 
 <section class="offers"><div class="container">
