@@ -39,6 +39,8 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 .dropdown a {display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-md) var(--spacing-lg); color: var(--color-text); text-decoration: none; font-weight: var(--font-weight-medium); transition: background var(--transition); border-radius: var(--radius-sm);}
 .dropdown a::before {content: '▸'; color: var(--color-red); font-size: 10px; flex-shrink: 0;}
 .dropdown a:hover {background: #f0f7ff;}
+.btn-login {color: var(--color-white); text-decoration: none; font-size: 14px; font-weight: var(--font-weight-bold); padding: 8px 16px; border: 1px solid rgba(255, 255, 255, 0.45); border-radius: var(--radius-sm); display: inline-flex; align-items: center; justify-content: center; line-height: 1; background: rgba(255, 255, 255, 0.08); transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);}
+.btn-login:hover {background: var(--color-white); border-color: var(--color-white); color: #0a2540; transform: translateY(-2px); box-shadow: 0 8px 18px rgba(255, 255, 255, 0.18);}
 .btn-cta {flex-shrink: 0; padding: var(--spacing-sm) var(--spacing-lg); background: white; color: #0a2540; text-decoration: none; border-radius: var(--radius-sm); font-weight: 800; font-size: 13px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 2px solid white; cursor: pointer; white-space: nowrap; display: inline-block; box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);}
 .btn-cta:hover {background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 255, 255, 0.5);}
 .menu-toggle-input {display: none;}
@@ -63,6 +65,8 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
   .nav-item-dropdown:hover .dropdown {display: none;}
   .menu-toggle-input:checked ~ .nav .dropdown {display: block;}
   .dropdown a {padding-left: var(--spacing-xl); font-size: 13px; border-radius: 0;}
+  .btn-login {color: var(--color-text); border-color: var(--color-border); background: #f6f8fb; padding: var(--spacing-md) var(--spacing-lg); width: 100%; justify-content: flex-start; margin-top: var(--spacing-sm);}
+  .btn-login:hover {background: #edf4ff; color: #0a2540; transform: none; box-shadow: none;}
   .menu-toggle-label {display: flex; align-items: center; justify-content: center; order: 2;}
   .btn-cta {order: 3; padding: var(--spacing-sm) var(--spacing-md); font-size: 12px;}
   .logo {order: 1;}
