@@ -1,68 +1,6 @@
-<!DOCTYPE html>
-<html lang="sq">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NetWave - Operator Telekomunikacioni</title>
-<link rel="stylesheet" href="/assets/css/telecomoperator.css">
-</head>
-<body>
-
-<!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="telecomeoperator.php">
-            <img src="/assets/images/telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
-          </a>
-        </div>
-
-        <!-- Menu Toggle (mobile) -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
-        <label for="menu-toggle" class="menu-toggle-label">
-          <span class="hamburger"></span>
-        </label>
-
-        <!-- Navigation -->
-        <nav class="nav">
-          <ul class="nav-list">
-            
-
-              <li class="nav-item-dropdown">
-               <a href="/pages/tv-packages.php" class="nav-link">TV <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
-                <ul class="dropdown">
-                    <li><a href="/pages/tv-packages.php">Pakot TV</a></li>
-                    <li><a href="/pages/tv+internet.php">Pakot TV + internet</a></li>
-                    <li><a href="/pages/channels-list.php">Lista e kanaleve</a></li>
-                </ul>
-            </li>
-
-            <li class="nav-item-dropdown">
-              <a href="/pages/fiber_internet.php" class="nav-link">Internet <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
-              <ul class="dropdown">
-                <li><a href="/pages/fiber_internet.php">Fiber Internet</a></li>
-                <li><a href="/pages/5G.php">5G</a></li>
-                <li><a href="/pages/telefoniafikse.php">Telefonia Fikse</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item-dropdown">
-              <a href="/pages/telefona.php" class="nav-link">E-Shop <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
-              <ul class="dropdown">
-                <li><a href="/pages/telefona.php">Telefona</a></li>
-                <li><a href="/pages/laptopa.php">Laptopë</a></li>
-                <li><a href="/pages/televizora.php">Televizorë</a></li>
-                <li><a href="/pages/routera.php">Routera</a></li>
-              </ul>
-            </li>
-
-          </ul>
-        </nav>
-
-      </div>
-    </div>
-  </header>
+<?php include 'config.php'; ?>
+<?php include '/includes/header.php'; ?>
+<?php include '/includes/navbar.php'; ?>
 
 <main class="main">
 <section id="hero" class="hero"><div class="container"><div class="hero-content">
@@ -163,14 +101,5 @@
 </div></section>
 </main>
 
-<footer class="footer"><div class="container">
-  <div class="footer-grid">
-    <div class="footer-col"><h4>Për NetWave</h4><ul><li><a href="#rreth">Rreth Nesh</a></li><li><a href="informatashtese.html">Informata</a></li><li><a href="/pages/telecomeoperator.php">Kryesore</a></li></ul></div>
-    <div class="footer-col"><h4>Shërbimet</h4><ul><li><a href="/pages/fiber_internet.php">Internet</a></li><li><a href="indeks.html">Mobile</a></li><li><a href="/pages/tv-packages.php">TV</a></li><li><a href="sherbime-shtese.html">Shërbime shtesë</a></li></ul></div>
-    <div class="footer-col"><h4>Kontakti</h4><ul><li><a href="tel:048312252">048/312 252</a></li><li><a href="mailto:info@netwave.local">info@netwave.local</a></li><li><a href="informatashtese.html">Pikat e shitjes</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><small>&copy; 2025 NetWave. Të gjitha të drejtat e rezervuara.</small></div>
-</div></footer>
-<script src="/assets/js/telecomoperator.js"></script>
-</body>
-</html>
+
+<?php include '/includes/footer.php'; ?>
