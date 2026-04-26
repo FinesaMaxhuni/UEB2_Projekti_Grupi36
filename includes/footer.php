@@ -6,6 +6,6 @@
   </div>
   <div class="footer-bottom"><small>&copy; 2025 NetWave. Të gjitha të drejtat e rezervuara.</small></div>
 </div></footer>
-<script src="/assets/js/telecomoperator.js"></script>
+<script src="/assets/js/telecomeoperator.js"></script>
 </body>
 </html>
