@@ -3,8 +3,8 @@
 <div class="header-content">
 
  <div class="logo">
-          <a href="telecomeoperator.php">
-            <img src="telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
+          <a href="/pages/telecomeoperator.php">
+            <img src="/assets/images/telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
           </a>
         </div>
 
@@ -18,30 +18,30 @@
 <ul class="nav-list">
 
 <li class="nav-item-dropdown">
-               <a href="tv-packages.html" class="nav-link">TV <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
+               <a href="/pages/tv-packages.php" class="nav-link">TV <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
                 <ul class="dropdown">
-                    <li><a href="tv-packages.html">Pakot TV</a></li>
-                    <li><a href="tv+internet.html">Pakot TV + internet</a></li>
-                    <li><a href="channels-list.html">Lista e kanaleve</a></li>
+                    <li><a href="/pages/tv-packages.php">Pakot TV</a></li>
+                    <li><a href="/pages/tv+internet.php">Pakot TV + internet</a></li>
+                    <li><a href="/pages/channels-list.php">Lista e kanaleve</a></li>
                 </ul>
             </li>
 
             <li class="nav-item-dropdown">
-              <a href="fiber_internet.html" class="nav-link">Internet <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
+              <a href="/pages/fiber_internet.php" class="nav-link">Internet <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
               <ul class="dropdown">
-                <li><a href="fiber_internet.html">Fiber Internet</a></li>
-                <li><a href="5G.html">5G</a></li>
-                <li><a href="telefoniafikse">Telefonia Fikse</a></li>
+                <li><a href="/pages/fiber_internet.php">Fiber Internet</a></li>
+                <li><a href="/pages/5G.php">5G</a></li>
+                <li><a href="/pages/telefoniafikse.php">Telefonia Fikse</a></li>
               </ul>
             </li>
 
             <li class="nav-item-dropdown">
-              <a href="telefona.html" class="nav-link">E-Shop <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
+              <a href="/pages/telefona.php" class="nav-link">E-Shop <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
               <ul class="dropdown">
-                <li><a href="telefona.html">Telefona</a></li>
-                <li><a href="laptopa.html">Laptopë</a></li>
-                <li><a href="televizora.html">Televizorë</a></li>
-                <li><a href="routera.html">Routera</a></li>
+                <li><a href="/pages/telefona.php">Telefona</a></li>
+                <li><a href="/pages/laptopa.php">Laptopë</a></li>
+                <li><a href="/pages/televizora.php">Televizorë</a></li>
+                <li><a href="/pages/routera.php">Routera</a></li>
               </ul>
             </li>
 
@@ -49,7 +49,7 @@
 
     <?php if($_SESSION['role']=="admin"): ?>
         <li class="nav-item-dropdown">
-            <a href="admin.php" class="nav-link">
+            <a href="/pages/admin.php" class="nav-link">
                 Admin Panel
                 <span class="chevron">
                     <svg viewBox="0 0 16 10">
@@ -63,8 +63,8 @@
     <?php
     $currentPage = basename($_SERVER['PHP_SELF']);
 
-    if($currentPage == "admin.php"){
-        $redirectPage = "telecomoperator.php";
+    if($currentPage == "/pages/admin.php"){
+        $redirectPage = "/pages/telecomoperator.php";
     } else {
         $redirectPage = $_SERVER['REQUEST_URI'];
     }
