@@ -29,7 +29,7 @@ include '../includes/navbar.php';
             <li>Instalim falas</li>
             <li>Router 5G përfshirë</li>
           </ul>
-          <a href="abonohu.html" class="btn btn-primary">Abonohu</a>
+          <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
         </div>
 
         <div class="plan-card">
@@ -40,7 +40,7 @@ include '../includes/navbar.php';
             <li>Pa kufizime në përdorim</li>
             <li>Router inteligjent Wi-Fi 6</li>
           </ul>
-          <a href="abonohu.html" class="btn btn-primary">Abonohu</a>
+          <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
         </div>
 
         <div class="plan-card">
@@ -51,7 +51,7 @@ include '../includes/navbar.php';
             <li>Prioritet në rrjet 5G</li>
             <li>Suport teknik 24/7</li>
           </ul>
-          <a href="abonohu.html" class="btn btn-primary">Abonohu</a>
+          <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
         </div>
       </div>
     </div>
@@ -86,17 +86,17 @@ include '../includes/navbar.php';
       <h2 class="section-title">Pse të zgjedhësh NetWave 5G?</h2>
       <div class="benefit-grid">
         <div class="benefit-item">
-          <img src="icons/speed.png" alt="">
+          <img src="/assets/images/icons/speed.png" alt="">
           <h3>Shpejtësi ekstreme</h3>
           <p>Arrin deri në 10x më shumë shpejtësi krahasuar me rrjetet tradicionale.</p>
         </div>
         <div class="benefit-item">
-          <img src="icons/signal.png" alt="">
+          <img src="/assets/images/icons/signal.png" alt="">
           <h3>Lidhje stabile</h3>
           <p>Mbulo territorin urban dhe rural me valë 5G të fuqishme.</p>
         </div>
         <div class="benefit-item">
-          <img src="icons/support.png" alt="">
+          <img src="/assets/images/icons/support.png" alt="">
           <h3>Suport 24/7</h3>
           <p>Ekipi ynë teknik është gjithmonë aktiv për ndihmë dhe instalim.</p>
         </div>
@@ -145,25 +145,16 @@ include '../includes/navbar.php';
   </div>
 </section>
 
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <small>&copy; 2025 NetWave — Të gjitha të drejtat e rezervuara.</small>
-      </div>
-    </div>
-  </footer>
-
-<!-- JavaScript për pyetjet (FAQ) -->
-  <script>
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
+<script>
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
         const answer = btn.nextElementSibling;
-        // nëse është e hapur, mbylle — nëse është e mbyllur, hape
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-      });
+        answer.style.display =
+            answer.style.display === 'block' ? 'none' : 'block';
     });
-  </script>
-</body>
-</html>
+});
+</script>
+
+
+<?php include '/includes/footer.php'; ?>
+ 
