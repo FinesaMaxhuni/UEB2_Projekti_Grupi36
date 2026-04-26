@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NetWave - Operator Telekomunikacioni</title>
-<link rel="stylesheet" href="telecomoperator.css">
+<link rel="stylesheet" href="/assets/css/telecomoperator.css">
 </head>
 <body>
 
@@ -13,8 +13,8 @@
     <div class="container">
       <div class="header-content">
         <div class="logo">
-          <a href="telecomeoperator.html">
-            <img src="telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
+          <a href="telecomeoperator.php">
+            <img src="/assets/images/telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
           </a>
         </div>
 
@@ -30,30 +30,30 @@
             
 
               <li class="nav-item-dropdown">
-               <a href="tv-packages.html" class="nav-link">TV <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
+               <a href="/pages/tv-packages.php" class="nav-link">TV <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
                 <ul class="dropdown">
-                    <li><a href="tv-packages.html">Pakot TV</a></li>
-                    <li><a href="tv+internet.html">Pakot TV + internet</a></li>
-                    <li><a href="channels-list.html">Lista e kanaleve</a></li>
+                    <li><a href="/pages/tv-packages.php">Pakot TV</a></li>
+                    <li><a href="/pages/tv+internet.php">Pakot TV + internet</a></li>
+                    <li><a href="/pages/channels-list.php">Lista e kanaleve</a></li>
                 </ul>
             </li>
 
             <li class="nav-item-dropdown">
-              <a href="fiber_internet.html" class="nav-link">Internet <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
+              <a href="/pages/fiber_internet.php" class="nav-link">Internet <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
               <ul class="dropdown">
-                <li><a href="fiber_internet.html">Fiber Internet</a></li>
-                <li><a href="5G.html">5G</a></li>
-                <li><a href="telefoniafikse">Telefonia Fikse</a></li>
+                <li><a href="/pages/fiber_internet.php">Fiber Internet</a></li>
+                <li><a href="/pages/5G.php">5G</a></li>
+                <li><a href="/pages/telefoniafikse.php">Telefonia Fikse</a></li>
               </ul>
             </li>
 
             <li class="nav-item-dropdown">
-              <a href="telefona.html" class="nav-link">E-Shop <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
+              <a href="/pages/telefona.php" class="nav-link">E-Shop <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
               <ul class="dropdown">
-                <li><a href="telefona.html">Telefona</a></li>
-                <li><a href="laptopa.html">Laptopë</a></li>
-                <li><a href="televizora.html">Televizorë</a></li>
-                <li><a href="routera.html">Routera</a></li>
+                <li><a href="/pages/telefona.php">Telefona</a></li>
+                <li><a href="/pages/laptopa.php">Laptopë</a></li>
+                <li><a href="/pages/televizora.php">Televizorë</a></li>
+                <li><a href="/pages/routera.php">Routera</a></li>
               </ul>
             </li>
 
@@ -68,7 +68,7 @@
 <section id="hero" class="hero"><div class="container"><div class="hero-content">
   <h1 class="hero-title">Shërbime të shpejta, të besueshme dhe të përballueshme</h1>
   <p class="hero-subtitle">Internet fibra, paketa mobile dhe TV — për biznes ose shtëpi. Oferta speciale tani.</p>
-  <div class="hero-cta"><a href="pagesa.html" class="btn btn-primary">Paguaj Online</a><a href="informatashtese.html" class="btn btn-secondary">Mëso më shumë</a></div>
+  <div class="hero-cta"><a href="/pages/pagesa.php" class="btn btn-primary">Paguaj Online</a><a href="informatashtese.html" class="btn btn-secondary">Mëso më shumë</a></div>
 </div></div></section>
 
 <section class="offers"><div class="container">
@@ -89,10 +89,10 @@
         <div class="sport-item"><span class="sport-icon">🏆</span><span class="sport-name">COPPA<br>ITALIA</span></div>
       </div>
       <div class="racing-logos"><span class="racing-logo">UFC</span><span class="racing-logo">F1</span><span class="racing-logo">F2</span><span class="racing-logo">F3</span><span class="racing-logo">F2</span></div>
-      <div class="smart-cta"><a href="tv+internet.html" class="btn-smart-buy">Blej Tani</a></div>
-      <div class="smart-footer"><img src="telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave" class="netwave-logo-banner"></div>
+      <div class="smart-cta"><a href="/pages/tv+internet.php" class="btn-smart-buy">Blej Tani</a></div>
+      <div class="smart-footer"><img src="/assets/images/telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave" class="netwave-logo-banner"></div>
     </div></div>
-    <div class="pako-trip-container" style="background-image: url('telecomoperator_foto/pako trip (1).png');"><div class="promo-content"><div class="promo-text">
+    <div class="pako-trip-container" style="background-image: url('/assets/images/telecomoperator_foto/pako trip (1).png');"><div class="promo-content"><div class="promo-text">
       <h2>Pako Trip</h2><p>8GB internet + 300 minuta për vetëm 10.90€</p><a href="trip.html" class="btn btn-primary">Blej Tani</a>
     </div></div></div>
   </div>
@@ -100,10 +100,10 @@
   <div class="offers-carousel"><div class="carousel-track">
     <div class="carousel-slide active"><div class="fiber-hero-banner">
       <div class="fiber-icon-wrapper"><div class="fiber-icon-circle"><svg class="fiber-bolt-icon" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="url(#boltGradient)"/><defs><linearGradient id="boltGradient" x1="3" y1="2" x2="13" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#ff6b35"/><stop offset="100%" stop-color="#f7931e"/></linearGradient></defs></svg></div></div>
-      <div class="fiber-content"><h2 class="fiber-title">Fiber 500 Mbps</h2><p class="fiber-subtitle">Shpejtësi e lartë për shtëpi dhe biznes</p><div class="fiber-price"><span class="fiber-price-amount">nga 29.99€</span><span class="fiber-price-period">/muaj</span></div><a href="fiber_internet.html" class="btn btn-primary" style="margin-top: 15px;">Blej Tani</a></div>
+      <div class="fiber-content"><h2 class="fiber-title">Fiber 500 Mbps</h2><p class="fiber-subtitle">Shpejtësi e lartë për shtëpi dhe biznes</p><div class="fiber-price"><span class="fiber-price-amount">nga 29.99€</span><span class="fiber-price-period">/muaj</span></div><a href="/pages/fiber_internet.php" class="btn btn-primary" style="margin-top: 15px;">Blej Tani</a></div>
       <div class="fiber-waves"></div>
     </div></div>
-    <div class="carousel-slide"><div class="mobile-hero-banner" style="background-image:url('telecomoperator_foto/e permirsuar.png')"><div class="mobile-content">
+    <div class="carousel-slide"><div class="mobile-hero-banner" style="background-image:url('/assets/images/telecomoperator_foto/e permirsuar.png')"><div class="mobile-content">
       <h2 class="mobile-title">Telefonia Mobile</h2><p class="mobile-subtitle">Paketat më të mira për thirrje dhe internet</p>
       <div class="mobile-price"><span class="mobile-price-amount">nga 7.99€</span><span class="mobile-price-period">/muaj</span></div>
       <ul class="mobile-features"><li>Minuta të pakufizuara</li><li>Internet 20GB</li><li>Roaming falas</li></ul>
@@ -116,19 +116,19 @@
   <h2 class="section-title">Të Shiturat</h2>
   <div class="product-grid">
     <div class="product-item">
-      <div class="product-image"><img src="telecomoperator_foto/iPhone-17-Colors.jpg" alt="Smartphone"><div class="product-overlay"><span class="overlay-text">OFERTË SPECIALE</span><span class="overlay-price">nga 299€</span></div></div>
+      <div class="product-image"><img src="/assets/images/telecomoperator_foto/iPhone-17-Colors.jpg" alt="Smartphone"><div class="product-overlay"><span class="overlay-text">OFERTË SPECIALE</span><span class="overlay-price">nga 299€</span></div></div>
       <h3>iPhone 17</h3><p class="product-description">Dizajn elegant në 5 ngjyra pastel, Dynamic Island dhe kamera profesionale</p>
-      <div class="product-features"><span>256GB</span><span>5G</span><span>A16 Bionic</span></div><a href="telefona.html" class="btn btn-primary">Blej Tani</a>
+      <div class="product-features"><span>256GB</span><span>5G</span><span>A16 Bionic</span></div><a href="/pages/telefona.php" class="btn btn-primary">Blej Tani</a>
     </div>
     <div class="product-item">
-      <div class="product-image"><img src="telecomoperator_foto/WUFERFLIKRCUXCJHXLUM2LQV24.jpg" alt="Router WiFi 6"><div class="product-overlay"><span class="overlay-text">PAK0 FIBER</span><span class="overlay-price">FALAS</span></div></div>
+      <div class="product-image"><img src="/assets/images/telecomoperator_foto/WUFERFLIKRCUXCJHXLUM2LQV24.jpg" alt="Router WiFi 6"><div class="product-overlay"><span class="overlay-text">PAK0 FIBER</span><span class="overlay-price">FALAS</span></div></div>
       <h3>Router WiFi 6</h3><p class="product-description">Router i shpejtë me mbulim të plotë dhe siguri të lartë</p>
-      <div class="product-features"><span>WiFi 6</span><span>2.5Gbps</span><span>Mesh Ready</span></div><a href="routera.html" class="btn btn-primary">Mëso më shumë</a>
+      <div class="product-features"><span>WiFi 6</span><span>2.5Gbps</span><span>Mesh Ready</span></div><a href="/pages/routera.php" class="btn btn-primary">Mëso më shumë</a>
     </div>
     <div class="product-item">
-      <div class="product-image"><img src="telecomoperator_foto/smarttv.jpg" alt="TV SMART+" class="tv-image"><div class="product-overlay"><span class="overlay-text">PAKETA TV</span><span class="overlay-price">nga 10.90€</span></div></div>
+      <div class="product-image"><img src="/assets/images/telecomoperator_foto/smarttv.jpg" alt="TV SMART+" class="tv-image"><div class="product-overlay"><span class="overlay-text">PAKETA TV</span><span class="overlay-price">nga 10.90€</span></div></div>
       <h3>TV SMART +</h3><p class="product-description">Mbi 100 kanale me sport, filma dhe seriale në HD</p>
-      <div class="product-features"><span>100+ Kanale</span><span>HD/4K</span><span>Sport</span></div><a href="tv-packages.html" class="btn btn-primary">Aktivizo</a>
+      <div class="product-features"><span>100+ Kanale</span><span>HD/4K</span><span>Sport</span></div><a href="/pages/tv-packages.php" class="btn btn-primary">Aktivizo</a>
     </div>
   </div>
 </div></section>
@@ -139,7 +139,7 @@
     <div class="ad-features"><span>✓ Aktivim i menjëhershëm</span><span>✓ Pa kartë fizike</span><span>✓ Roaming falas</span></div>
     <a href="indeks.html" class="btn btn-primary">Aktivizo eSIM</a>
   </div>
-  <div class="ad-image"><img src="telecomoperator_foto/netwave (1).png" alt="NetWave eSIM"></div>
+  <div class="ad-image"><img src="/assets/images/telecomoperator_foto/netwave (1).png" alt="NetWave eSIM"></div>
 </div></div></div></section>
 
 <section id="rreth" class="about"><div class="container">
@@ -165,12 +165,12 @@
 
 <footer class="footer"><div class="container">
   <div class="footer-grid">
-    <div class="footer-col"><h4>Për NetWave</h4><ul><li><a href="#rreth">Rreth Nesh</a></li><li><a href="informatashtese.html">Informata</a></li><li><a href="telecomeoperator.html">Kryesore</a></li></ul></div>
-    <div class="footer-col"><h4>Shërbimet</h4><ul><li><a href="fiber_internet.html">Internet</a></li><li><a href="indeks.html">Mobile</a></li><li><a href="tv-packages.html">TV</a></li><li><a href="sherbime-shtese.html">Shërbime shtesë</a></li></ul></div>
+    <div class="footer-col"><h4>Për NetWave</h4><ul><li><a href="#rreth">Rreth Nesh</a></li><li><a href="informatashtese.html">Informata</a></li><li><a href="/pages/telecomeoperator.php">Kryesore</a></li></ul></div>
+    <div class="footer-col"><h4>Shërbimet</h4><ul><li><a href="/pages/fiber_internet.php">Internet</a></li><li><a href="indeks.html">Mobile</a></li><li><a href="/pages/tv-packages.php">TV</a></li><li><a href="sherbime-shtese.html">Shërbime shtesë</a></li></ul></div>
     <div class="footer-col"><h4>Kontakti</h4><ul><li><a href="tel:048312252">048/312 252</a></li><li><a href="mailto:info@netwave.local">info@netwave.local</a></li><li><a href="informatashtese.html">Pikat e shitjes</a></li></ul></div>
   </div>
   <div class="footer-bottom"><small>&copy; 2025 NetWave. Të gjitha të drejtat e rezervuara.</small></div>
 </div></footer>
-<script src="telecomoperator.js"></script>
+<script src="/assets/js/telecomoperator.js"></script>
 </body>
 </html>
