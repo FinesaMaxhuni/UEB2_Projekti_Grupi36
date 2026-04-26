@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-$page = $_GET['page'] ?? 'telecomoperator.php';
+$page = $_GET['page'] ?? '/pages/telecomoperator.php';
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
