@@ -1,10 +1,10 @@
 <?php
- include '../config.php'; 
 $pageCSS = "tv+internet.css";
-include("../includes/header.php");
-include("../includes/navbar.php");
-?>
 
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
+?>
 
 <main class="main">
 
@@ -115,7 +115,7 @@ include("../includes/navbar.php");
     <div id="successPopupText">✓ Pako u aktivizua me sukses!</div>
 </div>
 
-<script src="/assets/js/telecomeoperator.js"></script>
-<script src="/assets/js/tv+internet.js"></script>
+<script src="assets/js/telecomeoperator.js"></script>
+<script src="assets/js/tv+internet.js"></script>
 
-<?php include("../includes/footer.php"); ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>

@@ -1,14 +1,14 @@
 <?php
-include 'config.php';
+$pageCSS = "admin.css";
 
-if(!isset($_SESSION['user']) || $_SESSION['role']!="admin")
-{
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
+
+if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
     die("Nuk ke qasje.");
 }
 ?>
-
-<?php include 'header.php'; ?>
-<?php include 'navbar.php'; ?>
 
 <style>
 /* ADMIN PANEL */
@@ -170,13 +170,42 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin")
         <h3>Admin Menu</h3>
 
         <ul class="admin-menu">
-            <li><a href="#"><span>📺</span> TV Paketa <span>›</span></a></li>
-            <li><a href="#"><span>🌐</span> Internet <span>›</span></a></li>
-            <li><a href="#"><span>🛒</span> E-Shop <span>›</span></a></li>
-            <li><a href="#"><span>☎️</span> Telefonia Fikse <span>›</span></a></li>
-            <li><a href="#"><span>👥</span> Përdoruesit <span>›</span></a></li>
-            <li><a href="#"><span>⚙️</span> Settings <span>›</span></a></li>
-        </ul>
+    <li>
+        <a href="/UEB1_Projekti_Grupi19/pages/channels-list.php">
+            <span>📺</span> TV Paketa <span>›</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="/UEB1_Projekti_Grupi19/pages/fiber_internet.php">
+            <span>🌐</span> Internet <span>›</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="/UEB1_Projekti_Grupi19/pages/telefona.php">
+            <span>🛒</span> E-Shop <span>›</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="/UEB1_Projekti_Grupi19/pages/telefoniafikse.php">
+            <span>☎️</span> Telefonia Fikse <span>›</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="/UEB1_Projekti_Grupi19/admin.php">
+            <span>👥</span> Përdoruesit <span>›</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="/UEB1_Projekti_Grupi19/pages/abonohu.php">
+            <span>⚙️</span> Settings <span>›</span>
+        </a>
+    </li>
+</ul>
     </div>
 
     <!-- Main Content -->
@@ -192,7 +221,7 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin")
             </div>
 
             <div class="stat-box">
-                <h4>Paketa TV Shit</h4>
+                <h4>Paketa TV të shitura</h4>
                 <div class="stat-number">386</div>
             </div>
 
@@ -247,4 +276,4 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin")
 </div>
 </section>
 
-<?php include 'footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>

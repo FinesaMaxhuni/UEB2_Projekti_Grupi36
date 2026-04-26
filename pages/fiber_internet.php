@@ -1,9 +1,9 @@
-
 <?php
- include '../config.php'; 
 $pageCSS = "fiber_internet.css";
-include("../includes/header.php");
-include("../includes/navbar.php");
+
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
 ?>
 
 <!-- HERO -->
@@ -19,19 +19,19 @@ include("../includes/navbar.php");
 <section class="fiber-features">
   <div class="container feature-grid">
     <div class="feature-item">
-      <img src="/assets/images/fiber/coverage.png" alt="">
+      <img src="assets/images/fiber/coverage.png" alt="">
       <h3>Mbulimi</h3>
       <p>Rrjeti ynë Fiber mbulon mbi 90% të territorit urban me lidhje ultra të shpejta.</p>
     </div>
 
     <div class="feature-item">
-      <img src="/assets/images/fiber/speed.jpg" alt="">
+      <img src="assets/images/fiber/speed.jpg" alt="">
       <h3>Shpejtësia</h3>
       <p>Derivoni shpejtësi deri në 10 Gbps — perfekt për streaming, gaming dhe pune online.</p>
     </div>
 
     <div class="feature-item">
-      <img src="/assets/images/fiber/security.jpg" alt="">
+      <img src="assets/images/fiber/security.jpg" alt="">
       <h3>Siguria</h3>
       <p>Infrastrukturë optike që garanton stabilitet maksimal dhe mbrojtje të të dhënave.</p>
     </div>
@@ -53,7 +53,7 @@ include("../includes/navbar.php");
           <li>2000 minuta falas në rrjetin NetWave</li>
           <li>Router Wi-Fi 6 falas</li>
         </ul>
-        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
       <div class="plan-card">
@@ -64,7 +64,7 @@ include("../includes/navbar.php");
           <li>2000 minuta falas në rrjetin NetWave</li>
           <li>Router Wi-Fi 6 falas</li>
         </ul>
-        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
       <div class="plan-card">
@@ -75,7 +75,7 @@ include("../includes/navbar.php");
           <li>2000 minuta falas në rrjetin NetWave</li>
           <li>Instalim falas</li>
         </ul>
-        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
       <div class="plan-card">
@@ -86,7 +86,7 @@ include("../includes/navbar.php");
           <li>Router Wi-Fi 6 Pro falas</li>
           <li>24/7 Suport teknik</li>
         </ul>
-        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
       <div class="plan-card">
@@ -97,7 +97,7 @@ include("../includes/navbar.php");
           <li>Performancë premium për biznese</li>
           <li>Router enterprise falas</li>
         </ul>
-        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
     </div>
@@ -157,4 +157,4 @@ include("../includes/navbar.php");
   </div>
 </section>
 
-<?php include("../includes/footer.php"); ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>

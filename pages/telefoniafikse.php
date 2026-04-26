@@ -1,8 +1,9 @@
 <?php
- include '../config.php'; 
 $pageCSS = "telefoniafikse.css";
-include("../includes/header.php");
-include("../includes/navbar.php");
+
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
 ?>
 
   <!-- HERO -->
@@ -104,6 +105,4 @@ include("../includes/navbar.php");
     </div>
   </section>
 
-<?php include("../includes/footer.php"); ?>
-
-
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>

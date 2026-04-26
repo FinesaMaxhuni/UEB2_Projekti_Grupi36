@@ -1,8 +1,8 @@
 <?php
 $pageCSS = "5G.css";
- include '../config.php'; 
-include '../includes/header.php';
-include '../includes/navbar.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
 ?>
 
 
@@ -29,7 +29,7 @@ include '../includes/navbar.php';
             <li>Instalim falas</li>
             <li>Router 5G përfshirë</li>
           </ul>
-          <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+          <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
         </div>
 
         <div class="plan-card">
@@ -40,7 +40,7 @@ include '../includes/navbar.php';
             <li>Pa kufizime në përdorim</li>
             <li>Router inteligjent Wi-Fi 6</li>
           </ul>
-          <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+          <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
         </div>
 
         <div class="plan-card">
@@ -51,7 +51,7 @@ include '../includes/navbar.php';
             <li>Prioritet në rrjet 5G</li>
             <li>Suport teknik 24/7</li>
           </ul>
-          <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+          <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
         </div>
       </div>
     </div>
@@ -86,17 +86,17 @@ include '../includes/navbar.php';
       <h2 class="section-title">Pse të zgjedhësh NetWave 5G?</h2>
       <div class="benefit-grid">
         <div class="benefit-item">
-          <img src="/assets/images/icons/speed.png" alt="">
+          <img src="assets/images/icons/speed.png" alt="">
           <h3>Shpejtësi ekstreme</h3>
           <p>Arrin deri në 10x më shumë shpejtësi krahasuar me rrjetet tradicionale.</p>
         </div>
         <div class="benefit-item">
-          <img src="/assets/images/icons/signal.png" alt="">
+          <img src="assets/images/icons/signal.png" alt="">
           <h3>Lidhje stabile</h3>
           <p>Mbulo territorin urban dhe rural me valë 5G të fuqishme.</p>
         </div>
         <div class="benefit-item">
-          <img src="/assets/images/icons/support.png" alt="">
+          <img src="assets/images/icons/support.png" alt="">
           <h3>Suport 24/7</h3>
           <p>Ekipi ynë teknik është gjithmonë aktiv për ndihmë dhe instalim.</p>
         </div>
@@ -155,5 +155,4 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 </script>
 
-<?php include '../includes/footer.php'; ?>
- 
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
