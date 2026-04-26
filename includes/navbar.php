@@ -63,8 +63,8 @@
     <?php
     $currentPage = basename($_SERVER['PHP_SELF']);
 
-    if($currentPage == "/pages/admin.php"){
-        $redirectPage = "/pages/telecomeperator.php";
+    if($currentPage == "admin.php"){
+        $redirectPage = "/pages/telecomoperator.php";
     } else {
         $redirectPage = $_SERVER['REQUEST_URI'];
     }
