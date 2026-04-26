@@ -1,6 +1,6 @@
-<?php include 'config.php'; ?>
-<?php include '/includes/header.php'; ?>
-<?php include '/includes/navbar.php'; ?>
+<?php include '../config.php'; ?>
+<?php include '../includes/header.php'; ?>
+<?php include '../includes/navbar.php'; ?>
 
 <main class="main">
 <section id="hero" class="hero"><div class="container"><div class="hero-content">
@@ -102,4 +102,4 @@
 </main>
 
 
-<?php include '/includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
