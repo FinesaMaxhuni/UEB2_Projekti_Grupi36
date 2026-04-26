@@ -3,7 +3,7 @@
 <div class="header-content">
 
  <div class="logo">
-          <a href="/pages/telecomeoperator.php">
+          <a href="/pages/telecomoperator.php">
             <img src="/assets/images/telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
           </a>
         </div>
@@ -64,7 +64,7 @@
     $currentPage = basename($_SERVER['PHP_SELF']);
 
     if($currentPage == "/pages/admin.php"){
-        $redirectPage = "/pages/telecomoperator.php";
+        $redirectPage = "/pages/telecomeperator.php";
     } else {
         $redirectPage = $_SERVER['REQUEST_URI'];
     }
@@ -72,7 +72,7 @@
 
     <li>
         <a class="btn-login"
-        href="logout.php?page=<?php echo urlencode($redirectPage); ?>">
+        href="/logout.php?page=<?php echo urlencode($redirectPage); ?>">
         Logout
         </a>
     </li>
@@ -81,7 +81,7 @@
 
     <li>
         <a class="btn-login"
-        href="login.php?page=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>">
+        href="/login.php?page=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>">
         Login
         </a>
     </li>
