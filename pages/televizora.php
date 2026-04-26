@@ -1,63 +1,9 @@
-<!DOCTYPE html>
-<html lang="sq">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Televizorë | NetWave E-Shop</title>
-  <link rel="stylesheet" href="telecomoperator.css">
-  <link rel="stylesheet" href="telefona.css">
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="telecomeoperator.html">
-            <img src="telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
-          </a>
-        </div>
-
-        <!-- Menu Toggle (mobile) -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
-        <label for="menu-toggle" class="menu-toggle-label">
-          <span class="hamburger"></span>
-        </label>
-
-        <!-- Navigation -->
-        <nav class="nav">
-          <ul class="nav-list">
-            
-
-            <li class="nav-item-dropdown"><a href="#" class="nav-link">Mobile <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a><ul class="dropdown"><li><a href="indeks.html">Ofertat</a></li><li><a href="unlimited.html">Pakot Unlimited</a></li><li><a href="trip.html">Pakot Trip</a></li><li><a href="start.html">Pakot Start</a></li><li><a href="diaspora.html">Pakot Diaspora</a></li><li><a href="informatashtese.html">Informata shtesë</a></li><li><a href="sherbime-shtese.html">Shërbime shtesë</a></li></ul></li>
-    <li class="nav-item-dropdown"><a href="#" class="nav-link">TV <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a><ul class="dropdown"><li><a href="tv-packages.html">Pakot TV</a></li><li><a href="tv+internet.html">Pakot TV + internet</a></li><li><a href="channels-list.html">Lista e kanaleve</a></li></ul></li>
-
-            <li class="nav-item-dropdown">
-              <a href="#" class="nav-link">Internet <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
-              <ul class="dropdown">
-                <li><a href="fiber_internet.html">Fiber Internet</a></li>
-                <li><a href="5G.html">5G</a></li>
-                <li><a href="telefoniafikse">Telefonia Fikse</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item-dropdown">
-              <a href="#" class="nav-link">E-Shop <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
-              <ul class="dropdown">
-                <li><a href="telefona.html">Telefona</a></li>
-                <li><a href="laptopa.html">Laptopë</a></li>
-                <li><a href="televizora.html">Televizorë</a></li>
-                <li><a href="routera.html">Routera</a></li>
-              </ul>
-            </li>
-
-          </ul>
-        </nav>
-
-      </div>
-    </div>
-  </header>
+<?php
+ include '../config.php'; 
+$pageCSS = "telefona.css";
+include("../includes/header.php");
+include("../includes/navbar.php");
+?>
 
   <!-- MAIN CONTENT -->
   <main class="main">
@@ -66,108 +12,108 @@
         <h2 class="section-title">Televizorë</h2>
         <div class="product-grid">
           <div class="product-item">
-            <img src="televizora/samsunng1.jpg" alt="Samsung QLED 65''">
+            <img src="/assets/images/televizora/samsunng1.jpg" alt="Samsung QLED 65''">
             <h3>Samsung QLED 65”</h3>
             <p class="product-price">1299€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/lg_oled_55.jpg" alt="LG OLED 55''">
+            <img src="/assets/images/televizora/lg_oled_55.jpg" alt="LG OLED 55''">
             <h3>LG OLED 55”</h3>
             <p class="product-price">1099€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/sony_bravia_4k.webp" alt="Sony Bravia 4K">
+            <img src="/assets/images/televizora/sony_bravia_4k.webp" alt="Sony Bravia 4K">
             <h3>Sony Bravia 4K</h3>
             <p class="product-price">999€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/hisene_smarttv.jpg" alt="Hisense Smart TV 50''">
+            <img src="/assets/images/televizora/hisene_smarttv.jpg" alt="Hisense Smart TV 50''">
             <h3>Hisense Smart TV 50”</h3>
             <p class="product-price">749€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/philips_ambilight.webp" alt="Philips Ambilight 58''">
+            <img src="/assets/images/televizora/philips_ambilight.webp" alt="Philips Ambilight 58''">
             <h3>Philips Ambilight 58”</h3>
             <p class="product-price">899€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/tcl_uhd.webp" alt="TCL UHD 4K 65''">
+            <img src="/assets/images/televizora/tcl_uhd.webp" alt="TCL UHD 4K 65''">
             <h3>TCL UHD 4K 65”</h3>
             <p class="product-price">849€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/samsung_crystal.jpg" alt="Samsung Crystal UHD 75''">
+            <img src="/assets/images/televizora/samsung_crystal.jpg" alt="Samsung Crystal UHD 75''">
             <h3>Samsung Crystal UHD 75”</h3>
             <p class="product-price">1399€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/lgnano.webp" alt="LG NanoCell 65''">
+            <img src="/assets/images/televizora/lgnano.webp" alt="LG NanoCell 65''">
             <h3>LG NanoCell 65”</h3>
             <p class="product-price">999€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/samsung_oled.webp" alt="Samsung OLED S90C">
+            <img src="/assets/images/televizora/samsung_oled.webp" alt="Samsung OLED S90C">
             <h3>Samsung OLED S90C 65”</h3>
             <p class="product-price">1549€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/sonyxr.jpg" alt="Sony XR A80L">
+            <img src="/assets/images/televizora/sonyxr.jpg" alt="Sony XR A80L">
             <h3>Sony XR A80L 55” OLED</h3>
             <p class="product-price">1399€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/hisene_mini.jpg" alt="Hisense U8K Mini LED">
+            <img src="/assets/images/televizora/hisene_mini.jpg" alt="Hisense U8K Mini LED">
             <h3>Hisense U8K Mini LED 65”</h3>
             <p class="product-price">1199€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/philips_oled.webp" alt="Philips OLED 708">
+            <img src="/assets/images/televizora/philips_oled.webp" alt="Philips OLED 708">
             <h3>Philips OLED 708 55”</h3>
             <p class="product-price">1249€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/tcl_mini.jpg" alt="TCL QD-Mini LED 75''">
+            <img src="/assets/images/televizora/tcl_mini.jpg" alt="TCL QD-Mini LED 75''">
             <h3>TCL QD-Mini LED 75”</h3>
             <p class="product-price">1599€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/xiaomi_tv.jpg" alt="Xiaomi TV P1 55''">
+            <img src="/assets/images/televizora/xiaomi_tv.jpg" alt="Xiaomi TV P1 55''">
             <h3>Xiaomi TV P1 55”</h3>
             <p class="product-price">699€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
           <div class="product-item">
-            <img src="televizora/panasonic.jpg" alt="Panasonic LX650 50''">
+            <img src="/assets/images/televizora/panasonic.jpg" alt="Panasonic LX650 50''">
             <h3>Panasonic LX650 50”</h3>
             <p class="product-price">749€</p>
-            <a href="pagesa.html" class="btn btn-primary">Bleje tani</a>
+            <a href="/pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
 
         </div>
@@ -175,14 +121,4 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-
-      <div class="footer-bottom">
-        <small>&copy; 2025 NetWave. Të gjitha të drejtat e rezervuara.</small>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+<?php include("../includes/footer.php"); ?>
