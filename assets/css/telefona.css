@@ -1,0 +1,133 @@
+
+.products {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #0b1120 0%, #111827 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.products::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15), transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(147, 197, 253, 0.1), transparent 50%);
+    z-index: 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.product-item {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #60a5fa;
+    box-shadow: 0 14px 40px rgba(96, 165, 250, 0.35);
+}
+
+.product-item img {
+    width: 100%;
+    height: 220px;           
+    object-fit: contain;     
+    object-position: center; 
+    border-radius: 10px;
+    background: #f9fafb;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+
+
+.product-item h3 {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 10px 0 4px;
+    font-weight: 600;
+}
+
+
+.product-price {
+    font-size: 15px;
+    color: #60a5fa;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+
+.product-item .btn {
+    background: #2563eb;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.product-item .btn:hover {
+    background: #1d4ed8;
+}
+
+/* 🔹 Stilizo butonin "Shto në shportë" si butonin "Blej Tani" nga faqja kryesore */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #0b1e34;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0b1e34;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(11, 30, 52, 0.3);
+}
+
+/* Nëse dëshiron që të jenë njësoj si "Blej Tani" tek index */
+.btn-primary {
+  background-color: #ffffff;
+  color: #0b1e34;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0b1e34;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(11, 30, 52, 0.4);
+}
+
+
+
+@media (max-width: 600px) {
+    .product-item img {
+        height: 180px;
+        padding: 6px;
+    }
+    .product-item {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,92 @@
+.abonohu-page {
+  padding: 60px 0;
+  color: white;
+}
+
+.abonohu-page .abonohu-container {
+  text-align: center;
+  background: #111c2e;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.abonohu-page h2 {
+  color: #60a5fa;
+  margin-bottom: 25px;
+}
+
+.abonohu-page input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.abonohu-page .btn-submit {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.abonohu-page .btn-submit:hover {
+  background: #2563eb;
+  box-shadow: 0 0 15px rgba(96,165,250,0.5);
+}
+
+.abonohu-page .loading,
+.abonohu-page .success-message {
+  display: none;
+}
+
+.abonohu-page .spinner {
+  width: 70px;
+  height: 70px;
+  border: 6px solid transparent;
+  border-top: 6px solid #60a5fa;
+  border-right: 6px solid #8b5cf6;
+  border-radius: 50%;
+  margin: 20px auto;
+  animation: spin 1s linear infinite, glow 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px rgba(96,165,250,0.5);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(96,165,250,0.4); }
+  to { box-shadow: 0 0 20px rgba(139,92,246,0.8); }
+}
+
+.abonohu-page .success-message h3 {
+  color: #4ade80;
+}
+
+.abonohu-page .back-link {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.abonohu-page .back-link:hover {
+  text-decoration: underline;
+}
+
+.abonohu-page .error {
+  display: block;
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
