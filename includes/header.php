@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="sq">
 <head>
@@ -6,5 +8,11 @@
 <title>NetWave - Operator Telekomunikacioni</title>
 
 <link rel="stylesheet" href="/assets/css/telecomoperator.css">
+
+<?php
+if(isset($pageCSS)){
+    echo '<link rel="stylesheet" href="/assets/css/' . $pageCSS . '">';
+}
+?>
 </head>
 <body>
