@@ -1,64 +1,9 @@
-<!DOCTYPE html>
-<html lang="sq">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telefoni Fikse | NetWave</title>
-  <link rel="stylesheet" href="telecomoperator.css">
-  <link rel="stylesheet" href="telefoniafikse.css">
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="telecomeoperator.html">
-            <img src="telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
-          </a>
-        </div>
-
-        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
-        <label for="menu-toggle" class="menu-toggle-label">
-          <span class="hamburger"></span>
-        </label>
-
-        <nav class="nav">
-          <ul class="nav-list">
-
-            
-                <li class="nav-item-dropdown"><a href="#" class="nav-link">Mobile <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a><ul class="dropdown"><li><a href="indeks.html">Ofertat</a></li><li><a href="unlimited.html">Pakot Unlimited</a></li><li><a href="trip.html">Pakot Trip</a></li><li><a href="start.html">Pakot Start</a></li><li><a href="diaspora.html">Pakot Diaspora</a></li><li><a href="informatashtese.html">Informata shtesë</a></li><li><a href="sherbime-shtese.html">Shërbime shtesë</a></li></ul></li>
-    <li class="nav-item-dropdown"><a href="#" class="nav-link">TV <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a><ul class="dropdown"><li><a href="tv-packages.html">Pakot TV</a></li><li><a href="tv+internet.html">Pakot TV + internet</a></li><li><a href="channels-list.html">Lista e kanaleve</a></li></ul></li>
-
-            <li class="nav-item-dropdown">
-              <a href="#" class="nav-link active">Internet 
-                <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span>
-              </a>
-              <ul class="dropdown">
-                <li><a href="fiber_internet.html">Fiber Internet</a></li>
-                <li><a href="5G.html">5G</a></li>
-                <li><a href="telefoniafikse.html">Telefoni Fikse</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item-dropdown">
-              <a href="#" class="nav-link">E-Shop 
-                <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span>
-              </a>
-              <ul class="dropdown">
-                <li><a href="telefona.html">Telefona</a></li>
-                <li><a href="laptopa.html">Laptopë</a></li>
-                <li><a href="televizora.html">Televizorë</a></li>
-                <li><a href="routera.html">Routera</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-
-      </div>
-    </div>
-  </header>
+<?php
+ include '../config.php'; 
+$pageCSS = "telefoniafikse.css";
+include("../includes/header.php");
+include("../includes/navbar.php");
+?>
 
   <!-- HERO -->
   <section class="fiber-hero">
@@ -159,16 +104,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <small>&copy; 2025 NetWave — Të gjitha të drejtat e rezervuara.</small>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+<?php include("../includes/footer.php"); ?>
 
 
