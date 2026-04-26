@@ -3,7 +3,7 @@
 <div class="header-content">
 
  <div class="logo">
-          <a href="/pages/telecomoperator.php">
+          <a href="/pages/telecomeoperator.php">
             <img src="/assets/images/telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
           </a>
         </div>
@@ -64,7 +64,7 @@
     $currentPage = basename($_SERVER['PHP_SELF']);
 
     if($currentPage == "admin.php"){
-        $redirectPage = "/pages/telecomoperator.php";
+        $redirectPage = "/pages/telecomeoperator.php";
     } else {
         $redirectPage = $_SERVER['REQUEST_URI'];
     }
