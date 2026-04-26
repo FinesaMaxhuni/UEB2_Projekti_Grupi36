@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NetWave - Operator Telekomunikacioni</title>
 
-<link rel="stylesheet" href="/assets/css/telecomoperator.css">
+<link rel="stylesheet" href="/assets/css/telecomeoperator.css">
 
 <?php
 if(isset($pageCSS)){
