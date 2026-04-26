@@ -64,7 +64,7 @@ include("../includes/navbar.php");
           <li>2000 minuta falas në rrjetin NetWave</li>
           <li>Router Wi-Fi 6 falas</li>
         </ul>
-        <a href="abonohu.html" class="btn btn-primary">Abonohu</a>
+        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
       <div class="plan-card">
@@ -75,7 +75,7 @@ include("../includes/navbar.php");
           <li>2000 minuta falas në rrjetin NetWave</li>
           <li>Instalim falas</li>
         </ul>
-        <a href="abonohu.html" class="btn btn-primary">Abonohu</a>
+        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
       <div class="plan-card">
@@ -86,7 +86,7 @@ include("../includes/navbar.php");
           <li>Router Wi-Fi 6 Pro falas</li>
           <li>24/7 Suport teknik</li>
         </ul>
-        <a href="abonohu.html" class="btn btn-primary">Abonohu</a>
+        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
       <div class="plan-card">
@@ -97,7 +97,7 @@ include("../includes/navbar.php");
           <li>Performancë premium për biznese</li>
           <li>Router enterprise falas</li>
         </ul>
-        <a href="abonohu.html" class="btn btn-primary">Abonohu</a>
+        <a href="/pages/abonohu.php" class="btn btn-primary">Abonohu</a>
       </div>
 
     </div>
