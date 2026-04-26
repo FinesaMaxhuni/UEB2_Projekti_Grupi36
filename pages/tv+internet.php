@@ -1,71 +1,10 @@
-<!DOCTYPE html>
-<html lang="sq">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pakot TV + Internet - NetWave</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f2942' rx='15'/%3E%3Cpath d='M20 45 Q25 35 30 45 T40 45' stroke='%2393c5fd' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M20 52 Q25 42 30 52 T40 52' stroke='%2393c5fd' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M20 59 Q25 49 30 59 T40 59' stroke='%2393c5fd' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ctext x='50' y='67' font-family='system-ui, -apple-system, sans-serif' font-size='28' font-weight='900' fill='%23ffffff' text-anchor='start'%3ENET%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet" href="telecomoperator.css">
-    <link rel="stylesheet" href="tv+internet.css">
-</head>
-<body>
+<?php
+ include '../config.php'; 
+$pageCSS = "tv+internet.css";
+include("../includes/header.php");
+include("../includes/navbar.php");
+?>
 
-<!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="telecomeoperator.html">
-            <img src="telecomoperator_foto/NETWAVE Logo Design.png" alt="NetWave Logo">
-          </a>
-        </div>
-
-        <!-- Menu Toggle (mobile) -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
-        <label for="menu-toggle" class="menu-toggle-label">
-          <span class="hamburger"></span>
-        </label>
-
-        <!-- Navigation -->
-        <nav class="nav">
-          <ul class="nav-list">
-            
-
-            <li class="nav-item-dropdown"><a href="#" class="nav-link">Mobile <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a><ul class="dropdown"><li><a href="indeks.html">Ofertat</a></li><li><a href="unlimited.html">Pakot Unlimited</a></li><li><a href="trip.html">Pakot Trip</a></li><li><a href="start.html">Pakot Start</a></li><li><a href="diaspora.html">Pakot Diaspora</a></li><li><a href="informatashtese.html">Informata shtesë</a></li><li><a href="sherbime-shtese.html">Shërbime shtesë</a></li></ul></li>
-            <li class="nav-item-dropdown">
-                <a href="#" class="nav-link">TV <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
-                <ul class="dropdown">
-                    <li><a href="tv-packages.html">Pakot TV</a></li>
-                    <li><a href="tv+internet.html">Pakot TV + internet</a></li>
-                    <li><a href="channels-list.html">Lista e kanaleve</a></li>
-                </ul>
-            </li>
-
-            <li class="nav-item-dropdown">
-              <a href="#" class="nav-link">Internet <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
-              <ul class="dropdown">
-                <li><a href="fiber_internet.html">Fiber Internet</a></li>
-                <li><a href="5G.html">5G</a></li>
-                <li><a href="telefoniafikse">Telefonia Fikse</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item-dropdown">
-              <a href="#" class="nav-link">E-Shop <span class="chevron"><svg viewBox="0 0 16 10"><path d="M2 3 L8 8 L14 3"/></svg></span></a>
-              <ul class="dropdown">
-                <li><a href="telefona.html">Telefona</a></li>
-                <li><a href="laptopa.html">Laptopë</a></li>
-                <li><a href="televizora.html">Televizorë</a></li>
-                <li><a href="routera.html">Routera</a></li>
-              </ul>
-            </li>
-
-          </ul>
-        </nav>
-
-      </div>
-    </div>
-  </header>
 
 <main class="main">
 
@@ -176,19 +115,7 @@
     <div id="successPopupText">✓ Pako u aktivizua me sukses!</div>
 </div>
 
-<script src="telecomoperator.js"></script>
-<script src="tv+internet.js"></script>
+<script src="/assets/js/telecomeoperator.js"></script>
+<script src="/assets/js/tv+internet.js"></script>
 
-<!-- FOOTER -->
-<footer class="footer"><div class="container">
-  <div class="footer-grid">
-    <div class="footer-col"><h4>Për NetWave</h4><ul><li><a href="#">Rreth Nesh</a></li><li><a href="#">Lajme</a></li><li><a href="#">Karriera</a></li></ul></div>
-    <div class="footer-col"><h4>Shërbimet</h4><ul><li><a href="#">Internet</a></li><li><a href="#">Mobile</a></li><li><a href="tv-packages.html">Pakot TV</a></li></ul></div>
-    <div class="footer-col"><h4>Kontakti</h4><ul><li><a href="tel:048312252">048/312 252</a></li><li><a href="mailto:info@netwave.local">info@netwave.local</a></li><li><a href="#">Pikat e shitjes</a></li></ul></div>
-    <div class="footer-col"><h4>Ndiqni</h4><ul><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><small>&copy; 2025 NetWave. Të gjitha të drejtat e rezervuara.</small></div>
-</div></footer>
-
-</body>
-</html>
+<?php include("../includes/footer.php"); ?>
