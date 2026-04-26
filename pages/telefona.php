@@ -1,9 +1,15 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $pageCSS = "telefona.css";
 
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
+require __DIR__ . '/../config.php';
+require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../includes/navbar.php';
+
+require_once __DIR__ . '/../classes/Telefoni.php';
+require_once __DIR__ . '/../classes/MenaxheriProdukteve.php';
 
 // Array e telefonave me sorting by price
 $phones = [
@@ -24,9 +30,12 @@ $phones = [
     ["name" => "iPhone 17 Pro Max (Silver)", "price" => 1299, "image" => "assets/images/phones/iphone17promax.webp"],
 ];
 
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/classes/Telefoni.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/classes/MenaxheriProdukteve.php';
+// SORT SIPAS CMIMIT - ASC
+usort($phones, function($a, $b) {
+    return $a['price'] - $b['price'];
+});
 
+// KËRKESA OOP: krijimi i objekteve nga array ekzistues
 $objekteTelefona = [];
 
 foreach ($phones as $p) {
@@ -40,36 +49,67 @@ foreach ($phones as $p) {
     );
 }
 
+// KËRKESA OOP: përdorim i klasës ndihmëse për analiza
 $meILire = MenaxheriProdukteve::produktiMeILire($objekteTelefona);
 $meIShtrenjte = MenaxheriProdukteve::produktiMeIShtrenjte($objekteTelefona);
 $cmimiMesatar = MenaxheriProdukteve::cmimiMesatar($objekteTelefona);
-
-// SORT SIPAS CMIMIT - ASC
-usort($phones, function($a, $b) {
-    return $a['price'] - $b['price'];
-});
 ?>
 
-  <!-- MAIN CONTENT -->
-  <main class="main">
-    <section class="products">
-      <div class="container">
-        <h2 class="section-title">Telefona (Renditur sipas çmimit)</h2>
-        <div class="product-grid">
+<main class="main">
 
-          <!-- Loop përmes telefonave të sortuar -->
-          <?php foreach ($phones as $phone): ?>
+  <!-- ANALIZA OOP -->
+  <section style="background:linear-gradient(135deg,#0a1929,#1a2845); padding:40px 0; color:white;">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:30px;">Analizë e Produkteve</h2>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;">
+
+        <div style="background:rgba(255,255,255,0.08); padding:25px; border-radius:15px; text-align:center;">
+          <h3>Produkti më i lirë</h3>
+          <p style="font-size:20px; color:#60a5fa;">
+            <?php echo htmlspecialchars($meILire->getEmri()); ?>
+          </p>
+          <strong><?php echo number_format($meILire->getCmimi(), 0); ?>€</strong>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.08); padding:25px; border-radius:15px; text-align:center;">
+          <h3>Produkti më i shtrenjtë</h3>
+          <p style="font-size:20px; color:#60a5fa;">
+            <?php echo htmlspecialchars($meIShtrenjte->getEmri()); ?>
+          </p>
+          <strong><?php echo number_format($meIShtrenjte->getCmimi(), 0); ?>€</strong>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.08); padding:25px; border-radius:15px; text-align:center;">
+          <h3>Çmimi mesatar</h3>
+          <p style="font-size:28px; color:#22c55e;">
+            <?php echo number_format($cmimiMesatar, 2); ?>€
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="products">
+    <div class="container">
+      <h2 class="section-title">Telefona (Renditur sipas çmimit)</h2>
+
+      <div class="product-grid">
+        <?php foreach ($phones as $phone): ?>
           <div class="product-item">
             <img src="<?php echo htmlspecialchars($phone['image']); ?>" alt="<?php echo htmlspecialchars($phone['name']); ?>">
             <h3><?php echo htmlspecialchars($phone['name']); ?></h3>
             <p class="product-price"><?php echo number_format($phone['price'], 0); ?>€</p>
             <a href="pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
-          <?php endforeach; ?>
-
+        <?php endforeach; ?>
       </div>
-      </div>
-    </section>
-  </main>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
+    </div>
+  </section>
+
+</main>
+
+<?php require __DIR__ . '/../includes/footer.php'; ?>
