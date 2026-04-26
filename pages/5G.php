@@ -155,5 +155,5 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 </script>
 
-<?php include '/includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
  
