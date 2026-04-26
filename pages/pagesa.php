@@ -55,6 +55,6 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
   </section>
 </main>
 
-<script src="../assets/js/pagesa.js"></script>
+<script src="assets/js/pagesa.js"></script>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
