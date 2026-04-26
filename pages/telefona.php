@@ -24,6 +24,26 @@ $phones = [
     ["name" => "iPhone 17 Pro Max (Silver)", "price" => 1299, "image" => "assets/images/phones/iphone17promax.webp"],
 ];
 
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/classes/Telefoni.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/classes/MenaxheriProdukteve.php';
+
+$objekteTelefona = [];
+
+foreach ($phones as $p) {
+    $marka = explode(" ", $p['name'])[0];
+
+    $objekteTelefona[] = new Telefoni(
+        $p['name'],
+        $p['price'],
+        $p['image'],
+        $marka
+    );
+}
+
+$meILire = MenaxheriProdukteve::produktiMeILire($objekteTelefona);
+$meIShtrenjte = MenaxheriProdukteve::produktiMeIShtrenjte($objekteTelefona);
+$cmimiMesatar = MenaxheriProdukteve::cmimiMesatar($objekteTelefona);
+
 // SORT SIPAS CMIMIT - ASC
 usort($phones, function($a, $b) {
     return $a['price'] - $b['price'];
