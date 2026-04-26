@@ -18,7 +18,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
 
     <section class="offers">
         <div class="container">
-            <ul><a href="#" class="package-btn">Aktivizo Pakon</a></ul>
+            <ul><a href="javascript:void(0);" class="package-btn">Aktivizo Pakon</a></ul>
             <div class="packages-grid">
 
                 <!-- Combo Basic -->
