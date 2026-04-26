@@ -1,6 +1,6 @@
 <?php
 $pageCSS = "5G.css";
- include '/config.php'; 
+ include '../config.php'; 
 include '../includes/header.php';
 include '../includes/navbar.php';
 ?>
@@ -154,7 +154,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     });
 });
 </script>
-
 
 <?php include '/includes/footer.php'; ?>
  
