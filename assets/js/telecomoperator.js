@@ -1,39 +1,62 @@
-// Carousel Auto-Rotation
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const dots = document.querySelectorAll('.carousel-dots .dot');
-const slideInterval = 8000;
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+  const dots = Array.from(document.querySelectorAll('.carousel-dots .dot'));
+  const slideInterval = 4000;
+  let currentSlide = 0;
+  let autoRotate = null;
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove('active'));
-  dots.forEach(dot => dot.classList.remove('active'));
-  slides[index].classList.add('active');
-  dots[index].classList.add('active');
-}
+  function showSlide(index) {
+    if (!slides.length || !dots.length) return;
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
+    currentSlide = (index + slides.length) % slides.length;
 
-let autoRotate = setInterval(nextSlide, slideInterval);
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('active', slideIndex === currentSlide);
+    });
 
-// Manual navigation
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    currentSlide = index;
-    showSlide(currentSlide);
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('active', dotIndex === currentSlide);
+    });
+  }
+
+  function startCarousel() {
+    if (slides.length < 2 || dots.length < 2) return;
+
     clearInterval(autoRotate);
-    autoRotate = setInterval(nextSlide, slideInterval);
+    autoRotate = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, slideInterval);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.type = 'button';
+    dot.addEventListener('click', () => {
+      showSlide(index);
+      startCarousel();
+    });
   });
+
+  showSlide(0);
+  startCarousel();
+
+  const statsSection = document.querySelector('.about-stats');
+
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat-number').forEach(stat => {
+            animateCounter(stat, parseInt(stat.getAttribute('data-target'), 10));
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.5, rootMargin: '0px'});
+
+    statsObserver.observe(statsSection);
+  }
 });
 
-// Pause on hover
-const carousel = document.querySelector('.offers-carousel');
-carousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
-carousel.addEventListener('mouseleave', () => autoRotate = setInterval(nextSlide, slideInterval));
-
-// Animated Counter for Stats
 function animateCounter(element, target, duration = 2000) {
   const increment = target / (duration / 16);
   let current = 0;
@@ -47,18 +70,3 @@ function animateCounter(element, target, duration = 2000) {
     }
   }, 16);
 }
-
-// Stats animation observer
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.stat-number').forEach(stat => {
-        animateCounter(stat, parseInt(stat.getAttribute('data-target')));
-      });
-      statsObserver.unobserve(entry.target);
-    }
-  });
-}, {threshold: 0.5, rootMargin: '0px'});
-
-const statsSection = document.querySelector('.about-stats');
-if (statsSection) statsObserver.observe(statsSection);
