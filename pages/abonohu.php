@@ -9,6 +9,10 @@ $gabime = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
+  $emri = $_POST["emri"] ?? "";
+  $mbiemri = $_POST["mbiemri"] ?? "";
+  $email = $_POST["email"] ?? "";
+  $telefon = $_POST["telefon"] ?? "";
 }
 ?>
 
