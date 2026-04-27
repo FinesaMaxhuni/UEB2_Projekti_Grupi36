@@ -18,18 +18,6 @@ Faqja kryesore përmban:
 - Seksion informues “Rreth Nesh”, ku shpjegohen informatat kryesore të kompanisë NetWave
 Homepage është ndërtuar duke përdorur HTML, CSS dhe JavaScript për strukturë, dizajn dhe ndërveprim.
 
-Seksioni Mobile
-------------------------------------------------------------------------------------------------------
-Ky seksion paraqet:
-- Oferta të ndryshme të pakove mobile
-- Informata shtesë rreth tarifave të thirrjeve
-- Shërbime shtesë si:
-  - Blacklist
-  - Thirrja me pagesë
-  - Transferimi i kredisë
-
-Qëllimi i këtij seksioni është informimi i klientëve për shërbimet mobile që ofron kompania.
-
 Seksioni TV
 ------------------------------------------------------------------------------------------------------
 Seksioni TV përmban:
