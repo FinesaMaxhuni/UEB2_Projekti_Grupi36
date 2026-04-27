@@ -29,7 +29,39 @@ $phones = [
     ["name" => "Samsung Galaxy S24 Ultra", "price" => 1199, "image" => "assets/images/phones/samsung_galaxy_s24_ultra.png"],
     ["name" => "iPhone 17 Pro Max (Silver)", "price" => 1299, "image" => "assets/images/phones/iphone17promax.webp"],
 ];
+ //variabla globale
+$GLOBALS['monedha'] = "€";
+$GLOBALS['tvsh'] = 0.18;
 
+// 2 numeric arrays
+$kategorite = ["Telefona", "Smartphone", "5G", "Premium"];
+$zbritjet = [5, 10, 15, 20];
+
+// 2 funksione
+function shfaqCmimin($cmimi) {
+    return number_format($cmimi, 0) . $GLOBALS['monedha'];
+}
+
+function cmimiMeTVSH($cmimi) {
+    return $cmimi + ($cmimi * $GLOBALS['tvsh']);
+}
+
+//  2 kushte
+function kontrolloProduktin($cmimi) {
+    if ($cmimi >= 1000) {
+        return "Premium";
+    } else {
+        return "Standard";
+    }
+}
+
+function kontrolloZbritjen($cmimi) {
+    if ($cmimi >= 900) {
+        return "Ka zbritje speciale";
+    } else {
+        return "Pa zbritje";
+    }
+}
 // SORT SIPAS CMIMIT - ASC
 usort($phones, function($a, $b) {
     return $a['price'] - $b['price'];
