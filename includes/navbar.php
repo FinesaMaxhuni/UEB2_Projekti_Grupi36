@@ -68,11 +68,11 @@
     <?php
     $currentPage = basename($_SERVER['PHP_SELF']);
 
-    if($currentPage == "admin.php"){
-        $redirectPage = "pages/telecomeoperator.php";
-    } else {
-        $redirectPage = $_SERVER['REQUEST_URI'];
-    }
+   if($_SESSION['role'] == "admin"){
+    $redirectPage = "pages/telecomeoperator.php";
+} else {
+    $redirectPage = $_SERVER['REQUEST_URI'];
+}
     ?>
 
     <li>
