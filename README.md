@@ -110,7 +110,7 @@ Ueb1_Projekti_Grupi/
 |   |   ├── phones/
 |   |   ├── routera/
 |   |   ├── telecomoperator_foto/
-|   |   ├── televizora/
+|   |   └── televizora/
 │   │   
 │   │
 │   └── js/
@@ -118,21 +118,21 @@ Ueb1_Projekti_Grupi/
 │       ├── pagesa.js
 |       ├── telecomoperator.js
 |       ├── tv-packages.js
-|       ├── tv+internet.js
+|       └── tv+internet.js
 ├── classes
 |   ├── MenaxheriProdukteve.php
 |   ├── Produkti.php
-|   ├── Telefoni.php
+|   └── Telefoni.php
 ├── includes
 |   ├── footer.php
 |   ├── header.php
-|   ├── navbar.php
+|   └── navbar.php
 ├── netwave(React)
 |   ├── node_modules/
 |   ├── public/
 |   ├── src/
 |   ├── package-lock.json
-|   ├── package.json
+|   └── package.json
 ├── pages
 |   ├── 5G.php
 |   ├── abonohu.php
@@ -148,11 +148,11 @@ Ueb1_Projekti_Grupi/
 |   ├── telefoniafikse.php
 |   ├── televizora.php
 |   ├── tv-packages.php
-|   ├── tv+internet.php
+|   └── tv+internet.php
 ├── config.php
 ├── login.php
 ├── logout.php
-├── README.md
+└── README.md
 ```
 
 Si të Ekzekutohet Projekti
