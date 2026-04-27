@@ -35,19 +35,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="abonohu-container">
 
         <h2>Abonohu Online</h2>
-
-        <form id="abonohuForm" novalidate>
+        <?php if (!empty($gabime)): ?>
+          <div class="error-messages">
+            <ul>
+              <?php foreach ($gabime as $gabim): ?>
+                <li><?php echo htmlspecialchars($gabim); ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        <?php endif; ?>
+        <form id="abonohuForm" method="POST" novalidate>
           <label for="emri">Emri</label>
-          <input type="text" id="emri" placeholder="Shkruaj emrin" required>
+          <input type="text" id="emri" name="emri" placeholder="Shkruaj emrin" required>
 
           <label for="mbiemri">Mbiemri</label>
-          <input type="text" id="mbiemri" placeholder="Shkruaj mbiemrin" required>
+          <input type="text" id="mbiemri" name="mbiemri" placeholder="Shkruaj mbiemrin" required>
 
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Shkruaj emailin" required>
+          <input type="email" id="email" name="email" placeholder="Shkruaj emailin" required>
 
           <label for="telefon">Numri i telefonit</label>
-          <input type="tel" id="telefon" placeholder="P.sh. 383 44 123 456" required>
+          <input type="tel" id="telefon" name="telefon" placeholder="P.sh. +383 44 123 456" required>
 
           <button type="submit" class="btn-submit">Dërgo aplikimin</button>
         </form>
