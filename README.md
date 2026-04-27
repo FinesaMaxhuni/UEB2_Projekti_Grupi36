@@ -151,5 +151,8 @@ Si të Ekzekutohet Projekti
 1.	Klono repository-n:
  	git clone https://github.com/FinesaMaxhuni/UEB2_Projekti_Grupi36.git
 2.	Hape folderin e projektit ne Visual Studio
-3.	Bej ndryshime dhe ekzekutoji ato
+3.	Bej ndryshime dhe ruaji
+4.	Hape app e Xampp
+5.	Start Apache Serverin
+6.	Ne browser e hap localhost:8080/path qe tregon lokacionin e folderit te projektit 
 
