@@ -17,6 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
       $gabime[] = "Email nuk është valid.";
   }
+  if (!preg_match("/^\+?[0-9\s]{9,15}$/", $telefon)) {
+    $gabime[] = "Numri i telefonit nuk është valid.";
+  }
 }
 ?>
 
