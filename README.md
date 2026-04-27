@@ -114,19 +114,19 @@ Ueb1_Projekti_Grupi/
 │   │   
 │   │
 │   └── js/
-│       ├── informatashtese.html
-│       ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
+│       ├── abonohu.js
+│       ├── pagesa.js
+        ├── telecomoperator.js
+        ├── tv-packages.js
+        ├── tv+internet.js
 ├── classes
-    ├── abonohu.css
-    ├── abonohu.css
-    ├── abonohu.css
+    ├── MenaxheriProdukteve.php
+    ├── Produkti.php
+    ├── Telefoni.php
 ├── includes
-    ├── abonohu.css
-    ├── abonohu.css
-    ├── abonohu.css
+    ├── footer.php
+    ├── header.php
+    ├── navbar.php
 ├── netwave(React)
     ├── abonohu.css
     ├── abonohu.css
