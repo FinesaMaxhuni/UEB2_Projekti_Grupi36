@@ -11,7 +11,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
     <div class="container">
       <h1>NetWave 5G Internet</h1>
       <p>Lidhje pa kufij me shpejtësi të pabesueshme dhe stabilitet që e ndjen në çdo klikim.</p>
-      <a href="#planet5g" class="btn btn-primary">Shiko paketat 5G</a>
+          <a href="pages/5G.php#planet5g" class="btn btn-primary">
     </div>
   </section>
 
