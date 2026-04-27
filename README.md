@@ -77,6 +77,54 @@ Struktura e Projektit
 ------------------------------------------------------------------------------------------------------
 <img width="473" height="697" alt="image" src="https://github.com/user-attachments/assets/2ba46250-eb39-49e3-8600-abeed3ba98ae" />
 <img width="547" height="655" alt="image" src="https://github.com/user-attachments/assets/7a76e6d3-5d83-4840-9be0-2c7796ecf412" />
+Ueb1_Projekti_Grupi/
+│
+├── assets/
+│   ├── css/
+│   │   ├── 5G.css
+│   │   ├── abonohu.css
+│   │   ├── channels-list.css
+│   │   ├── fiber_internet.css
+        ├── pagesa.css
+        ├── telecomoperator.css
+        ├── telefona.css
+        ├── telefoniafikse.css
+        ├── tv-packages.css
+        ├── tv+internet.css
+│   │
+│   │
+│   ├── images/
+│   │   ├── fiber/
+│   │   ├── icons/
+│   │   ├── kanalet-arte-marciale/
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+│   │   
+│   │
+│   └── js/
+│       ├── informatashtese.html
+│       ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+        ├── abonohu.css
+├── classes
+    ├── abonohu.css
+    ├── abonohu.css
+    ├── abonohu.css
+├── includes
+    ├── abonohu.css
+    ├── abonohu.css
+    ├── abonohu.css
 
 Si të Ekzekutohet Projekti
 ------------------------------------------------------------------------------------------------------
