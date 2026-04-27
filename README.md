@@ -87,68 +87,72 @@ Ueb1_Projekti_Grupi/
 │   │   ├── abonohu.css
 │   │   ├── channels-list.css
 │   │   ├── fiber_internet.css
-        ├── pagesa.css
-        ├── telecomoperator.css
-        ├── telefona.css
-        ├── telefoniafikse.css
-        ├── tv-packages.css
-        ├── tv+internet.css
+|   |   ├── pagesa.css
+|   |   ├── telecomoperator.css
+|   |   ├── telefona.css
+|   |   ├── telefoniafikse.css
+|   |   ├── tv-packages.css
+|   |   ├── tv+internet.css
 │   │
 │   │
 │   ├── images/
 │   │   ├── fiber/
 │   │   ├── icons/
 │   │   ├── kanalet-arte-marciale/
-        ├── kanalet-e-muzikes/
-        ├── kanalet-e-sportit/
-        ├── kanalet-informuese/
-        ├── kanalet-motosport/
-        ├── kanalet-per-dokumentarë/
-        ├── kanalet-per-femije/
-        ├── kanalet-per-filma/
-        ├── laptopa/
-        ├── phones/
-        ├── routera/
-        ├── telecomoperator_foto/
-        ├── televizora/
+|   |   ├── kanalet-e-muzikes/
+|   |   ├── kanalet-e-sportit/
+|   |   ├── kanalet-informuese/
+|   |   ├── kanalet-motosport/
+|   |   ├── kanalet-per-dokumentarë/
+|   |   ├── kanalet-per-femije/
+|   |   ├── kanalet-per-filma/
+|   |   ├── laptopa/
+|   |   ├── phones/
+|   |   ├── routera/
+|   |   ├── telecomoperator_foto/
+|   |   ├── televizora/
 │   │   
 │   │
 │   └── js/
 │       ├── abonohu.js
 │       ├── pagesa.js
-        ├── telecomoperator.js
-        ├── tv-packages.js
-        ├── tv+internet.js
+|       ├── telecomoperator.js
+|       ├── tv-packages.js
+|       ├── tv+internet.js
 ├── classes
-    ├── MenaxheriProdukteve.php
-    ├── Produkti.php
-    ├── Telefoni.php
+|   ├── MenaxheriProdukteve.php
+|   ├── Produkti.php
+|   ├── Telefoni.php
 ├── includes
-    ├── footer.php
-    ├── header.php
-    ├── navbar.php
+|   ├── footer.php
+|   ├── header.php
+|   ├── navbar.php
 ├── netwave(React)
-    ├── abonohu.css
-    ├── abonohu.css
-    ├── abonohu.css
-    ├── abonohu.css
-    ├── abonohu.css
+|   ├── node_modules/
+|   ├── public/
+|   ├── src/
+|   ├── package-lock.json
+|   ├── package.json
 ├── pages
-    ├── 5G.php
-    ├── abonohu.php
-    ├── admin.php
-    ├── channels-list.php
-    ├── fiber_internet.php
-    ├── laptopa.php
-    ├── pagesa.php
-    ├── perdoruesit.php
-    ├── routera.php
-    ├── telecomeoperator.php
-    ├── telefona.php
-    ├── telefoniafikse.php
-    ├── televizora.php
-    ├── tv-packages.php
-    ├── tv+internet.php
+|   ├── 5G.php
+|   ├── abonohu.php
+|   ├── admin.php
+|   ├── channels-list.php
+|   ├── fiber_internet.php
+|   ├── laptopa.php
+|   ├── pagesa.php
+|   ├── perdoruesit.php
+|   ├── routera.php
+|   ├── telecomeoperator.php
+|   ├── telefona.php
+|   ├── telefoniafikse.php
+|   ├── televizora.php
+|   ├── tv-packages.php
+|   ├── tv+internet.php
+├── config.php
+├── login.php
+├── logout.php
+├── README.md
 ```
 
 Si të Ekzekutohet Projekti
