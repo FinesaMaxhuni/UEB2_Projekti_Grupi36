@@ -60,6 +60,11 @@
         </li>
     <?php endif; ?>
 
+    <li style="color:white; font-weight:600; margin-left:15px;">
+        👋 <?php echo htmlspecialchars($_SESSION['user']); ?>
+        (<?php echo htmlspecialchars($_SESSION['role']); ?>)
+    </li>
+
     <?php
     $currentPage = basename($_SERVER['PHP_SELF']);
 
@@ -78,6 +83,12 @@
     </li>
 
 <?php else: ?>
+
+    <?php if (isset($_COOKIE['netwave_user'])): ?>
+        <li style="color:white; margin-left:15px;">
+            Mirë se u ktheve, <?php echo htmlspecialchars($_COOKIE['netwave_user']); ?> 😊
+        </li>
+    <?php endif; ?>
 
     <li>
         <a class="btn-login"
