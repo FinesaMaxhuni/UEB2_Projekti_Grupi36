@@ -14,6 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = $_POST["email"] ?? "";
   $telefon = $_POST["telefon"] ?? "";
 
+  if (!preg_match("/^[a-zA-ZëËçÇ]{2,}$/u", $emri)) {
+    $gabime[] = "Emri duhet të përmbajë vetëm shkronja pa hapësira.";
+  }
   if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
       $gabime[] = "Email nuk është valid.";
   }
