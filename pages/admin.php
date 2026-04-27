@@ -195,7 +195,7 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
     </li>
 
     <li>
-        <a href="/UEB1_Projekti_Grupi19/admin.php">
+        <a href="/UEB1_Projekti_Grupi19/pages/perdoruesit.php">
             <span>👥</span> Përdoruesit <span>›</span>
         </a>
     </li>
