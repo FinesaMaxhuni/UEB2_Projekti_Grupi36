@@ -11,7 +11,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
     <div class="container">
         <h1>Menaxhimi i Përdoruesve</h1>
         <p>Statistika, klientët aktivë dhe shërbimet që përdorin në NetWave.</p>
-        <a href="#lista" class="btn btn-primary">Shiko përdoruesit</a>
+        <a href="pages/perdoruesit.php#lista" class="btn btn-primary">Shiko përdoruesit</a>
+       
     </div>
 </section>
 
