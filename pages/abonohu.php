@@ -8,11 +8,15 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
 $gabime = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  
+
   $emri = $_POST["emri"] ?? "";
   $mbiemri = $_POST["mbiemri"] ?? "";
   $email = $_POST["email"] ?? "";
   $telefon = $_POST["telefon"] ?? "";
+
+  if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
+      $gabime[] = "Email nuk është valid.";
+  }
 }
 ?>
 
