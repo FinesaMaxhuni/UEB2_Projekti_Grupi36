@@ -75,6 +75,8 @@ UEB2_Projekti_Grupi36/
 │   │   ├── channels-list.css
 │   │   ├── fiber_internet.css
 |   |   ├── pagesa.css
+|   |   ├── perdoruesit.css
+|   |   ├── settings.css
 |   |   ├── telecomoperator.css
 |   |   ├── telefona.css
 |   |   ├── telefoniafikse.css
@@ -130,6 +132,7 @@ UEB2_Projekti_Grupi36/
 |   ├── pagesa.php
 |   ├── perdoruesit.php
 |   ├── routera.php
+|   ├── settings.php
 |   ├── telecomeoperator.php
 |   ├── telefona.php
 |   ├── telefoniafikse.php
