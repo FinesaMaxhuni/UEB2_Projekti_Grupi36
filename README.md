@@ -71,6 +71,7 @@ Teknologjitë e Përdorura
 - HTML5 – Struktura e faqes
 - CSS3 – Dizajni dhe layout-i
 - JavaScript – Funksionaliteti dhe ndërveprimi
+- PHP - Gjenerimi dinamik i faqeve, menaxhimi i sesioneve (login/logout) dhe organizimi modular përmes includes
 - GitHub – Menaxhimi i punës dhe bashkëpunimi në grup
 
 Struktura e Projektit
@@ -158,7 +159,7 @@ Ueb1_Projekti_Grupi/
 Si të Ekzekutohet Projekti
 ------------------------------------------------------------------------------------------------------
 1.	Klono repository-n:
- 	git clone https://github.com/FinesaMaxhuni/UEB1_Projekti_Grupi19.git
+ 	git clone https://github.com/FinesaMaxhuni/UEB2_Projekti_Grupi36.git
 2.	Hape folderin e projektit ne Visual Studio
 3.	Bej ndryshime dhe ekzekutoji ato
 
