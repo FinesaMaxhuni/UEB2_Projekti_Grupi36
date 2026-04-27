@@ -133,7 +133,22 @@ $cmimiMesatar = MenaxheriProdukteve::cmimiMesatar($objekteTelefona);
           <div class="product-item">
             <img src="<?php echo htmlspecialchars($phone['image']); ?>" alt="<?php echo htmlspecialchars($phone['name']); ?>">
             <h3><?php echo htmlspecialchars($phone['name']); ?></h3>
-            <p class="product-price"><?php echo number_format($phone['price'], 0); ?>€</p>
+
+<p class="product-price">
+    <?php echo shfaqCmimin($phone['price']); ?>
+</p>
+
+<p style="color:#60a5fa; font-weight:600;">
+    <?php echo kontrolloProduktin($phone['price']); ?>
+</p>
+
+<p style="color:#22c55e; font-size:13px;">
+    <?php echo kontrolloZbritjen($phone['price']); ?>
+</p>
+
+<p style="color:#cbd5e1; font-size:13px;">
+    Me TVSH: <?php echo shfaqCmimin(cmimiMeTVSH($phone['price'])); ?>
+</p>
             <a href="pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
         <?php endforeach; ?>
