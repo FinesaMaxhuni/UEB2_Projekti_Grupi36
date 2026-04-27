@@ -104,13 +104,15 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
         <div class="success-message" id="successMessage">
           <h3>Faleminderit për porosinë tuaj!</h3>
           <p>Porosia dhe pagesa janë kryer me sukses.</p>
-          <a href="telefona.php" class="back-link">← Kthehu tek produktet</a>
+          <a href="pages/telefona.php" class="back-link">← Kthehu tek produktet</a>
         </div>
 
       </div>
     </div>
   </section>
 </main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script src="/UEB1_Projekti_Grupi19/assets/js/pagesa.js"></script>
 
