@@ -99,18 +99,18 @@ Ueb1_Projekti_Grupi/
 │   │   ├── fiber/
 │   │   ├── icons/
 │   │   ├── kanalet-arte-marciale/
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
-        ├── abonohu.css
+        ├── kanalet-e-muzikes/
+        ├── kanalet-e-sportit/
+        ├── kanalet-informuese/
+        ├── kanalet-motosport/
+        ├── kanalet-per-dokumentarë/
+        ├── kanalet-per-femije/
+        ├── kanalet-per-filma/
+        ├── laptopa/
+        ├── phones/
+        ├── routera/
+        ├── telecomoperator_foto/
+        ├── televizora/
 │   │   
 │   │
 │   └── js/
