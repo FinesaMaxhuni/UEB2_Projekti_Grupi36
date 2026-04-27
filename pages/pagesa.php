@@ -112,6 +112,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
   </section>
 </main>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script src="/UEB1_Projekti_Grupi19/assets/js/pagesa.js"></script>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
