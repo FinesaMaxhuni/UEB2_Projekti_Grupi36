@@ -5,14 +5,20 @@ $page = $_GET['page'] ?? '/pages/telecomoperator.php';
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
 
     if(isset($users[$username]) &&
        $users[$username]['password'] == $password)
     {
+        // SESSION
         $_SESSION['user'] = $username;
         $_SESSION['role'] = $users[$username]['role'];
+        $_SESSION['login_time'] = date("H:i:s");
+
+        // COOKIE
+        setcookie("netwave_user", $username, time() + (86400 * 7), "/");
+        setcookie("netwave_role", $users[$username]['role'], time() + (86400 * 7), "/");
 
         header("Location: ".$_POST['page']);
         exit();
