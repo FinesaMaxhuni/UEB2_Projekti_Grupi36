@@ -147,18 +147,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
           <button type="submit" class="btn-submit">Konfirmo Pagesën</button>
         </form>
 
-        <!-- Loading -->
-        <div class="loading" id="loadingScreen">
-          <div class="spinner"></div>
-          <p>Duke përpunuar pagesën tuaj...</p>
-        </div>
-
-        <!-- Success -->
-        <div class="success-message js-success" id="successMessage">
-          <h3>Faleminderit për porosinë tuaj!</h3>
-          <p>Porosia dhe pagesa janë kryer me sukses.</p>
-          <a href="pages/telefona.php" class="back-link">← Kthehu tek produktet</a>
-        </div>
+        
 
       </div>
     </div>

@@ -41,6 +41,15 @@
       <div class="abonohu-container">
 
         <h2>Abonohu Online</h2>
+
+        <?php if (isset($_GET['sukses'])): ?>
+          <div class="success-message server-success">
+            <h3>Faleminderit për abonimin tuaj!</h3>
+            <p>Kërkesa jote u dërgua me sukses. Do të kontaktohesh nga ekipi NetWave.</p>
+            <a href="fiber_internet.php" class="back-link">← Kthehu në faqen kryesore</a>
+          </div>
+        <?php endif; ?>
+
         <?php if (!empty($gabime)): ?>
           <div class="error-messages">
             <ul>
@@ -50,7 +59,8 @@
             </ul>
           </div>
         <?php endif; ?>
-        <form id="abonohuForm" method="POST" novalidate>
+
+        <form id="abonohuForm" method="POST" action="" novalidate>
           <label for="emri">Emri</label>
           <input type="text" id="emri" name="emri" placeholder="Shkruaj emrin" value="<?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? htmlspecialchars($emri) : ''; ?>" required>
 
@@ -66,13 +76,6 @@
           <button type="submit" class="btn-submit">Dërgo aplikimin</button>
         </form>
 
-        <?php if (isset($_GET['sukses'])): ?>
-          <div class="success-message">
-            <h3>Faleminderit për abonimin tuaj!</h3>
-            <p>Kërkesa jote u dërgua me sukses. Do të kontaktohesh nga ekipi NetWave.</p>
-            <a href="fiber_internet.php" class="back-link">← Kthehu në faqen kryesore</a>
-          </div>
-        <?php endif; ?>
 
       </div>
     </div>
