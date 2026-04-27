@@ -1,55 +1,121 @@
 
 .pagesa-page {
-  padding: 60px 0;
-  color: white;
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0a1929, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.pagesa-page .payment-container {
-  text-align: left;
-  background: #111c2e;
-  padding: 40px 50px;
+.payment-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.pagesa-page h2 {
-  color: #60a5fa;
-  margin-bottom: 25px;
-}
-
-.pagesa-page input, .pagesa-page select {
   width: 100%;
-  padding: 10px 12px;
-  margin-bottom: 15px;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  color: white;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
 }
 
-.pagesa-page .btn-submit {
-  background: #3b82f6;
+.payment-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #60a5fa;
+}
+
+#paymentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#paymentForm label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+#paymentForm input,
+#paymentForm select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+}
+
+#paymentForm input:focus,
+#paymentForm select:focus {
+  box-shadow: 0 0 0 2px #60a5fa;
+}
+
+.btn-submit {
+  background: #60a5fa;
   color: white;
   border: none;
-  padding: 12px 25px;
+  padding: 12px;
   border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
-.pagesa-page .btn-submit:hover {
+.btn-submit:hover {
   background: #2563eb;
-  box-shadow: 0 0 15px rgba(96,165,250,0.5);
 }
 
-.pagesa-page .loading,
-.pagesa-page .success-message {
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.loading {
   display: none;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.pagesa-page .spinner {
+.success-message {
+  display: none;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-message h3 {
+  color: #4ade80;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  color: #e2e8f0;
+}
+
+.error {
+  display: block;
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+.spinner {
   width: 70px;
   height: 70px;
   border: 6px solid transparent;
@@ -58,36 +124,69 @@
   border-radius: 50%;
   margin: 20px auto;
   animation: spin 1s linear infinite, glow 2s ease-in-out infinite alternate;
-  box-shadow: 0 0 10px rgba(96,165,250,0.5);
+}
+
+#cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-pair {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.expiry-row {
+  display: flex;
+  gap: 10px;
+}
+
+#cardDetails:focus-within {
+  box-shadow: 0 0 10px rgba(96,165,250,0.4);
+  border-radius: 12px;
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes glow {
-  from { box-shadow: 0 0 10px rgba(96,165,250,0.4); }
-  to { box-shadow: 0 0 20px rgba(139,92,246,0.8); }
+  from {
+    box-shadow: 0 0 10px rgba(96,165,250,0.4);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(139,92,246,0.8);
+  }
 }
 
-.pagesa-page .success-message h3 {
-  color: #4ade80;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.pagesa-page .back-link {
-  color: #60a5fa;
-  text-decoration: none;
-  font-weight: 600;
-}
+@media (max-width: 480px) {
+  .card-pair {
+    flex-direction: column;
+  }
 
-.pagesa-page .back-link:hover {
-  text-decoration: underline;
-}
-
-.pagesa-page .error {
-  display: block;
-  color: #ef4444;
-  font-size: 14px;
-  margin-top: -10px;
-  margin-bottom: 10px;
+  .payment-container {
+    padding: 25px;
+  }
 }
