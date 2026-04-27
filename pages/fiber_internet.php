@@ -11,7 +11,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
   <div class="container hero-content">
     <h1>NetWave Ultra Fiber</h1>
     <p>Përjeto fuqinë e lidhjes më të shpejtë dhe më të qëndrueshme të internetit në Kosovë.</p>
-    <a href="#fiber-plans" class="btn btn-primary">Zbulo paketat</a>
+    <a href="#paketat" class="btn btn-primary">Zbulo paketat</a>
   </div>
 </section>
 
