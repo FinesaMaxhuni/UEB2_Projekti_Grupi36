@@ -127,6 +127,28 @@ Ueb1_Projekti_Grupi/
     ├── abonohu.css
     ├── abonohu.css
     ├── abonohu.css
+├── netwave(React)
+    ├── abonohu.css
+    ├── abonohu.css
+    ├── abonohu.css
+    ├── abonohu.css
+    ├── abonohu.css
+├── pages
+    ├── 5G.php
+    ├── abonohu.php
+    ├── admin.php
+    ├── channels-list.php
+    ├── fiber_internet.php
+    ├── laptopa.php
+    ├── pagesa.php
+    ├── perdoruesit.php
+    ├── routera.php
+    ├── telecomeoperator.php
+    ├── telefona.php
+    ├── telefoniafikse.php
+    ├── televizora.php
+    ├── tv-packages.php
+    ├── tv+internet.php
 ```
 
 Si të Ekzekutohet Projekti
