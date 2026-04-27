@@ -53,8 +53,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
         <h2 class="section-title">Përdorues sipas Gjinisë</h2>
 
         <div class="mini-grid">
-            <div class="mini-box">👨 Mashkuj <strong>58%</strong></div>
-            <div class="mini-box">👩 Femra <strong>42%</strong></div>
+            <div class="mini-box">👨 Mashkuj <strong>42%</strong></div>
+            <div class="mini-box">👩 Femra <strong>58%</strong></div>
         </div>
     </div>
 </section>
