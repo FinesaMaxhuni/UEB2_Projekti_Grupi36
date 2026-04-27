@@ -29,7 +29,39 @@ $phones = [
     ["name" => "Samsung Galaxy S24 Ultra", "price" => 1199, "image" => "assets/images/phones/samsung_galaxy_s24_ultra.png"],
     ["name" => "iPhone 17 Pro Max (Silver)", "price" => 1299, "image" => "assets/images/phones/iphone17promax.webp"],
 ];
+ //variabla globale
+$GLOBALS['monedha'] = "€";
+$GLOBALS['tvsh'] = 0.18;
 
+// 2 numeric arrays
+$kategorite = ["Telefona", "Smartphone", "5G", "Premium"];
+$zbritjet = [5, 10, 15, 20];
+
+// 2 funksione
+function shfaqCmimin($cmimi) {
+    return number_format($cmimi, 0) . $GLOBALS['monedha'];
+}
+
+function cmimiMeTVSH($cmimi) {
+    return $cmimi + ($cmimi * $GLOBALS['tvsh']);
+}
+
+//  2 kushte
+function kontrolloProduktin($cmimi) {
+    if ($cmimi >= 1000) {
+        return "Premium";
+    } else {
+        return "Standard";
+    }
+}
+
+function kontrolloZbritjen($cmimi) {
+    if ($cmimi >= 900) {
+        return "Ka zbritje speciale";
+    } else {
+        return "Pa zbritje";
+    }
+}
 // SORT SIPAS CMIMIT - ASC
 usort($phones, function($a, $b) {
     return $a['price'] - $b['price'];
@@ -101,7 +133,22 @@ $cmimiMesatar = MenaxheriProdukteve::cmimiMesatar($objekteTelefona);
           <div class="product-item">
             <img src="<?php echo htmlspecialchars($phone['image']); ?>" alt="<?php echo htmlspecialchars($phone['name']); ?>">
             <h3><?php echo htmlspecialchars($phone['name']); ?></h3>
-            <p class="product-price"><?php echo number_format($phone['price'], 0); ?>€</p>
+
+<p class="product-price">
+    <?php echo shfaqCmimin($phone['price']); ?>
+</p>
+
+<p style="color:#60a5fa; font-weight:600;">
+    <?php echo kontrolloProduktin($phone['price']); ?>
+</p>
+
+<p style="color:#22c55e; font-size:13px;">
+    <?php echo kontrolloZbritjen($phone['price']); ?>
+</p>
+
+<p style="color:#cbd5e1; font-size:13px;">
+    Me TVSH: <?php echo shfaqCmimin(cmimiMeTVSH($phone['price'])); ?>
+</p>
             <a href="pages/pagesa.php" class="btn btn-primary">Bleje tani</a>
           </div>
         <?php endforeach; ?>
