@@ -8,15 +8,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefon = trim($_POST["telefon"] ?? "");
 
     if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
-        $gabime[] = "Emri nuk është valid.";
+        $gabime[] = "Emri duhet të përmbajë vetëm shkronja dhe të ketë të paktën 2 karaktere.";
     }
 
     if (!preg_match("/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/", $email)) {
-        $gabime[] = "Email nuk është valid.";
+        $gabime[] = "Email duhet të përmbajë @ dhe të përfundojë me domain si .com, .org, .net ose .edu.";
     }
 
     if (!preg_match("/^\+?[0-9\s]{9,15}$/", $telefon)) {
-        $gabime[] = "Numri i telefonit nuk është valid.";
+        $gabime[] = "Numri i telefonit duhet të ketë 9 deri 15 shifra dhe mund të fillojë me +.";
     }
 
     if (empty($gabime)) {
