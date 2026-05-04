@@ -90,10 +90,25 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
     <div class="modal-content">
         <span class="modal-close">&times;</span>
         <h2>Aktivizo Pakon</h2>
-        <form id="activationForm">
-            <input type="text" placeholder="Emri & Mbiemri" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Numri i telefonit" required>
+        <?php if (!empty($gabime)): ?>
+    <div class="error-messages">
+        <ul>
+            <?php foreach ($gabime as $g): ?>
+                <li><?php echo htmlspecialchars($g); ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
+
+<?php if (isset($sukses)): ?>
+    <div class="success-message server-success">
+        <?php echo htmlspecialchars($sukses); ?>
+    </div>
+<?php endif; ?>
+        <form method="POST" id="activationForm" novalidate>
+          <input type="text" name="emri" placeholder="Emri & Mbiemri" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="tel" name="telefon" placeholder="Numri i telefonit" required>
             <select id="packageSelect" required>
                 <option value="">Zgjidh pakon...</option>
                 <option value="economy">TV Economy - 8.90€</option>
