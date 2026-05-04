@@ -151,12 +151,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
     </div>
 </div>
 
-<!-- Success Popup Modal -->
-<div class="success-popup" id="successPopup">
-    <div id="successPopupText">✓ Pako u aktivizua me sukses!</div>
-</div>
-
 <script src="assets/js/telecomeoperator.js"></script>
-<script src="assets/js/tv+internet.js"></script>
+<script src="assets/js/tv+internet.js?v=php-validation-2"></script>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>

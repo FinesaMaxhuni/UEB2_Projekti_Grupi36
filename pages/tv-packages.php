@@ -305,13 +305,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
     </div>
 </div>
 
-<!-- Mesazhi qe shfaqet pas aktivizimit te pakos -->
-<div class="success-popup" id="successPopup">
-    <div id="successPopupText">✓ Pako u aktivizua me sukses!</div>
-</div>
-
 <script src="assets/js/telecomeoperator.js"></script>
-<script src="assets/js/tv-packages.js"></script>
+<script src="assets/js/tv-packages.js?v=php-validation-2"></script>
 
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
