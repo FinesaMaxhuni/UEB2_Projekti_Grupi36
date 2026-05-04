@@ -112,7 +112,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
 </main>
 
 <!-- Activation Modal -->
-<div id="activationModal" class="modal">
+<div id="activationModal" class="modal" <?php echo ($_SERVER["REQUEST_METHOD"] == "POST") ? 'style="display:block;"' : ''; ?>>
     <div class="modal-content">
         <span class="modal-close">&times;</span>
        <h2>Aktivizo Pakon</h2>
