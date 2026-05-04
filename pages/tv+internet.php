@@ -134,10 +134,12 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
      <?php endif; ?>
 
     <form method="POST" id="activationForm" novalidate>
-            <input type="text" placeholder="Emri i plotë" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Numri i telefonit" required>
-            <select id="packageSelect" required>
+           <input type="text" name="emri" placeholder="Emri i plotë" value="<?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? htmlspecialchars($emri) : ''; ?>" required>
+
+           <input type="email" name="email" placeholder="Email" value="<?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? htmlspecialchars($email) : ''; ?>" required>
+
+           <input type="tel" name="telefon" placeholder="Numri i telefonit" value="<?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? htmlspecialchars($telefon) : ''; ?>" required>
+            <select id="packageSelect" name="pako" required>
                 <option value="">Zgjidh pakon...</option>
                 <option value="combo-basic">Combo Basic - 14.90€</option>
                 <option value="combo-plus">Combo Plus - 20.90€</option>
