@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<base href="/UEB1_Projekti_Grupi19/">
+<base href="/UEB2_Projekti_Grupi36/">
 <title>NetWave - Operator Telekomunikacioni</title>
 
-<link rel="stylesheet" href="/UEB1_Projekti_Grupi19/assets/css/telecomoperator.css">
+<link rel="stylesheet" href="/UEB2_Projekti_Grupi36/assets/css/telecomoperator.css">
 
 <?php
 if(isset($pageCSS)){
-    echo '<link rel="stylesheet" href="/UEB1_Projekti_Grupi19/assets/css/' . $pageCSS . '">';
+    echo '<link rel="stylesheet" href="/UEB2_Projekti_Grupi36/assets/css/' . $pageCSS . '">';
 }
 ?>
 </head>

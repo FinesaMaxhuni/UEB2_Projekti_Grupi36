@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$page = $_GET['page'] ?? 'pages/telecomoperator.php';
+$page = $_GET['page'] ?? 'pages/telecomeoperator.php';
 
 $_SESSION = [];
 session_unset();

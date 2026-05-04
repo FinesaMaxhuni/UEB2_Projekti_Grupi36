@@ -1,9 +1,9 @@
 <?php
 $pageCSS = "admin.css";
 
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 
 if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
     die("Nuk ke qasje.");
@@ -171,37 +171,37 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
 
         <ul class="admin-menu">
     <li>
-        <a href="/UEB1_Projekti_Grupi19/pages/channels-list.php">
+        <a href="/UEB2_Projekti_Grupi36/pages/channels-list.php">
             <span>📺</span> TV Paketa <span>›</span>
         </a>
     </li>
 
     <li>
-        <a href="/UEB1_Projekti_Grupi19/pages/fiber_internet.php">
+        <a href="/UEB2_Projekti_Grupi36/pages/fiber_internet.php">
             <span>🌐</span> Internet <span>›</span>
         </a>
     </li>
 
     <li>
-        <a href="/UEB1_Projekti_Grupi19/pages/telefona.php">
+        <a href="/UEB2_Projekti_Grupi36/pages/telefona.php">
             <span>🛒</span> E-Shop <span>›</span>
         </a>
     </li>
 
     <li>
-        <a href="/UEB1_Projekti_Grupi19/pages/telefoniafikse.php">
+        <a href="/UEB2_Projekti_Grupi36/pages/telefoniafikse.php">
             <span>☎️</span> Telefonia Fikse <span>›</span>
         </a>
     </li>
 
     <li>
-        <a href="/UEB1_Projekti_Grupi19/pages/perdoruesit.php">
+        <a href="/UEB2_Projekti_Grupi36/pages/perdoruesit.php">
             <span>👥</span> Përdoruesit <span>›</span>
         </a>
     </li>
 
     <li>
-        <a href="/UEB1_Projekti_Grupi19/pages/settings.php">
+        <a href="/UEB2_Projekti_Grupi36/pages/settings.php">
             <span>⚙️</span> Settings <span>›</span>
         </a>
     </li>
@@ -276,4 +276,4 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
 </div>
 </section>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/footer.php'; ?>
