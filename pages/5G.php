@@ -1,8 +1,8 @@
 <?php
 $pageCSS = "5G.css";
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 ?>
 
 
@@ -11,7 +11,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
     <div class="container">
       <h1>NetWave 5G Internet</h1>
       <p>Lidhje pa kufij me shpejtësi të pabesueshme dhe stabilitet që e ndjen në çdo klikim.</p>
-      <a href="#planet5g" class="btn btn-primary">Shiko paketat 5G</a>
+      <a href="pages/5G.php#planet5g" class="btn btn-primary">Shiko paketat 5G</a>
+      
     </div>
   </section>
 
@@ -155,4 +156,4 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 </script>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/footer.php'; ?>

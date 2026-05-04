@@ -1,4 +1,8 @@
 <?php
+<<<<<<< rela
+=======
+
+>>>>>>> main
 $gabime = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -7,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefon = $_POST["telefon"] ?? "";
 
     if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
+<<<<<<< rela
         $gabime[] = "Emri duhet të përmbajë vetëm shkronja dhe të ketë të paktën 2 karaktere.";
     }
 
@@ -16,6 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!preg_match("/^\+?[0-9\s]{9,15}$/", $telefon)) {
         $gabime[] = "Numri i telefonit duhet të ketë 9 deri 15 shifra dhe mund të fillojë me +.";
+=======
+        $gabime[] = "Emri nuk është valid.";
+    }
+
+    if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
+        $gabime[] = "Email nuk është valid.";
+    }
+
+    if (!preg_match("/^\+?[0-9\s]{9,15}$/", $telefon)) {
+        $gabime[] = "Numri i telefonit nuk është valid.";
+>>>>>>> main
     }
 
     if (empty($gabime)) {
@@ -23,11 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+<<<<<<< rela
 $pageCSS = "tv-packages.css?v=validation-style-3";
+=======
+$pageCSS = "tv-packages.css";
+>>>>>>> main
 
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 ?>
 
 <main class="main">
@@ -309,4 +329,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
 <script src="assets/js/tv-packages.js?v=php-validation-2"></script>
 
 
+<<<<<<< rela
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
+=======
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/footer.php'; ?>
+>>>>>>> main

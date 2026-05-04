@@ -18,18 +18,6 @@ Faqja kryesore përmban:
 - Seksion informues “Rreth Nesh”, ku shpjegohen informatat kryesore të kompanisë NetWave
 Homepage është ndërtuar duke përdorur HTML, CSS dhe JavaScript për strukturë, dizajn dhe ndërveprim.
 
-Seksioni Mobile
-------------------------------------------------------------------------------------------------------
-Ky seksion paraqet:
-- Oferta të ndryshme të pakove mobile
-- Informata shtesë rreth tarifave të thirrjeve
-- Shërbime shtesë si:
-  - Blacklist
-  - Thirrja me pagesë
-  - Transferimi i kredisë
-
-Qëllimi i këtij seksioni është informimi i klientëve për shërbimet mobile që ofron kompania.
-
 Seksioni TV
 ------------------------------------------------------------------------------------------------------
 Seksioni TV përmban:
@@ -71,17 +59,100 @@ Teknologjitë e Përdorura
 - HTML5 – Struktura e faqes
 - CSS3 – Dizajni dhe layout-i
 - JavaScript – Funksionaliteti dhe ndërveprimi
+- PHP - Gjenerimi dinamik i faqeve, menaxhimi i sesioneve (login/logout) dhe organizimi modular përmes includes
 - GitHub – Menaxhimi i punës dhe bashkëpunimi në grup
 
 Struktura e Projektit
 ------------------------------------------------------------------------------------------------------
-<img width="473" height="697" alt="image" src="https://github.com/user-attachments/assets/2ba46250-eb39-49e3-8600-abeed3ba98ae" />
-<img width="547" height="655" alt="image" src="https://github.com/user-attachments/assets/7a76e6d3-5d83-4840-9be0-2c7796ecf412" />
+
+```
+UEB2_Projekti_Grupi36/
+│
+├── assets/
+│   ├── css/
+│   │   ├── 5G.css
+│   │   ├── abonohu.css
+│   │   ├── channels-list.css
+│   │   ├── fiber_internet.css
+|   |   ├── pagesa.css
+|   |   ├── perdoruesit.css
+|   |   ├── settings.css
+|   |   ├── telecomoperator.css
+|   |   ├── telefona.css
+|   |   ├── telefoniafikse.css
+|   |   ├── tv-packages.css
+|   |   ├── tv+internet.css
+│   │
+│   │
+│   ├── images/
+│   │   ├── fiber/
+│   │   ├── icons/
+│   │   ├── kanalet-arte-marciale/
+|   |   ├── kanalet-e-muzikes/
+|   |   ├── kanalet-e-sportit/
+|   |   ├── kanalet-informuese/
+|   |   ├── kanalet-motosport/
+|   |   ├── kanalet-per-dokumentarë/
+|   |   ├── kanalet-per-femije/
+|   |   ├── kanalet-per-filma/
+|   |   ├── laptopa/
+|   |   ├── phones/
+|   |   ├── routera/
+|   |   ├── telecomoperator_foto/
+|   |   └── televizora/
+│   │   
+│   │
+│   └── js/
+│       ├── abonohu.js
+│       ├── pagesa.js
+|       ├── telecomoperator.js
+|       ├── tv-packages.js
+|       └── tv+internet.js
+├── classes
+|   ├── MenaxheriProdukteve.php
+|   ├── Produkti.php
+|   └── Telefoni.php
+├── includes
+|   ├── footer.php
+|   ├── header.php
+|   └── navbar.php
+├── netwave(React)
+|   ├── node_modules/
+|   ├── public/
+|   ├── src/
+|   ├── package-lock.json
+|   └── package.json
+├── pages
+|   ├── 5G.php
+|   ├── abonohu.php
+|   ├── admin.php
+|   ├── channels-list.php
+|   ├── fiber_internet.php
+|   ├── laptopa.php
+|   ├── pagesa.php
+|   ├── perdoruesit.php
+|   ├── routera.php
+|   ├── settings.php
+|   ├── telecomeoperator.php
+|   ├── telefona.php
+|   ├── telefoniafikse.php
+|   ├── televizora.php
+|   ├── tv-packages.php
+|   └── tv+internet.php
+├── config.php
+├── index.html
+├── login.php
+├── logout.php
+└── README.md
+```
 
 Si të Ekzekutohet Projekti
 ------------------------------------------------------------------------------------------------------
 1.	Klono repository-n:
- 	git clone https://github.com/FinesaMaxhuni/UEB1_Projekti_Grupi19.git
+ 	git clone https://github.com/FinesaMaxhuni/UEB2_Projekti_Grupi36.git
 2.	Hape folderin e projektit ne Visual Studio
-3.	Bej ndryshime dhe ekzekutoji ato
+3.	Bej ndryshime dhe ruaji
+4.	Hape app e Xampp
+5.	Start Apache Serverin
+6.	Ne browser e hap localhost:8080/path qe tregon lokacionin e folderit te projektit 
 

@@ -1,9 +1,9 @@
 <?php
 $pageCSS = "telefoniafikse.css";
 
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 ?>
 
   <!-- HERO -->
@@ -11,7 +11,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
     <div class="container hero-content">
       <h1>NetWave Telefoni Fikse</h1>
       <p>Komuniko qartë, me cilësi të lartë dhe me çmimet më të volitshme në Kosovë.</p>
-      <a href="#pako-bazike" class="btn btn-primary">Shfleto pakot</a>
+      <a href="pages/telefoniafikse.php#pako-bazike" class="btn btn-primary">Shfleto pakot</a>
+      
     </div>
   </section>
 
@@ -105,4 +106,4 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
     </div>
   </section>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/footer.php'; ?>
