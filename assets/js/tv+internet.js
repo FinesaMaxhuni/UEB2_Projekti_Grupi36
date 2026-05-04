@@ -41,7 +41,6 @@ if (phoneInput) {
 // Handle form submission
 if (activationForm) {
     activationForm.addEventListener('submit', function(e) {
-        e.preventDefault();
 
         const pkgSelect = document.getElementById('packageSelect');
         let message = '✓ Pako u aktivizua me sukses! Faleminderit.';

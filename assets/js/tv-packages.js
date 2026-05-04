@@ -112,7 +112,6 @@ if (phoneInput) {
 }
 
 form.addEventListener('submit', e=>{
-    e.preventDefault();
         
     let message = '';
     const pkgValue = pkgSelect.value;
