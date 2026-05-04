@@ -3,15 +3,15 @@ $gabime = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $emri = $_POST["emri"] ?? "";
-    $email = $_POST["email"] ?? "";
-    $telefon = $_POST["telefon"] ?? "";
+    $emri = trim($_POST["emri"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $telefon = trim($_POST["telefon"] ?? "");
 
     if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
         $gabime[] = "Emri nuk është valid.";
     }
 
-    if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
+    if (!preg_match("/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/", $email)) {
         $gabime[] = "Email nuk është valid.";
     }
 
