@@ -1,4 +1,29 @@
 <?php
+$gabime = [];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $emri = $_POST["emri"] ?? "";
+    $email = $_POST["email"] ?? "";
+    $telefon = $_POST["telefon"] ?? "";
+
+    if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
+        $gabime[] = "Emri nuk është valid.";
+    }
+
+    if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
+        $gabime[] = "Email nuk është valid.";
+    }
+
+    if (!preg_match("/^\+?[0-9\s]{9,15}$/", $telefon)) {
+        $gabime[] = "Numri i telefonit nuk është valid.";
+    }
+
+    if (empty($gabime)) {
+        $sukses = "Pako u aktivizua me sukses!";
+    }
+}
+
 $pageCSS = "tv+internet.css";
 
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
