@@ -115,11 +115,25 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php'
 <div id="activationModal" class="modal">
     <div class="modal-content">
         <span class="modal-close">&times;</span>
-        <h2>Aktivizo Pakon</h2>
-        <div class="success-message" id="successMessage">
-            ✓ Pako u aktivizua me sukses!
-        </div>
-        <form id="activationForm">
+       <h2>Aktivizo Pakon</h2>
+
+    <?php if (!empty($gabime)): ?>
+    <div class="error-messages">
+        <ul>
+            <?php foreach ($gabime as $g): ?>
+                <li><?php echo htmlspecialchars($g); ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+   <?php endif; ?>
+
+   <?php if (isset($sukses)): ?>
+    <div class="success-message server-success">
+        <?php echo htmlspecialchars($sukses); ?>
+    </div>
+     <?php endif; ?>
+
+    <form method="POST" id="activationForm" novalidate>
             <input type="text" placeholder="Emri i plotë" required>
             <input type="email" placeholder="Email" required>
             <input type="tel" placeholder="Numri i telefonit" required>
