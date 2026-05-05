@@ -1,5 +1,30 @@
 <?php
-$pageCSS = "tv+internet.css";
+$gabime = [];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $emri = trim($_POST["emri"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $telefon = trim($_POST["telefon"] ?? "");
+
+    if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
+        $gabime[] = "Emri duhet të përmbajë vetëm shkronja dhe të ketë të paktën 2 karaktere.";
+    }
+
+    if (!preg_match("/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/", $email)) {
+        $gabime[] = "Email duhet të përmbajë @ dhe të përfundojë me domain si .com, .org, .net ose .edu.";
+    }
+
+    if (!preg_match("/^\+?[0-9\s]{9,15}$/", $telefon)) {
+        $gabime[] = "Numri i telefonit duhet të ketë 9 deri 15 shifra dhe mund të fillojë me +.";
+    }
+
+    if (empty($gabime)) {
+        $sukses = "Pako u aktivizua me sukses!";
+    }
+}
+
+$pageCSS = "tv+internet.css?v=validation-style-3";
 
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
@@ -87,18 +112,34 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
 </main>
 
 <!-- Activation Modal -->
-<div id="activationModal" class="modal">
+<div id="activationModal" class="modal" <?php echo ($_SERVER["REQUEST_METHOD"] == "POST") ? 'style="display:block;"' : ''; ?>>
     <div class="modal-content">
         <span class="modal-close">&times;</span>
-        <h2>Aktivizo Pakon</h2>
-        <div class="success-message" id="successMessage">
-            ✓ Pako u aktivizua me sukses!
-        </div>
-        <form id="activationForm">
-            <input type="text" placeholder="Emri i plotë" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Numri i telefonit" required>
-            <select id="packageSelect" required>
+       <h2>Aktivizo Pakon</h2>
+
+    <?php if (!empty($gabime)): ?>
+    <div class="error-messages">
+        <ul>
+            <?php foreach ($gabime as $g): ?>
+                <li><?php echo htmlspecialchars($g); ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+   <?php endif; ?>
+
+   <?php if (isset($sukses)): ?>
+    <div class="success-message server-success">
+        <?php echo htmlspecialchars($sukses); ?>
+    </div>
+     <?php endif; ?>
+
+    <form method="POST" id="activationForm" novalidate>
+           <input type="text" name="emri" placeholder="Emri i plotë" value="<?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? htmlspecialchars($emri) : ''; ?>" required>
+
+           <input type="email" name="email" placeholder="Email" value="<?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? htmlspecialchars($email) : ''; ?>" required>
+
+           <input type="tel" name="telefon" placeholder="Numri i telefonit" value="<?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? htmlspecialchars($telefon) : ''; ?>" required>
+            <select id="packageSelect" name="pako" required>
                 <option value="">Zgjidh pakon...</option>
                 <option value="combo-basic">Combo Basic - 14.90€</option>
                 <option value="combo-plus">Combo Plus - 20.90€</option>
@@ -110,12 +151,11 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
     </div>
 </div>
 
-<!-- Success Popup Modal -->
-<div class="success-popup" id="successPopup">
-    <div id="successPopupText">✓ Pako u aktivizua me sukses!</div>
-</div>
-
 <script src="assets/js/telecomeoperator.js"></script>
-<script src="assets/js/tv+internet.js"></script>
+<script src="assets/js/tv+internet.js?v=php-validation-2"></script>
 
+<<<<<<< rela
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
+=======
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/footer.php'; ?>
+>>>>>>> main
