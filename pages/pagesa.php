@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $adresa   = $_POST["adresa"] ?? "";
   $telefoni = $_POST["telefoni"] ?? "";
   $pagesa   = $_POST["pagesa"] ?? "";
-
+// /u i bjen Unicode mode.
   if (!preg_match("/^[a-zA-ZëËçÇ]{2,}$/u", $emri)) {
     $gabime[] = "Emri duhet të përmbajë vetëm shkronja pa hapësira.";
   }
@@ -37,9 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $pageCSS = "pagesa.css";
 
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/navbar.php';
 ?>
 
 <main class="main">
@@ -156,6 +156,6 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script src="/UEB2_Projekti_Grupi36/assets/js/pagesa.js"></script>
+<script src="/UEB1_Projekti_Grupi19/assets/js/pagesa.js"></script>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/UEB1_Projekti_Grupi19/includes/footer.php'; ?>
