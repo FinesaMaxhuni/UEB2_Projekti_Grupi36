@@ -8,8 +8,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    if(isset($users[$username]) &&
-       $users[$username]['password'] == $password)
+    // REGEX për username
+    if(!preg_match("/^[a-zA-Z0-9_]{3,20}$/", $username))
+    {
+        $error = "Username duhet të ketë 3-20 karaktere dhe vetëm shkronja, numra ose _.";
+    }
+
+    // REGEX për password
+    elseif(!preg_match("/^[a-zA-Z0-9!@#$%^&*]{4,20}$/", $password))
+    {
+        $error = "Password jo valid.";
+    }
+
+    // LOGIN CHECK
+    elseif(isset($users[$username]) &&
+           $users[$username]['password'] == $password)
     {
         // SESSION
         $_SESSION['user'] = $username;
@@ -23,8 +36,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         header("Location: ".$_POST['page']);
         exit();
     }
-
-    $error = "Gabim kredencialet!";
+    else
+    {
+        $error = "Gabim kredencialet!";
+    }
 }
 ?>
 
