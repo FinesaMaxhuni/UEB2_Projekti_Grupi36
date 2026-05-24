@@ -1,3 +1,7 @@
+CREATE DATABASE netwave;
+
+use netwave;
+
 CREATE TABLE users(
     id INT AUTO_INCREMENT PRIMARY KEY,
     fullname VARCHAR(100) NOT NULL ,
