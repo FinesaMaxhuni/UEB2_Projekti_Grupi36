@@ -164,3 +164,50 @@
 }
 
 }
+
+/* USER ACTIONS */
+
+.user-actions{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
+
+.user-actions a{
+    flex:1;
+    text-align:center;
+    padding:12px 18px;
+    border-radius:12px;
+    text-decoration:none !important;
+    font-weight:700;
+    font-size:15px;
+    transition:0.3s;
+    display:inline-block;
+    color:white !important;
+}
+
+/* EDIT BUTTON */
+
+.user-actions .edit-btn{
+    background:#2563eb;
+    border:2px solid #2563eb;
+}
+
+.user-actions .edit-btn:hover{
+    background:#1d4ed8;
+    border-color:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* DELETE BUTTON */
+
+.user-actions .delete-btn{
+    background:#ef4444;
+    border:2px solid #ef4444;
+}
+
+.user-actions .delete-btn:hover{
+    background:#dc2626;
+    border-color:#dc2626;
+    transform:translateY(-2px);
+}

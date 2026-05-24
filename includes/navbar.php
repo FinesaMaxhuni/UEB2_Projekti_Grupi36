@@ -62,20 +62,24 @@
     <?php endif; ?>
 
     <li style="color:white; font-weight:600; margin-left:15px;">
+         
          <?php echo htmlspecialchars($_SESSION['user']); ?>
        
     </li>
-
+    
     <?php
     $currentPage = basename($_SERVER['PHP_SELF']);
 
-   if($_SESSION['role'] == "admin"){
-    $redirectPage = "pages/telecomeoperator.php";
-} else {
+ if($_SESSION['role'] == "admin"){
+
+    $redirectPage =
+    "/UEB2_Projekti_Grupi36/pages/telecomeoperator.php";
+
+}else{
+
     $redirectPage = $_SERVER['REQUEST_URI'];
 }
     ?>
-
     <li>
         <a class="btn-login"
         href="auth/logout.php?page=<?php echo urlencode($redirectPage); ?>">

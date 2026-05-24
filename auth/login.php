@@ -40,6 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $_SESSION['user'] = $user['username'];
         $_SESSION['role'] = $user['role'];
+        $_SESSION['fullname'] = $user['fullname'];
 
         setcookie(
             "netwave_user",
