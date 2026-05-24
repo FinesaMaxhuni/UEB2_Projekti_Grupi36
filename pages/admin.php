@@ -27,25 +27,25 @@ SELECT COUNT(*) FROM users
 
         <ul class="admin-menu">
     <li>
-        <a href="/UEB2_Projekti_Grupi36/pages/channels-list.php">
+        <a href="">
             <span>📺</span> TV Paketa <span>›</span>
         </a>
     </li>
 
     <li>
-        <a href="/UEB2_Projekti_Grupi36/pages/fiber_internet.php">
+        <a href="">
             <span>🌐</span> Internet <span>›</span>
         </a>
     </li>
 
     <li>
-        <a href="/UEB2_Projekti_Grupi36/pages/telefona.php">
+        <a href="">
             <span>🛒</span> E-Shop <span>›</span>
         </a>
     </li>
 
     <li>
-        <a href="/UEB2_Projekti_Grupi36/pages/telefoniafikse.php">
+        <a href="">
             <span>☎️</span> Telefonia Fikse <span>›</span>
         </a>
     </li>
