@@ -51,11 +51,6 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
         </a>
     </li>
 
-    <li>
-        <a href="/UEB2_Projekti_Grupi36/pages/settings.php">
-            <span>⚙️</span> Settings <span>›</span>
-        </a>
-    </li>
 </ul>
     </div>
 
