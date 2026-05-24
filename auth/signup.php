@@ -162,7 +162,7 @@ Sign Up
 
 Already have an account?
 
-<a href="auth/login.php">
+<a href="../auth/login.php">
 Login
 </a>
 
