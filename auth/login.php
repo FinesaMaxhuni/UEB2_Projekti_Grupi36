@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
- <link rel="stylesheet" href="../assets/css/login.css">
+<link rel="stylesheet" href="../assets/css/login.css?v=<?php echo time(); ?>">
 
 <title>Login</title>
 
