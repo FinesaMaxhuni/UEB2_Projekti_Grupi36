@@ -57,8 +57,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <meta charset="UTF-8">
 
-<link rel="stylesheet"
-href="assets/css/login.css">
+<link rel="stylesheet" href="../assets/css/resetpassword.css?v=<?php echo time(); ?>">
+
 
 <title>Reset Password</title>
 
@@ -71,7 +71,7 @@ href="assets/css/login.css">
 <div class="login-card">
 
 <div class="login-logo">
-<img src="assets/images/telecomoperator_foto/NETWAVE Logo Design.png">
+<img src="../assets/images/telecomoperator_foto/NETWAVE Logo Design.png">
 </div>
 
 <h2>Reset Password</h2>
