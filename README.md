@@ -139,10 +139,10 @@ UEB2_Projekti_Grupi36/
 |   ├── televizora.php
 |   ├── tv-packages.php
 |   └── tv+internet.php
-├── config.php
+├── config1.php
 ├── index.html
-├── login.php
-├── logout.php
+├── login1.php
+├── logout1.php
 └── README.md
 ```
 
