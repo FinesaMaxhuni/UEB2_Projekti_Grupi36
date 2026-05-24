@@ -6,8 +6,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $fullname = trim($_POST['fullname']);
     $email = trim($_POST['email']);
     $username = trim($_POST['username']);
+    $gender = trim($_POST['gender']);
+    $city = trim($_POST['city']);
     $password = trim($_POST['password']);
     $confirm = trim($_POST['confirm_password']);
+    
 
     if(empty($fullname)){
 
@@ -49,14 +52,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             password_hash($password, PASSWORD_DEFAULT);
 
            $stmt = $pdo->prepare("
-         INSERT INTO users(
+            INSERT INTO users(
             fullname,
             username,
             email,
             password,
-            role
+            role,
+            gender,
+            city
             )
-            VALUES(?,?,?,?,?)
+            VALUES(?,?,?,?,?,?,?)
             ");
 
            $stmt->execute([
@@ -64,8 +69,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            $username,
            $email,
            $hashedPassword,
-           'user'
-            ]);
+           'user',
+           $gender,
+           $city
+           ]);
 
             $success = "Llogaria u krijua me sukses.";
         }
@@ -135,6 +142,26 @@ required>
 type="text"
 name="username"
 placeholder="Username"
+required>
+
+<select name="gender" required>
+
+<option value="">Zgjedh gjininë</option>
+
+<option value="Mashkull">
+Mashkull
+</option>
+
+<option value="Femër">
+Femër
+</option>
+
+</select>
+
+<input
+type="text"
+name="city"
+placeholder="Qyteti"
 required>
 
 <input
