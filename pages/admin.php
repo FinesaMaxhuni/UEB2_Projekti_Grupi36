@@ -8,6 +8,11 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
 if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
     die("Nuk ke qasje.");
 }
+/* TOTAL USERS */
+
+$totalUsers = $pdo->query("
+SELECT COUNT(*) FROM users
+")->fetchColumn();
 ?>
 
 
@@ -61,9 +66,12 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
 
         <div class="stats-grid">
 
+       
             <div class="stat-box">
                 <h4>Përdorues Total</h4>
-                <div class="stat-number">1,245</div>
+                <div class="stat-number">
+    <?php echo $totalUsers; ?>
+</div>
             </div>
 
             <div class="stat-box">
