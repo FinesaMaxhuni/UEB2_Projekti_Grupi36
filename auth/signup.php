@@ -48,21 +48,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $hashedPassword =
             password_hash($password, PASSWORD_DEFAULT);
 
-            $stmt = $pdo->prepare("
-            INSERT INTO users(
+           $stmt = $pdo->prepare("
+         INSERT INTO users(
+            fullname,
             username,
             email,
             password,
             role
             )
-            VALUES(?,?,?,?)
+            VALUES(?,?,?,?,?)
             ");
 
-            $stmt->execute([
-                $username,
-                $email,
-                $hashedPassword,
-                'user'
+           $stmt->execute([
+           $fullname,
+           $username,
+           $email,
+           $hashedPassword,
+           'user'
             ]);
 
             $success = "Llogaria u krijua me sukses.";

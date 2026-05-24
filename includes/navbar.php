@@ -62,6 +62,7 @@
     <?php endif; ?>
 
     <li style="color:white; font-weight:600; margin-left:15px;">
+         
          <?php echo htmlspecialchars($_SESSION['user']); ?>
        
     </li>
