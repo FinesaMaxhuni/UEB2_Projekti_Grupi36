@@ -1,10 +1,13 @@
 CREATE TABLE users(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    fullname VARCHAR(100),
-    username VARCHAR(50),
-    email VARCHAR(100),
-    password VARCHAR(255),
-    role VARCHAR(20),
+    fullname VARCHAR(100) NOT NULL ,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL DEFAULT 'user',
     gender VARCHAR(20),
-    city VARCHAR(50)
+    city VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
