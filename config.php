@@ -1,13 +1,11 @@
 <?php
 
-if(session_status() === PHP_SESSION_NONE){
-    session_start();
-}
+session_start();
 
 $host = "localhost";
 $dbname = "netwave";
 $user = "root";
-$pass = "Veram3107mysql";
+$pass = "";
 
 try{
 
@@ -17,10 +15,13 @@ try{
         $pass
     );
 
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(
+        PDO::ATTR_ERRMODE,
+        PDO::ERRMODE_EXCEPTION
+    );
 
 }catch(PDOException $e){
 
-    die("Database connection failed.");
+    die("Gabim ne databaze: " . $e->getMessage());
 }
 ?>
