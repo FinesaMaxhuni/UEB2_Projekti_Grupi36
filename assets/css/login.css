@@ -1,136 +1,228 @@
-/* BACKGROUND */
-.login-page{
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
     min-height:100vh;
-    background:linear-gradient(135deg,#0a1929,#0f172a);
+
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:40px 20px;
+
+    background:
+    linear-gradient(rgba(2,6,23,.94),rgba(2,6,23,.94)),
+    linear-gradient(135deg,#020617,#0f172a,#111827);
+
+    padding:20px;
 }
 
-/* KARTA */
+/* MAIN CARD */
+
 .login-card{
+
     width:100%;
     max-width:520px;
-    background:rgba(255,255,255,0.05);
-    border-radius:18px;
-    padding:45px;
-    box-shadow:0 10px 40px rgba(0,0,0,0.35);
-    backdrop-filter:blur(12px);
-    animation:fadeIn .6s ease;
+
+    background:#020b24;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.45),
+    0 0 30px rgba(59,130,246,.12);
 }
 
 /* LOGO */
+
 .login-logo{
+
     text-align:center;
-    margin-bottom:15px;
+
+    margin-bottom:25px;
 }
 
 .login-logo img{
-    width:90px;
-    height:auto;
+
+    width:150px;
 }
 
-/* TITULLI */
+/* TITLE */
+
 .login-card h2{
+
+    color:white;
+
     text-align:center;
-    color:#60a5fa;
-    font-size:34px;
-    margin-bottom:30px;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    margin-bottom:40px;
 }
 
-/* LABEL */
-.login-card label{
-    display:block;
-    margin-bottom:8px;
-    color:#cbd5e1;
-    font-weight:600;
-    font-size:15px;
-}
+/* INPUTS */
 
-/* INPUT */
 .login-card input{
+
     width:100%;
-    padding:14px;
+
+    padding:18px;
+
     border:none;
     outline:none;
-    border-radius:10px;
-    margin-bottom:18px;
-    font-size:15px;
+
+    border-radius:16px;
+
+    background:#1e293b;
+
+    color:white;
+
+    font-size:17px;
+
+    margin-bottom:22px;
+
+    transition:.3s;
+}
+
+.login-card input::placeholder{
+
+    color:#94a3b8;
 }
 
 .login-card input:focus{
-    box-shadow:0 0 0 2px #60a5fa;
+
+    box-shadow:
+    0 0 0 2px #60a5fa;
 }
 
-/* ERROR */
-.error-box{
-    background:rgba(239,68,68,.15);
-    color:#f87171;
-    padding:12px;
-    border-radius:10px;
-    margin-bottom:18px;
-    font-size:14px;
+/* FORGOT PASSWORD */
+
+.login-links{
+
+    text-align:right;
+
+    margin-bottom:28px;
 }
 
-/* BUTONI */
+.login-links a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    font-size:15px;
+}
+
+.login-links a:hover{
+
+    color:#60a5fa;
+}
+
+/* LOGIN BUTTON */
+
 .login-btn{
+
     width:100%;
-    padding:14px;
+
+    padding:18px;
+
     border:none;
-    border-radius:10px;
-    background:#60a5fa;
-    color:white;
-    font-size:17px;
-    font-weight:700;
+
+    border-radius:16px;
+
+    background:white;
+
+    color:#020617;
+
+    font-size:20px;
+
+    font-weight:800;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
 .login-btn:hover{
-    background:#2563eb;
+
+    background:#f8fafc;
+
+    transform:translateY(-2px);
 }
 
-/* EXTRA */
-.login-links{
-    margin-top:18px;
-    text-align:right;
+/* SIGNUP */
+
+.auth-switch{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#cbd5e1;
+
+    font-size:16px;
 }
 
-.login-links a{
-    color:#93c5fd;
+.auth-switch a{
+
+    color:#60a5fa;
+
     text-decoration:none;
-    font-size:14px;
+
+    font-weight:700;
+
+    margin-left:5px;
 }
 
-.login-links a:hover{
+.auth-switch a:hover{
+
     text-decoration:underline;
 }
 
-.demo-users{
-    margin-top:25px;
+/* ERROR */
+
+.error-box{
+
+    background:rgba(239,68,68,.10);
+
+    border:1px solid rgba(239,68,68,.25);
+
+    color:#fca5a5;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
     text-align:center;
-    color:#cbd5e1;
-    font-size:14px;
-    line-height:1.8;
 }
 
-.demo-users span{
-    color:#60a5fa;
-    font-weight:bold;
-}
-
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(15px);}
-    to{opacity:1;transform:translateY(0);}
-}
+/* MOBILE */
 
 @media(max-width:600px){
+
     .login-card{
+
         padding:30px 22px;
     }
 
     .login-card h2{
+
         font-size:28px;
+    }
+
+    .login-logo img{
+
+        width:120px;
     }
 }
