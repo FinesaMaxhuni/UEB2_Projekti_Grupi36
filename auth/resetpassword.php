@@ -123,7 +123,7 @@ Reset Password
 </form>
 
 <div class="auth-switch">
-<a href="login.php">
+<a href="../auth/login.php">
 Back To Login
 </a>
 </div>

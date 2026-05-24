@@ -1,4 +1,5 @@
 <?php
+
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 
 $page = $_GET['page']
@@ -56,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="assets/css/login.css">
+ <link rel="stylesheet" href="../assets/css/login.css">
 
 <title>Login</title>
 
@@ -69,7 +70,7 @@ content="width=device-width, initial-scale=1.0">
 <div class="login-card">
 
     <div class="login-logo">
-        <img src="assets/images/telecomoperator_foto/NETWAVE Logo Design.png">
+        <img src="../assets/images/telecomoperator_foto/NETWAVE Logo Design.png">
     </div>
 
     <h2>Kyçu në NetWave</h2>
@@ -101,7 +102,7 @@ content="width=device-width, initial-scale=1.0">
 
         <div class="login-links">
 
-            <a href="resetpassword.php">
+            <a href="../auth/resetpassword.php">
                 Forgot Password?
             </a>
 
@@ -119,7 +120,7 @@ content="width=device-width, initial-scale=1.0">
 
         Don't have an account?
 
-        <a href="signup.php">Sign Up</a>
+        <a href="../auth/signup.php">Sign Up</a>
        
     </div>
 
