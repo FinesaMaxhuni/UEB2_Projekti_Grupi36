@@ -8,6 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $adresa   = $_POST["adresa"] ?? "";
   $telefoni = $_POST["telefoni"] ?? "";
   $pagesa   = $_POST["pagesa"] ?? "";
+  $cardName   = $_POST["cardName"] ?? "";
+$cardNumber = $_POST["cardNumber"] ?? "";
+$cvv        = $_POST["cvv"] ?? "";
+$month      = $_POST["month"] ?? "";
+$year       = $_POST["year"] ?? "";
 // /u i bjen Unicode mode.
   if (!preg_match("/^[a-zA-ZëËçÇ]{2,}$/u", $emri)) {
     $gabime[] = "Emri duhet të përmbajë vetëm shkronja pa hapësira.";

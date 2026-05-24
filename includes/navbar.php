@@ -78,7 +78,7 @@
 
     <li>
         <a class="btn-login"
-        href="logout.php?page=<?php echo urlencode($redirectPage); ?>">
+        href="auth/logout.php?page=<?php echo urlencode($redirectPage); ?>">
         Logout
         </a>
     </li>
@@ -93,7 +93,7 @@
 
     <li>
         <a class="btn-login"
-        href="login.php?page=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>">
+        href="auth/login.php?page=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>">
         Login
         </a>
     </li>
