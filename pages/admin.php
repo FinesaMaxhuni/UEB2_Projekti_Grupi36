@@ -27,7 +27,7 @@ SELECT COUNT(*) FROM users
 
         <ul class="admin-menu">
     <li>
-        <a href="">
+       <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php">
             <span>📺</span> TV Paketa <span>›</span>
         </a>
     </li>
