@@ -2,25 +2,39 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 
-$page = $_GET['page']
-?? 'pages/telecomeoperator.php';
+/*
+|-------------------------------------------------
+| Merr faqen prej nga erdhi useri
+|-------------------------------------------------
+*/
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+$page = $_GET['page']
+?? '/UEB2_Projekti_Grupi36/pages/telecomeoperator.php';
+
+/*
+|-------------------------------------------------
+| Login
+|-------------------------------------------------
+*/
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
     $stmt = $pdo->prepare("
-    SELECT * FROM users
-    WHERE username = ?
+        SELECT * FROM users
+        WHERE username = ?
     ");
 
     $stmt->execute([$username]);
 
     $user = $stmt->fetch();
 
-    if($user &&
-       password_verify($password,$user['password'])){
+    if(
+        $user &&
+        password_verify($password, $user['password'])
+    ){
 
         session_regenerate_id(true);
 
@@ -37,7 +51,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             true
         );
 
-        header("Location: ".$_POST['page']);
+        /*
+        |-------------------------------------------------
+        | Ktheje userin ne faqen ku ka qene
+        |-------------------------------------------------
+        */
+
+        $redirectPage =
+        $_POST['page']
+        ?? '/UEB2_Projekti_Grupi36/pages/telecomeoperator.php';
+
+        header("Location: " . $redirectPage);
         exit();
 
     }else{
