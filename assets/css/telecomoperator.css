@@ -382,3 +382,132 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
   .promo-esim img {width: 100%; border-radius: 12px; margin: 40px 0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);}
   .mobile-package img {width: 100%; max-width: 480px; margin: 40px auto; display: block; border-radius: 16px; box-shadow: 0 6px 20px rgba(11, 30, 52, 0.15);}
 }
+/* --- SEKSIONI I LAJMEVE NGA API (RREGULLUAR) --- */
+
+.latest-tech-section {
+    max-width: 1200px;
+    margin: 60px auto 40px auto;
+    padding: 0 20px;
+    clear: both;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header-left h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.header-left p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.view-all-btn {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Kontejneri që i detyron të rrinë 4 krah për krah */
+.api-news-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+.api-news-card {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: transform 0.2s !important;
+}
+
+.api-news-card:hover {
+    transform: translateY(-5px) !important;
+}
+
+.card-thumb {
+    width: 100% !important;
+    height: 160px !important;
+    overflow: hidden !important;
+}
+
+.card-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+.card-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.card-heading {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    color: #1e293b !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 600 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    height: 44px !important; /* Detyron titujt të kenë lartësi të barabartë */
+}
+
+.card-footer-meta {
+    margin-top: auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    font-size: 12px !important;
+    color: #94a3b8 !important;
+}
+
+/* Responsive për Celularë */
+@media (max-width: 992px) {
+    .api-news-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .api-news-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Heq nënvizimin dhe ngjyrën e kaltër të linkut të kartës */
+.api-news-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block !important;
+}
+
+.api-news-link:hover {
+    text-decoration: none !important;
+}

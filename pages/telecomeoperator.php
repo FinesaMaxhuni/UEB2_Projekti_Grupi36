@@ -4,12 +4,80 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php'
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 ?>
 
+<?php
+$apiKey = "0fa898c4bda14a1cb5249b8031b8dcb4";
+// $url = "https://newsapi.org/v2/top-headlines?category=technology&language=en&pageSize=4&apiKey=$apiKey";
+$url = "https://newsapi.org/v2/everything?q=gadgets&language=en&sortBy=publishedAt&apiKey=$apiKey";
+
+/* GET NEWS */
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+/* USER AGENT */
+curl_setopt($ch, CURLOPT_USERAGENT, 'NetWaveApp/1.0');
+$response = curl_exec($ch);
+
+if(curl_errno($ch)){
+    echo "cURL Error: " . curl_error($ch);
+}
+curl_close($ch);
+/* CHECK RESPONSE */
+if($response !== false){
+    $data = json_decode($response, true);
+    if(isset($data['articles'])){
+        $articles = $data['articles'];
+    }else{
+        $articles = [];
+    }
+}else{
+    $articles = [];
+}
+?>
+
 <main class="main">
 <section id="hero" class="hero"><div class="container"><div class="hero-content">
   <h1 class="hero-title">Shërbime të shpejta, të besueshme dhe të përballueshme</h1>
   <p class="hero-subtitle">Internet fibra, paketa mobile dhe TV — për biznes ose shtëpi. Oferta speciale tani.</p>
   <div class="hero-cta"><a href="pages/pagesa.php" class="btn btn-primary">Paguaj Online</a><a href="pages/telecomeoperator.php#rreth" class="btn btn-secondary">Mëso më shumë</a></div>
 </div></div></section>
+
+<section class="latest-tech-section">
+    <div class="section-header">
+        <div class="header-left">
+            <div>
+                <h2>Latest Tech Updates</h2>
+                <p>Lajmet më të fundit nga bota e teknologjisë</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="api-news-grid">
+        <?php 
+        if (isset($articles) && is_array($articles)):
+            $limited_articles = array_slice($articles, 0, 4);
+            foreach($limited_articles as $article): 
+        ?>
+            <a href="<?php echo $article['url']; ?>" target="_blank" class="api-news-link">
+                <div class="api-news-card">
+                    <div class="card-thumb">
+                        <img src="<?php echo !empty($article['urlToImage']) ? $article['urlToImage'] : 'https://via.placeholder.com/400x250?text=No+Image'; ?>" alt="">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">TECHNOLOGY</span>
+                        <h3 class="card-heading"><?php echo htmlspecialchars($article['title']); ?></h3>
+                        <div class="card-footer-meta">
+                            <span class="meta-date">
+                                <?php echo isset($article['publishedAt']) ? date("M d, Y", strtotime($article['publishedAt'])) : date("M d, Y"); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a> <?php 
+            endforeach; 
+        endif;
+        ?>
+    </div>
+</section>
 
 <section class="offers"><div class="container">
   <div class="smart-trip-grid">
