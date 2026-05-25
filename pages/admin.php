@@ -13,6 +13,13 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!="admin"){
 $totalUsers = $pdo->query("
 SELECT COUNT(*) FROM users
 ")->fetchColumn();
+
+$totalSoldTvPackages = $pdo->query("
+SELECT COUNT(*)
+FROM aktivizo
+WHERE tv_package_id IS NOT NULL
+   OR tv_internet_package_id IS NOT NULL
+")->fetchColumn();
 ?>
 
 
@@ -76,7 +83,7 @@ SELECT COUNT(*) FROM users
 
             <div class="stat-box">
                 <h4>Paketa TV të shitura</h4>
-                <div class="stat-number">386</div>
+                <div class="stat-number"><?php echo $totalSoldTvPackages; ?></div>
             </div>
 
             <div class="stat-box">

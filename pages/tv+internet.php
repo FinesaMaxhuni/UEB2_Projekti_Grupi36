@@ -1,11 +1,22 @@
 <?php
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
+
 $gabime = [];
+$sukses = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $emri = trim($_POST["emri"] ?? "");
     $email = trim($_POST["email"] ?? "");
     $telefon = trim($_POST["telefon"] ?? "");
+    $pako = $_POST["pako"] ?? "";
+
+    $pakotCombo = [
+        "combo-basic" => "Combo Basic",
+        "combo-plus" => "Combo Plus",
+        "combo-sport" => "Combo Sport",
+        "combo-ultra" => "Combo Ultra"
+    ];
 
     if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
         $gabime[] = "Emri duhet të përmbajë vetëm shkronja dhe të ketë të paktën 2 karaktere.";
@@ -19,14 +30,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gabime[] = "Numri i telefonit duhet të ketë 9 deri 15 shifra dhe mund të fillojë me +.";
     }
 
+    if (!isset($_SESSION['id'])) {
+        $gabime[] = "Duhet te kycesh per ta aktivizuar pakon.";
+    }
+
+    if (!isset($pakotCombo[$pako])) {
+        $gabime[] = "Zgjedh nje pako valide.";
+    }
+
     if (empty($gabime)) {
-        $sukses = "Pako u aktivizua me sukses!";
+        $stmt = $pdo->prepare("
+            SELECT id
+            FROM tv_internet_packages
+            WHERE package_name = ?
+        ");
+        $stmt->execute([$pakotCombo[$pako]]);
+        $tvInternetPackageId = $stmt->fetchColumn();
+
+        if ($tvInternetPackageId) {
+            $stmt = $pdo->prepare("
+                INSERT INTO aktivizo(user_id, tv_package_id, tv_internet_package_id)
+                VALUES (?, NULL, ?)
+            ");
+            $stmt->execute([$_SESSION['id'], $tvInternetPackageId]);
+            $sukses = "Pako u aktivizua me sukses!";
+        } else {
+            $gabime[] = "Pako nuk u gjet ne databaze.";
+        }
     }
 }
 
 $pageCSS = "tv+internet.css?v=validation-style-3";
 
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 ?>

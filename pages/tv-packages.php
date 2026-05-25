@@ -1,10 +1,21 @@
 <?php
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
+
 $gabime = [];
+$sukses = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emri = $_POST["emri"] ?? "";
     $email = $_POST["email"] ?? "";
     $telefon = $_POST["telefon"] ?? "";
+    $pako = $_POST["pako"] ?? "";
+
+    $pakotTv = [
+        "economy" => "TV Economy",
+        "premium" => "TV Premium",
+        "sport" => "TV Sport",
+        "custom" => "TV Custom"
+    ];
 
     if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
         $gabime[] = "Emri nuk është valid.";
@@ -18,14 +29,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gabime[] = "Numri i telefonit nuk është valid.";
     }
 
+    if (!isset($_SESSION['id'])) {
+        $gabime[] = "Duhet te kycesh per ta aktivizuar pakon.";
+    }
+
+    if (!isset($pakotTv[$pako])) {
+        $gabime[] = "Zgjedh nje pako valide.";
+    }
+
     if (empty($gabime)) {
-        $sukses = "Pako u aktivizua me sukses!";
+        $stmt = $pdo->prepare("
+            SELECT id
+            FROM tv_packages
+            WHERE package_name = ?
+        ");
+        $stmt->execute([$pakotTv[$pako]]);
+        $tvPackageId = $stmt->fetchColumn();
+
+        if ($tvPackageId) {
+            $stmt = $pdo->prepare("
+                INSERT INTO aktivizo(user_id, tv_package_id, tv_internet_package_id)
+                VALUES (?, ?, NULL)
+            ");
+            $stmt->execute([$_SESSION['id'], $tvPackageId]);
+            $sukses = "Pako u aktivizua me sukses!";
+        } else {
+            $gabime[] = "Pako nuk u gjet ne databaze.";
+        }
     }
 }
 
 $pageCSS = "tv-packages.css";
 
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 ?>
