@@ -5,7 +5,7 @@ session_start();
 $host = "localhost";
 $dbname = "netwave";
 $user = "root";
-$pass = "passwordi yt";
+$pass = "admin";
 
 try{
 
