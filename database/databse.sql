@@ -14,6 +14,10 @@ CREATE TABLE users(
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+INSERT INTO users(fullname,username, email, password, role, gender, city)
+VALUES
+('Finesa Maxhuni','finesa','finesa@gmail.com','$2y$10$VxQ7x9u2x9fKQeY5nR4k8uVQ8g3zJ2fT9eY2hM7vN4bX1zL0sW6aK','admin',  'Femer','Prishtine'),
+
 CREATE TABLE tv_packages(
     id INT AUTO_INCREMENT PRIMARY KEY,
     package_name VARCHAR(100) NOT NULL,
