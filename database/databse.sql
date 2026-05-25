@@ -14,4 +14,46 @@ CREATE TABLE users(
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE tv_packages(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    package_name VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    channels_count INT NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE tv_internet_packages(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    package_name VARCHAR(100) NOT NULL,
+    internet_speed VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    channels_count INT NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE channels(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    channel_name VARCHAR(100) NOT NULL,
+    category VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE permbajtja(
+    tv_package_id INT NOT NULL,
+    channel_id INT NOT NULL,
+    PRIMARY KEY(tv_package_id, channel_id),
+    FOREIGN KEY(tv_package_id) REFERENCES tv_packages(id),
+    FOREIGN KEY(channel_id) REFERENCES channels(id)
+);
+
+CREATE TABLE aktivizo(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    tv_package_id INT,
+    tv_internet_package_id INT,
+    activated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(id),
+    FOREIGN KEY(tv_package_id) REFERENCES tv_packages(id),
+    FOREIGN KEY(tv_internet_package_id) REFERENCES tv_internet_packages(id)
+);
+
 
