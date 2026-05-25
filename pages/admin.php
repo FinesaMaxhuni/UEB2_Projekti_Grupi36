@@ -33,7 +33,7 @@ SELECT COUNT(*) FROM users
     </li>
 
     <li>
-        <a href="">
+       <a href="/UEB2_Projekti_Grupi36/pages/internet.php">
             <span>🌐</span> Internet <span>›</span>
         </a>
     </li>

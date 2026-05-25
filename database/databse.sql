@@ -16,7 +16,7 @@ CREATE TABLE users(
 
 INSERT INTO users(fullname,username, email, password, role, gender, city)
 VALUES
-('Finesa Maxhuni','finesa','finesa@gmail.com','$2y$10$VxQ7x9u2x9fKQeY5nR4k8uVQ8g3zJ2fT9eY2hM7vN4bX1zL0sW6aK','admin','Femer','Prishtine');
+('Finesa Maxhuni','finesa','finesa@gmail.com','$2y$10$VxQ7x9u2x9fKQeY5nR4k8uVQ8g3zJ2fT9eY2hM7vN4bX1zL0sW6aK','admin',  'Femer','Prishtine'),
 
 CREATE TABLE tv_packages(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -113,6 +113,35 @@ VALUES
 (2,4),(2,5),(2,10),(2,11),
 (3,6),(3,7),(3,8),(3,9),
 (4,1),(4,5),(4,10);
+
+CREATE TABLE fiber_packages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    package_name VARCHAR(100) NOT NULL,
+    speed VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE fiveg_packages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    package_name VARCHAR(100) NOT NULL,
+    speed VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE internet_subscriptions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(30) NOT NULL,
+
+    package_type ENUM('fiber','5g') NOT NULL,
+    package_id INT NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE fiber_packages (
     id INT AUTO_INCREMENT PRIMARY KEY,

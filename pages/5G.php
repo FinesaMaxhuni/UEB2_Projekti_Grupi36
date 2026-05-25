@@ -3,6 +3,10 @@ $pageCSS = "5G.css";
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
+
+$stmt = $pdo->prepare("SELECT * FROM fiveg_packages");
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -16,47 +20,37 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
     </div>
   </section>
 
-  <!-- PLANET 5G -->
-  <section class="g5-plans" id="planet5g">
-    <div class="container">
-      <h2 class="section-title">Zgjidh planin tënd 5G</h2>
-      <div class="plans-grid">
-        
-        <div class="plan-card">
-          <h3>5G Basic</h3>
-          <p class="price">24.90 €/muaj</p>
-          <ul>
-            <li>Shpejtësi deri në 150 Mbps</li>
-            <li>Instalim falas</li>
-            <li>Router 5G përfshirë</li>
-          </ul>
-          <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
-        </div>
+  <!-- PACKAGES -->
+<section class="g5-plans" id="planet5g">
+  <div class="container">
+    <h2 class="section-title">Zgjidh planin tënd 5G</h2>
+
+    <div class="plans-grid">
+
+      <?php foreach($result as $row) { ?>
 
         <div class="plan-card">
-          <h3>5G Plus</h3>
-          <p class="price">34.90 €/muaj</p>
+          <h3><?= htmlspecialchars($row['package_name']) ?></h3>
+
+          <p class="price">
+            <?= htmlspecialchars($row['price']) ?> €/muaj
+          </p>
+
           <ul>
-            <li>Shpejtësi deri në 500 Mbps</li>
-            <li>Pa kufizime në përdorim</li>
-            <li>Router inteligjent Wi-Fi 6</li>
+            <li><?= htmlspecialchars($row['speed']) ?></li>
+            <li><?= htmlspecialchars($row['description']) ?></li>
           </ul>
-          <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
+
+          <a href="/UEB2_Projekti_Grupi36/pages/abonohu.php?type=5g&id=<?= (int)$row['id'] ?>" class="btn btn-primary">
+            Abonohu
+          </a>
         </div>
 
-        <div class="plan-card">
-          <h3>5G Premium</h3>
-          <p class="price">49.90 €/muaj</p>
-          <ul>
-            <li>Shpejtësi mbi 1 Gbps</li>
-            <li>Prioritet në rrjet 5G</li>
-            <li>Suport teknik 24/7</li>
-          </ul>
-          <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
-        </div>
-      </div>
+      <?php } ?>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- KRAHASIMI 5G VS 4G -->
   <section class="g5-compare">

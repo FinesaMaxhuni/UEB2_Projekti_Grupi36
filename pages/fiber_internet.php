@@ -4,6 +4,10 @@ $pageCSS = "fiber_internet.css";
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
+
+$stmt = $pdo->prepare("SELECT * FROM fiber_packages");
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!-- HERO -->
@@ -45,62 +49,29 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
 
     <div class="plans-grid">
 
-      <div class="plan-card">
-        <h3>Fiber 100 Mbps (Wi-Fi 6)</h3>
-        <p class="price">29.90 €/muaj</p>
-        <ul>
-          <li>100 Mbps Download / 50 Mbps Upload</li>
-          <li>2000 minuta falas në rrjetin NetWave</li>
-          <li>Router Wi-Fi 6 falas</li>
-        </ul>
-        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
-      </div>
+      <?php foreach($result as $row) { ?>
 
-      <div class="plan-card">
-        <h3>Fiber 300 Mbps (Wi-Fi 6)</h3>
-        <p class="price">39.90 €/muaj</p>
-        <ul>
-          <li>300 Mbps Download / 100 Mbps Upload</li>
-          <li>2000 minuta falas në rrjetin NetWave</li>
-          <li>Router Wi-Fi 6 falas</li>
-        </ul>
-        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
-      </div>
+        <div class="plan-card">
+          <h3><?= htmlspecialchars($row['package_name']) ?></h3>
 
-      <div class="plan-card">
-        <h3>Fiber 1 Gbps (Wi-Fi 6)</h3>
-        <p class="price">49.90 €/muaj</p>
-        <ul>
-          <li>1 Gbps Download / 100 Mbps Upload</li>
-          <li>2000 minuta falas në rrjetin NetWave</li>
-          <li>Instalim falas</li>
-        </ul>
-        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
-      </div>
+          <p class="price">
+            <?= htmlspecialchars($row['price']) ?> €/muaj
+          </p>
 
-      <div class="plan-card">
-        <h3>Fiber 2.5 Gbps (Wi-Fi 6)</h3>
-        <p class="price">69.90 €/muaj</p>
-        <ul>
-          <li>2.5 Gbps Download / 500 Mbps Upload</li>
-          <li>Router Wi-Fi 6 Pro falas</li>
-          <li>24/7 Suport teknik</li>
-        </ul>
-        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
-      </div>
+          <ul>
+            <li><?= htmlspecialchars($row['speed']) ?></li>
+            <li><?= htmlspecialchars($row['description']) ?></li>
+          </ul>
 
-      <div class="plan-card">
-        <h3>Fiber 10 Gbps (Wi-Fi 6 Pro)</h3>
-        <p class="price">99.90 €/muaj</p>
-        <ul>
-          <li>10 Gbps Download / 10 Gbps Upload</li>
-          <li>Performancë premium për biznese</li>
-          <li>Router enterprise falas</li>
-        </ul>
-        <a href="pages/abonohu.php" class="btn btn-primary">Abonohu</a>
-      </div>
+          <a href="/UEB2_Projekti_Grupi36/pages/abonohu.php?type=fiber&id=<?= (int)$row['id'] ?>" class="btn btn-primary">
+            Abonohu
+          </a>
+        </div>
+
+      <?php } ?>
 
     </div>
+
   </div>
 </section>
 
