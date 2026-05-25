@@ -511,3 +511,172 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 .api-news-link:hover {
     text-decoration: none !important;
 }
+
+/* per pjesen contact  */
+/* --- STILIMI I MODAL POP-UP (DARK THEME) --- */
+
+/* Sfondi i madh që mbulon tërë ekranin */
+.contact-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Sigurohet që qëndron mbi çdo element tjetër */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Kur modali është aktiv */
+.contact-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Shtresa e errët mbrapa formës */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 7, 18, 0.8); /* Errëson faqen në sfond */
+    backdrop-filter: blur(4px); /* Efekt blur i lehtë */
+}
+
+/* Kutia e formës që vjen me animacion */
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 480px;
+    z-index: 10000;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.contact-modal.active .modal-content {
+    transform: scale(1);
+}
+
+/* Butoni X për mbyllje */
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 32px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+    color: #ffffff;
+}
+
+/* Elementet e brendshme të formës */
+.contact-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-header h2 {
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.contact-header p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.main-contact-form {
+    background: #111d37;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.form-input-group {
+    margin-bottom: 18px;
+}
+
+.form-input-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #cbd5e1;
+    font-size: 13px;
+    text-align: left;
+}
+
+.form-input-group input,
+.form-input-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    background-color: #0c152b;
+    color: #ffffff;
+}
+
+.form-input-group input::placeholder,
+.form-input-group textarea::placeholder {
+    color: #475569;
+}
+
+.form-input-group input:focus,
+.form-input-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 215, 0.15);
+}
+
+.contact-submit-btn {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* --- ZHDUKJA E SHIRITIT TË BARDHË MES SEKSIONEVE --- */
+
+/* 1. Forcojmë trupin e faqes që në atë zonë të jetë i errët */
+body {
+    background-color: #0b1329 !important; 
+}
+
+/* 2. Kapim seksionin e misionit ose çdo element para footer-it dhe ia heqim margin-in */
+section, main, div {
+    margin-bottom: 0 !important;
+}
+
+/* 3. Sigurohemi që footeri të mos ketë asnjë hapësirë boshe sipër tij */
+.footer {
+    margin-top: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important; /* Një vijë shumë e hollë ndarëse */
+    background-color: #0c152b !important;
+}
