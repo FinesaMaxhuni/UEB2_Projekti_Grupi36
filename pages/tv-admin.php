@@ -456,11 +456,10 @@ $totalTvInternetPackages = $pdo->query("
 SELECT COUNT(*) FROM tv_internet_packages
 ")->fetchColumn();
 
-$totalChannels = $pdo->query("
-SELECT
-    COALESCE((SELECT SUM(channels_count) FROM tv_packages), 0) +
-    COALESCE((SELECT SUM(channels_count) FROM tv_internet_packages), 0)
-")->fetchColumn();
+$channelsPage = $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/pages/channels-list.php';
+$totalChannels = file_exists($channelsPage)
+    ? substr_count(file_get_contents($channelsPage), 'class="channel-item"')
+    : 0;
 
 $tvPackages = $pdo->query("
 SELECT
