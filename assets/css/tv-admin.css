@@ -170,6 +170,10 @@ body{
     box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
+.secondary-manage{
+    margin-top:20px;
+}
+
 .manage-top{
     display:flex;
     justify-content:space-between;
