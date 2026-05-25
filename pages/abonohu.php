@@ -1,38 +1,76 @@
 <?php
-  $gabime = [];
+$pageCSS = "abonohu.css";
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
+
+$gabime = [];
+
+// GET nga URL (fiber / 5g + id i paketës)
+$type = strtolower(trim($_GET['type'] ?? ''));
+$package_id = (int)($_GET['id'] ?? 0);
+
+
+if (!in_array($type, ['fiber', '5g'])) {
+    die("Type gabim: $type");
+}
+
+if ($package_id <= 0) {
+    die("Invalid package id");
+}
+
+// input default
+$emri = "";
+$mbiemri = "";
+$email = "";
+$telefon = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $emri = $_POST["emri"] ?? "";
     $mbiemri = $_POST["mbiemri"] ?? "";
     $email = $_POST["email"] ?? "";
     $telefon = $_POST["telefon"] ?? "";
 
+    // VALIDIM
     if (!preg_match("/^[a-zA-ZëËçÇ]{2,}$/u", $emri)) {
-      $gabime[] = "Emri duhet të përmbajë vetëm shkronja pa hapësira.";
+        $gabime[] = "Emri nuk është valid.";
     }
+
     if (!preg_match("/^[a-zA-ZëËçÇ]{2,}$/u", $mbiemri)) {
-      $gabime[] = "Mbiemri duhet të përmbajë vetëm shkronja pa hapësira.";
+        $gabime[] = "Mbiemri nuk është valid.";
     }
+
     if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
         $gabime[] = "Email nuk është valid.";
     }
+
     if (!preg_match("/^\+?[0-9\s]{9,15}$/", $telefon)) {
-      $gabime[] = "Numri i telefonit nuk është valid. Numri duhet të përmbajë 9-15 shifra.";
+        $gabime[] = "Numri i telefonit nuk është valid.";
     }
 
+    // INSERT NË DB
     if (empty($gabime)) {
-    header("Location: abonohu.php?sukses=1");
-    exit();
-    }
-  }
 
-?>
-<?php
-  $pageCSS = "abonohu.css";
-  require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
-  require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
-  require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
+        $stmt = $pdo->prepare("
+            INSERT INTO internet_subscriptions
+            (fullname, email, phone, package_type, package_id)
+            VALUES (:fullname, :email, :phone, :package_type, :package_id)
+        ");
+
+        $stmt->execute([
+            ':fullname' => $emri . ' ' . $mbiemri,
+            ':email' => $email,
+            ':phone' => $telefon,
+            ':package_type' => $type,
+            ':package_id' => $package_id
+        ]);
+
+        header("Location: abonohu.php?sukses=1");
+        exit();
+    }
+}
 ?>
 
 

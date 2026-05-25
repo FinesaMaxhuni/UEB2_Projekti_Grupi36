@@ -63,7 +63,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <li><?= htmlspecialchars($row['description']) ?></li>
           </ul>
 
-          <a href="abonohu.php?type=fiber&id=<?= (int)$row['id'] ?>" class="btn btn-primary">
+          <a href="/UEB2_Projekti_Grupi36/pages/abonohu.php?type=fiber&id=<?= (int)$row['id'] ?>" class="btn btn-primary">
             Abonohu
           </a>
         </div>
