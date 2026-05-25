@@ -448,18 +448,18 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/footer.php'
 exit();
 endif;
 
-$totalTvSold = $pdo->query("
-SELECT COUNT(*) FROM aktivizo
-WHERE tv_package_id IS NOT NULL
+$totalTvPackages = $pdo->query("
+SELECT COUNT(*) FROM tv_packages
 ")->fetchColumn();
 
-$totalTvInternetSold = $pdo->query("
-SELECT COUNT(*) FROM aktivizo
-WHERE tv_internet_package_id IS NOT NULL
+$totalTvInternetPackages = $pdo->query("
+SELECT COUNT(*) FROM tv_internet_packages
 ")->fetchColumn();
 
 $totalChannels = $pdo->query("
-SELECT COUNT(*) FROM channels
+SELECT
+    COALESCE((SELECT SUM(channels_count) FROM tv_packages), 0) +
+    COALESCE((SELECT SUM(channels_count) FROM tv_internet_packages), 0)
 ")->fetchColumn();
 
 $tvPackages = $pdo->query("
@@ -485,12 +485,6 @@ SELECT
     channels_count
 FROM tv_internet_packages
 ORDER BY id
-")->fetchAll();
-
-$channelsList = $pdo->query("
-SELECT id, channel_name, category
-FROM channels
-ORDER BY id DESC
 ")->fetchAll();
 
 $allPackages = [];
@@ -530,6 +524,8 @@ if($filter == 'tv'){
 }else{
     $visiblePackages = $allPackages;
 }
+
+$addPackageType = $filter == 'tv_internet' ? 'tv_internet' : 'tv';
 ?>
 
 <section class="tv-admin-page">
@@ -548,8 +544,8 @@ if($filter == 'tv'){
             </div>
 
             <div class="tv-stat-content">
-                <h3>Paketat TV<br>te shitura</h3>
-                <span><?php echo $totalTvSold; ?></span>
+                <h3>Paketat TV<br>Total</h3>
+                <span><?php echo $totalTvPackages; ?></span>
             </div>
         </div>
 
@@ -559,8 +555,8 @@ if($filter == 'tv'){
             </div>
 
             <div class="tv-stat-content">
-                <h3>Paketat TV + Internet<br>te shitura</h3>
-                <span><?php echo $totalTvInternetSold; ?></span>
+                <h3>Paketat TV + Internet<br>Total</h3>
+                <span><?php echo $totalTvInternetPackages; ?></span>
             </div>
         </div>
 
@@ -645,7 +641,7 @@ if($filter == 'tv'){
                 </div>
             </div>
 
-            <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=add_package" class="add-btn">
+            <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=add_package&type=<?php echo $addPackageType; ?>" class="add-btn">
                 + Shto Pakete te Re
             </a>
         </div>
@@ -671,38 +667,6 @@ if($filter == 'tv'){
                     <div class="actions">
                         <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=edit_package&type=<?php echo urlencode($package['type_key']); ?>&id=<?php echo $package['id']; ?>" class="edit-btn">Edito</a>
                         <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=delete_package&type=<?php echo urlencode($package['type_key']); ?>&id=<?php echo $package['id']; ?>" class="delete-btn" onclick="return confirm('A je i sigurt qe don me fshi kete pakete?')">Fshi</a>
-                    </div>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-    </div>
-
-    <div class="manage-box secondary-manage">
-        <div class="manage-top">
-            <div>
-                <h2>Menaxho Kanalet</h2>
-            </div>
-            <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=add_channel" class="add-btn">+ Shto Kanal</a>
-        </div>
-
-        <table class="tv-table manage-table">
-            <tr>
-                <th>ID</th>
-                <th>Emri i Kanalit</th>
-                <th>Kategoria</th>
-                <th>Veprimet</th>
-            </tr>
-
-            <?php foreach($channelsList as $channel): ?>
-            <tr>
-                <td><?php echo htmlspecialchars($channel['id']); ?></td>
-                <td><?php echo htmlspecialchars($channel['channel_name']); ?></td>
-                <td><?php echo htmlspecialchars($channel['category']); ?></td>
-                <td>
-                    <div class="actions">
-                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=edit_channel&id=<?php echo $channel['id']; ?>" class="edit-btn">Edito</a>
-                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=delete_channel&id=<?php echo $channel['id']; ?>" class="delete-btn" onclick="return confirm('A je i sigurt qe don me fshi kete kanal?')">Fshi</a>
                     </div>
                 </td>
             </tr>
