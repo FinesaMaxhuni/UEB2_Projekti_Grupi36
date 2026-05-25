@@ -11,10 +11,13 @@
   <div class="footer-bottom"><small>&copy; 2026 NetWave. Te gjitha te drejtat e rezervuara.</small></div>
 </div></footer>
 
-<?php include 'contact-modal.php'; ?>
+<?php 
+  // Kjo siguron që PHP e gjen skedarin contact-modal.php pavarësisht në cilën faqe je
+  include $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/contact-modal.php'; 
+?>
 
-<script src="assets/js/telecomoperator.js?v=2"></script>
-<script src="assets/js/contact-modal.js"></script>
+<script src="/UEB2_Projekti_Grupi36/assets/js/telecomoperator.js?v=2"></script>
+<script src="/UEB2_Projekti_Grupi36/assets/js/contact-modal.js"></script>
 
 </body>
 </html>

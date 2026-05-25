@@ -661,22 +661,22 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 .contact-submit-btn:hover {
     background-color: #1d4ed8;
 }
-
-/* --- ZHDUKJA E SHIRITIT TË BARDHË MES SEKSIONEVE --- */
+/* --- ZHDUKJA E SHIRITIT TË BARDHË MES SEKSIONEVE (I RREGULLUAR) --- */
 
 /* 1. Forcojmë trupin e faqes që në atë zonë të jetë i errët */
 body {
     background-color: #0b1329 !important; 
 }
 
-/* 2. Kapim seksionin e misionit ose çdo element para footer-it dhe ia heqim margin-in */
-section, main, div {
+/* 2. Në vend të 'div', kapim vetëm seksionin e misionit ose hapësirat e mëdha fundore të faqeve */
+.about-mission, section:last-of-type, main > div:last-child {
     margin-bottom: 0 !important;
+    padding-bottom: 40px !important; /* Siguron që të mos ngjitet teksti me vijën e footerit */
 }
 
 /* 3. Sigurohemi që footeri të mos ketë asnjë hapësirë boshe sipër tij */
 .footer {
     margin-top: 0 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.05) !important; /* Një vijë shumë e hollë ndarëse */
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important; 
     background-color: #0c152b !important;
 }
