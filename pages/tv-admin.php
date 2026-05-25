@@ -492,6 +492,44 @@ SELECT id, channel_name, category
 FROM channels
 ORDER BY id DESC
 ")->fetchAll();
+
+$allPackages = [];
+
+foreach($tvPackages as $package){
+    $allPackages[] = [
+        'id' => $package['id'],
+        'type_key' => 'tv',
+        'name' => $package['package_name'],
+        'type' => 'TV',
+        'price' => $package['price'],
+        'channels_count' => $package['channels_count']
+    ];
+}
+
+foreach($tvInternetPackages as $package){
+    $allPackages[] = [
+        'id' => $package['id'],
+        'type_key' => 'tv_internet',
+        'name' => $package['package_name'],
+        'type' => 'TV + Internet',
+        'price' => $package['price'],
+        'channels_count' => $package['channels_count']
+    ];
+}
+
+$filter = $_GET['filter'] ?? 'all';
+
+if($filter == 'tv'){
+    $visiblePackages = array_filter($allPackages, function($package){
+        return $package['type_key'] == 'tv';
+    });
+}elseif($filter == 'tv_internet'){
+    $visiblePackages = array_filter($allPackages, function($package){
+        return $package['type_key'] == 'tv_internet';
+    });
+}else{
+    $visiblePackages = $allPackages;
+}
 ?>
 
 <section class="tv-admin-page">
@@ -599,11 +637,16 @@ ORDER BY id DESC
     <div class="manage-box">
         <div class="manage-top">
             <div>
-                <h2>Menaxho Paketat TV</h2>
+                <h2>Menaxho Paketat</h2>
+                <div class="tabs">
+                    <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?filter=all" class="<?php if($filter == 'all') echo 'active-tab'; ?>">Te gjitha Paketat</a>
+                    <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?filter=tv" class="<?php if($filter == 'tv') echo 'active-tab'; ?>">Paketat TV</a>
+                    <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?filter=tv_internet" class="<?php if($filter == 'tv_internet') echo 'active-tab'; ?>">Paketat TV + Internet</a>
+                </div>
             </div>
 
-            <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=add_package&type=tv" class="add-btn">
-                + Shto Pakete TV
+            <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=add_package" class="add-btn">
+                + Shto Pakete te Re
             </a>
         </div>
 
@@ -611,60 +654,23 @@ ORDER BY id DESC
             <tr>
                 <th>ID</th>
                 <th>Emri i Paketes</th>
+                <th>Lloji</th>
                 <th>Cmimi</th>
                 <th>Kanale</th>
                 <th>Veprimet</th>
             </tr>
 
-            <?php foreach($tvPackages as $package): ?>
+            <?php foreach($visiblePackages as $package): ?>
             <tr>
                 <td><?php echo htmlspecialchars($package['id']); ?></td>
-                <td><?php echo htmlspecialchars($package['package_name']); ?></td>
+                <td><?php echo htmlspecialchars($package['name']); ?></td>
+                <td><?php echo htmlspecialchars($package['type']); ?></td>
                 <td><?php echo htmlspecialchars($package['price']); ?> EUR / muaj</td>
                 <td><?php echo htmlspecialchars($package['channels_count']); ?></td>
                 <td>
                     <div class="actions">
-                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=edit_package&type=tv&id=<?php echo $package['id']; ?>" class="edit-btn">Edito</a>
-                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=delete_package&type=tv&id=<?php echo $package['id']; ?>" class="delete-btn" onclick="return confirm('A je i sigurt qe don me fshi kete pakete?')">Fshi</a>
-                    </div>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-    </div>
-
-    <div class="manage-box secondary-manage">
-        <div class="manage-top">
-            <div>
-                <h2>Menaxho Paketat TV + Internet</h2>
-            </div>
-
-            <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=add_package&type=tv_internet" class="add-btn">
-                + Shto Pakete TV + Internet
-            </a>
-        </div>
-
-        <table class="tv-table manage-table">
-            <tr>
-                <th>ID</th>
-                <th>Emri i Paketes</th>
-                <th>Shpejtesia</th>
-                <th>Cmimi</th>
-                <th>Kanale</th>
-                <th>Veprimet</th>
-            </tr>
-
-            <?php foreach($tvInternetPackages as $package): ?>
-            <tr>
-                <td><?php echo htmlspecialchars($package['id']); ?></td>
-                <td><?php echo htmlspecialchars($package['package_name']); ?></td>
-                <td><?php echo htmlspecialchars($package['internet_speed']); ?></td>
-                <td><?php echo htmlspecialchars($package['price']); ?> EUR / muaj</td>
-                <td><?php echo htmlspecialchars($package['channels_count']); ?></td>
-                <td>
-                    <div class="actions">
-                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=edit_package&type=tv_internet&id=<?php echo $package['id']; ?>" class="edit-btn">Edito</a>
-                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=delete_package&type=tv_internet&id=<?php echo $package['id']; ?>" class="delete-btn" onclick="return confirm('A je i sigurt qe don me fshi kete pakete?')">Fshi</a>
+                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=edit_package&type=<?php echo urlencode($package['type_key']); ?>&id=<?php echo $package['id']; ?>" class="edit-btn">Edito</a>
+                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=delete_package&type=<?php echo urlencode($package['type_key']); ?>&id=<?php echo $package['id']; ?>" class="delete-btn" onclick="return confirm('A je i sigurt qe don me fshi kete pakete?')">Fshi</a>
                     </div>
                 </td>
             </tr>
