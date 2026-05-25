@@ -187,24 +187,6 @@ body{
     margin-bottom:15px;
 }
 
-/* TABS */
-
-.tabs{
-    display:flex;
-    gap:25px;
-}
-
-.tabs a{
-    text-decoration:none;
-    color:#475569;
-    font-weight:600;
-    font-size:15px;
-}
-
-.active-tab{
-    color:#2563eb !important;
-}
-
 /* ADD BUTTON */
 
 .add-btn{
@@ -408,10 +390,6 @@ body{
         flex-direction:column;
         align-items:flex-start;
         gap:20px;
-    }
-
-    .tabs{
-        flex-wrap:wrap;
     }
 
     .form-title-row,
