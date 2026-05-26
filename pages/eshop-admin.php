@@ -126,6 +126,35 @@ $stmt->execute(['tv']);
 
 $tv = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// ======================
+// BLERJET
+// ======================
+
+$stmt = $pdo->prepare("
+    SELECT 
+        orders.id,
+        orders.fullname,
+        orders.quantity,
+        orders.created_at,
+
+        eshop_products.product_name,
+        eshop_products.category,
+        eshop_products.price
+
+    FROM orders
+
+    INNER JOIN eshop_products
+    ON orders.product_id = eshop_products.id
+
+    ORDER BY orders.created_at DESC
+");
+
+$stmt->execute();
+
+$orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 ?>
 
 <main class="eshop-admin">
@@ -405,47 +434,50 @@ $tv = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <tbody>
 
-                    <tr>
-                        <td>#1025</td>
-                        <td>Finesa Maxhuni</td>
-                        <td>iPhone 15</td>
-                        <td>Telefona</td>
-                        <td>899€</td>
-                        <td>1</td>
-                        <td>20/05/2025</td>
-                        <td>
-                            <button class="view-btn">👁</button>
-                        </td>
-                    </tr>
+<?php foreach($orders as $order): ?>
 
-                    <tr>
-                        <td>#1024</td>
-                        <td>Arben Krasniqi</td>
-                        <td>MacBook Air M2</td>
-                        <td>Laptopa</td>
-                        <td>1399€</td>
-                        <td>1</td>
-                        <td>19/05/2025</td>
-                        <td>
-                        <td>
-                            <button class="view-btn">👁</button>
-                        </td>
-                    </tr>
+<tr>
 
-                    <tr>
-                        <td>#1023</td>
-                        <td>Elira Gashi</td>
-                        <td>TP-Link Archer</td>
-                        <td>Routera</td>
-                        <td>119€</td>
-                        <td>2</td>
-                        <td>18/05/2025</td>
-                        <td>
-                            <button class="view-btn">👁</button>
-                        </td>
-                    </tr>
+    <td>
+        #<?php echo htmlspecialchars($order['id']); ?>
+    </td>
 
-                </tbody>
+    <td>
+        <?php echo htmlspecialchars($order['fullname']); ?>
+    </td>
+
+    <td>
+        <?php echo htmlspecialchars($order['product_name']); ?>
+    </td>
+
+    <td>
+        <?php echo htmlspecialchars($order['category']); ?>
+    </td>
+
+    <td>
+        <?php echo htmlspecialchars($order['price']); ?>€
+    </td>
+
+    <td>
+        <?php echo htmlspecialchars($order['quantity']); ?>
+    </td>
+
+    <td>
+        <?php echo date(
+            "d/m/Y",
+            strtotime($order['created_at'])
+        ); ?>
+    </td>
+
+    <td>
+        <button class="view-btn">👁</button>
+    </td>
+
+</tr>
+
+<?php endforeach; ?>
+
+</tbody>
 
             </table>
 
