@@ -88,7 +88,7 @@ WHERE tv_package_id IS NOT NULL
 
             <div class="stat-box">
                 <h4>E-Shop Shitje</h4>
-                <div class="stat-number">€14,520</div>
+                <div class="stat-number"></div>
             </div>
 
         </div>
