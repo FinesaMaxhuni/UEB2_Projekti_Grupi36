@@ -1,6 +1,6 @@
 <?php
 
-$pageCSS = "edit-user.css";
+$pageCSS = "edit-product.css";
 
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 
