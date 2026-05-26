@@ -46,7 +46,7 @@ WHERE tv_package_id IS NOT NULL
     </li>
 
     <li>
-        <a href="">
+        <a href="/UEB2_Projekti_Grupi36/pages/eshop-admin.php">
             <span>🛒</span> E-Shop <span>›</span>
         </a>
     </li>
