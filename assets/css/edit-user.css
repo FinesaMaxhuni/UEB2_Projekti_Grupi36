@@ -224,3 +224,137 @@ td{
     cursor:pointer;
     font-size:16px;
 }
+
+/* ==========================================================================
+   Stilimi i Formës "Edit User" (Përshtatur me edit-user.php)
+   ========================================================================== */
+
+/* Seksioni kryesor që mbulon faqen */
+.edit-user-page {
+    padding: 60px 40px;
+    background: #f5f7fb;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Kontaineri i jashtëm */
+.edit-user-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Karta e bardhë ku ndodhet forma */
+.edit-user-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #2563eb; /* Shirit i kaltër anash për konsistencë */
+}
+
+/* Pjesa e titullit (Edit User) */
+.edit-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #edf1f7;
+    padding-bottom: 15px;
+}
+
+.edit-header h1 {
+    font-size: 32px;
+    color: #0b1739;
+    margin: 0 0 8px 0;
+}
+
+.edit-header p {
+    color: #7b8499;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Forma dhe grupet e fushave */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Stilimi i inputeve dhe select-ave */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    background: #f5f7fb;
+    border: 1px solid #edf1f7;
+    border-radius: 12px;
+    font-size: 15px;
+    color: #0f172a;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Efekti kur përdoruesi klikon mbi fushë (Focus) */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 213, 0.1);
+}
+
+/* Kontaineri i butonave poshtë */
+.form-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 25px;
+    border-top: 1px solid #edf1f7;
+}
+
+/* Butoni Update User */
+.save-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.save-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Butoni Cancel */
+.cancel-btn {
+    color: #ef4444;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.cancel-btn:hover {
+    background: #ffeeec;
+}
