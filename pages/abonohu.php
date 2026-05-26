@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ':package_id' => $package_id
         ]);
 
-        header("Location: abonohu.php?sukses=1");
+        header("Location: abonohu.php?type=$type&id=$package_id&sukses=1");
         exit();
     }
 }
