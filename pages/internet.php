@@ -3,8 +3,7 @@
 $pageCSS = "internet.css";
 
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/internet_package_tables.php';
-ensureInternetPackageTables($pdo);
+
 
 if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
     die("Nuk ke qasje.");
@@ -383,7 +382,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
                             <td><?php echo htmlspecialchars($subscription['package_name']); ?></td>
                             <td><?php echo $subscription['package_type'] === '5g' ? '5G' : 'Internet'; ?></td>
                             <td>
-                                <form method="POST" action="pages/internet.php" onsubmit="return confirm('A je i sigurt qe don me fshi kete abonim?');">
+                                <form method="POST" onsubmit="return confirm('A je i sigurt qe don me fshi kete abonim?');">
                                     <input type="hidden" name="delete_subscription" value="<?php echo (int)$subscription['id']; ?>">
                                     <a href="#" class="cancel-btn" onclick="this.closest('form').requestSubmit(); return false;">
                                         Ndal Abonimin
