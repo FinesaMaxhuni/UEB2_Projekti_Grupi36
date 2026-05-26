@@ -45,7 +45,7 @@ if($response !== false){
     <div class="section-header">
         <div class="header-left">
             <div>
-                <h2>Latest Tech Updates</h2>
+                <h2 style="color: white;">Latest Tech Updates</h2>
                 <p>Lajmet më të fundit nga bota e teknologjisë</p>
             </div>
         </div>

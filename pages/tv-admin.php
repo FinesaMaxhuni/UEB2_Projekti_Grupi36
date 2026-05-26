@@ -656,19 +656,30 @@ $addPackageType = $filter == 'tv_internet' ? 'tv_internet' : 'tv';
             </tr>
 
             <?php foreach($visiblePackages as $package): ?>
-            <tr>
-                <td><?php echo htmlspecialchars($package['id']); ?></td>
-                <td><?php echo htmlspecialchars($package['name']); ?></td>
-                <td><?php echo htmlspecialchars($package['type']); ?></td>
-                <td><?php echo htmlspecialchars($package['price']); ?> EUR / muaj</td>
-                <td><?php echo htmlspecialchars($package['channels_count']); ?></td>
-                <td>
-                    <div class="actions">
-                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=edit_package&type=<?php echo urlencode($package['type_key']); ?>&id=<?php echo $package['id']; ?>" class="edit-btn">Edito</a>
-                        <a href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=delete_package&type=<?php echo urlencode($package['type_key']); ?>&id=<?php echo $package['id']; ?>" class="delete-btn" onclick="return confirm('A je i sigurt qe don me fshi kete pakete?')">Fshi</a>
-                    </div>
-                </td>
-            </tr>
+                <tr id="package-row-<?php echo $package['id']; ?>">
+                    <td><?php echo htmlspecialchars($package['id']); ?></td>
+                    <td><?php echo htmlspecialchars($package['name']); ?></td>
+                    <td><?php echo htmlspecialchars($package['type']); ?></td>
+                    <td>
+                        <?php echo htmlspecialchars($package['price']); ?> EUR / muaj
+                    </td>
+                    <td><?php echo htmlspecialchars($package['channels_count']); ?></td>
+                    <td>
+                        <div class="actions">
+                            <a
+                                href="/UEB2_Projekti_Grupi36/pages/tv-admin.php?action=edit_package&type=<?php echo urlencode($package['type_key']); ?>&id=<?php echo $package['id']; ?>"
+                                class="edit-btn">
+                                Edito
+                            </a>
+                            <button
+                                class="delete-btn delete-package-btn"
+                                data-id="<?php echo $package['id']; ?>"
+                                data-type="<?php echo $package['type_key']; ?>">
+                                Fshi
+                            </button>
+                        </div>
+                    </td>
+                </tr>
             <?php endforeach; ?>
         </table>
     </div>
@@ -676,6 +687,8 @@ $addPackageType = $filter == 'tv_internet' ? 'tv_internet' : 'tv';
 </div>
 
 </section>
+
+<script src="/UEB2_Projekti_Grupi36/assets/js/tv-admin.js"></script>
 
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/footer.php';
