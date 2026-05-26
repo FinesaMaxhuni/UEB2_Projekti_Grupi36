@@ -5,7 +5,7 @@
       
       <div class="contact-header">
           <h2>Na Kontaktoni</h2>
-          <p>Keni ndonjë pyetje? Na shkruani direkt.</p>
+          <p>Keni ndonjë pyetje? Na shkruani menjëherë.</p>
       </div>
       
       <form action="/UEB2_Projekti_Grupi36/pages/send-email.php" method="POST" class="main-contact-form">
@@ -30,3 +30,4 @@
       </form>
   </div>
 </div>
+<script src="/UEB2_Projekti_Grupi36/assets/js/contact-validation.js"></script>
