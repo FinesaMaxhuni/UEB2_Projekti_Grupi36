@@ -5,7 +5,9 @@ body{
 /* PAGE */
 
 .tv-admin-page{
-    padding:35px 0 70px;
+    background:#f5f7fb;
+    min-height:100vh;
+    padding:40px 0 70px;
 }
 
 /* TITLE */

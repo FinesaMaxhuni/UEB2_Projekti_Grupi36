@@ -73,6 +73,11 @@
   text-align: center;
 }
 
+.g5-compare .section-title {
+  color: #0a2540;
+  text-shadow: none;
+}
+
 .compare-table {
   width: 100%;
   max-width: 900px;

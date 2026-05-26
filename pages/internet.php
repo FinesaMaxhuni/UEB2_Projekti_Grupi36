@@ -3,14 +3,40 @@
 $pageCSS = "internet.css";
 
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
-
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
-
-require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/internet_package_tables.php';
+ensureInternetPackageTables($pdo);
 
 if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
     die("Nuk ke qasje.");
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_subscription'])) {
+    $subscriptionId = (int)$_POST['delete_subscription'];
+    $stmt = $pdo->prepare("DELETE FROM internet_subscriptions WHERE id = ?");
+    $stmt->execute([$subscriptionId]);
+
+    header("Location: internet.php");
+    exit();
+}
+
+$subscriptions = $pdo->query("
+    SELECT
+        s.id,
+        s.fullname,
+        s.email,
+        s.package_type,
+        COALESCE(f.package_name, g.package_name, CONCAT('Paketa #', s.package_id)) AS package_name
+    FROM internet_subscriptions s
+    LEFT JOIN fiber_packages f
+        ON s.package_type = 'fiber' AND s.package_id = f.id
+    LEFT JOIN fiveg_packages g
+        ON s.package_type = '5g' AND s.package_id = g.id
+    ORDER BY s.created_at DESC, s.id DESC
+")->fetchAll(PDO::FETCH_ASSOC);
+
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
+
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 
 ?>
 
@@ -275,7 +301,7 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
                         <th>Email</th>
                         <th>Paketa</th>
                         <th>Lloji</th>
-                  
+
                         <th>Veprimet</th>
 
                     </tr>
@@ -284,55 +310,32 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
 
                 <tbody>
 
-                    <tr>
+                    <?php if (empty($subscriptions)): ?>
+                        <tr>
+                            <td colspan="6">Nuk ka ende abonime nga forma Abonohu.</td>
+                        </tr>
+                    <?php endif; ?>
 
-                        <td>1</td>
-                        <td>Arben Krasniqi</td>
-                        <td>arben@example.com</td>
-                        <td>Fiber 300 Mbps</td>
-                        <td>Internet</td>
-                      
+                    <?php foreach ($subscriptions as $subscription): ?>
+                        <tr>
 
-                        <td>
-                            <a href="#" class="cancel-btn">
-                                Ndal Abonimin
-                            </a>
-                        </td>
+                            <td><?php echo (int)$subscription['id']; ?></td>
+                            <td><?php echo htmlspecialchars($subscription['fullname']); ?></td>
+                            <td><?php echo htmlspecialchars($subscription['email']); ?></td>
+                            <td><?php echo htmlspecialchars($subscription['package_name']); ?></td>
+                            <td><?php echo $subscription['package_type'] === '5g' ? '5G' : 'Internet'; ?></td>
 
-                    </tr>
+                            <td>
+                                <form method="POST" action="pages/internet.php" onsubmit="return confirm('A je i sigurt qe don me fshi kete abonim?');">
+                                    <input type="hidden" name="delete_subscription" value="<?php echo (int)$subscription['id']; ?>">
+                                    <a href="#" class="cancel-btn" onclick="this.closest('form').requestSubmit(); return false;">
+                                        Ndal Abonimin
+                                    </a>
+                                </form>
+                            </td>
 
-                    <tr>
-
-                        <td>2</td>
-                        <td>Blerina Pllana</td>
-                        <td>blerina@example.com</td>
-                        <td>5G Plus</td>
-                        <td>5G</td>
-                    
-
-                        <td>
-                            <a href="#" class="cancel-btn">
-                                Ndal Abonimin
-                            </a>
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>3</td>
-                        <td>Driton Maliqi</td>
-                        <td>driton@example.com</td>
-                        <td>Fiber 1 Gbps</td>
-                        <td>Internet</td>
-                
-                        <td>
-                            <a href="#" class="cancel-btn">
-                                Ndal Abonimin
-                            </a>
-                        </td>
-
-                    </tr>
+                        </tr>
+                    <?php endforeach; ?>
 
                 </tbody>
 

@@ -188,6 +188,12 @@
   background: white; 
 }
 
+.fiber-map .section-title,
+.fiber-form .section-title {
+  color: #0a2540;
+  text-shadow: none;
+}
+
 .apply-form {
   max-width: 500px;
   margin: 0 auto;
