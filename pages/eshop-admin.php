@@ -12,6 +12,120 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
     die("Nuk ke qasje.");
 }
 
+// TELEFONA TOTAL
+$stmt = $pdo->prepare("
+    SELECT COUNT(*) 
+    FROM eshop_products
+    WHERE category = ?
+    
+");
+
+$stmt->execute(['telefon']);
+
+$totalTelefona = $stmt->fetchColumn();
+
+
+// LAPTOPA TOTAL
+$stmt = $pdo->prepare("
+    SELECT COUNT(*) 
+    FROM eshop_products
+    WHERE category = ?
+    
+");
+
+$stmt->execute(['laptop']);
+
+$totalLaptopa = $stmt->fetchColumn();
+
+
+// ROUTERA TOTAL
+$stmt = $pdo->prepare("
+    SELECT COUNT(*) 
+    FROM eshop_products
+    WHERE category = ?
+    
+");
+
+$stmt->execute(['router']);
+
+$totalRoutera = $stmt->fetchColumn();
+
+
+// TV TOTAL
+$stmt = $pdo->prepare("
+    SELECT COUNT(*) 
+    FROM eshop_products
+    WHERE category = ?
+");
+
+$stmt->execute(['tv']);
+
+$totalTV = $stmt->fetchColumn();
+
+
+// ======================
+// 5 TELEFONAT
+// ======================
+
+$stmt = $pdo->prepare("
+    SELECT product_name, price
+    FROM eshop_products
+    WHERE category = ?
+    LIMIT 5
+");
+
+$stmt->execute(['telefon']);
+
+$telefonat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+// ======================
+// 5 LAPTOPAT
+// ======================
+
+$stmt = $pdo->prepare("
+    SELECT product_name, price
+    FROM eshop_products
+    WHERE category = ?
+    LIMIT 5
+");
+
+$stmt->execute(['laptop']);
+
+$laptopat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+// ======================
+// 5 ROUTERAT
+// ======================
+
+$stmt = $pdo->prepare("
+    SELECT product_name, price
+    FROM eshop_products
+    WHERE category = ?
+    LIMIT 5
+");
+
+$stmt->execute(['router']);
+
+$routerat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+// ======================
+// 5 TV
+// ======================
+
+$stmt = $pdo->prepare("
+    SELECT product_name, price
+    FROM eshop_products
+    WHERE category = ?
+    LIMIT 5
+");
+
+$stmt->execute(['tv']);
+
+$tv = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <main class="eshop-admin">
@@ -43,8 +157,9 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
             <h3>Telefona Total</h3>
 
             <div class="stat-bottom">
-                <span class="stat-number">15</span>
-
+<span class="stat-number">
+    <?php echo $totalTelefona; ?>
+</span>
     
             </div>
         </div>
@@ -61,7 +176,9 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
             <h3>Laptopa Total</h3>
 
             <div class="stat-bottom">
-                <span class="stat-number">14</span>
+            <span class="stat-number">
+    <?php echo $totalLaptopa; ?>
+</span>
 
             </div>
         </div>
@@ -78,7 +195,9 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
             <h3>Routera Total</h3>
 
             <div class="stat-bottom">
-                <span class="stat-number">15</span>
+              <span class="stat-number">
+    <?php echo $totalRoutera; ?>
+</span>
 
             </div>
         </div>
@@ -95,7 +214,9 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
             <h3>Televizora Total</h3>
 
             <div class="stat-bottom">
-                <span class="stat-number">16</span>
+               <span class="stat-number">
+    <?php echo $totalTV; ?>
+</span>
 
             </div>
         </div>
@@ -121,31 +242,27 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
                 <p>Menaxho telefonat</p>
             </div>
 
-            <div class="product-list">
+             <div class="product-list">
 
-                <div class="product-item">
-                    <span>iPhone 15</span>
-                    <strong>899€</strong>
-                </div>
+    <?php foreach($telefonat as $telefon): ?>
 
-                <div class="product-item">
-                    <span>Samsung Galaxy S24</span>
-                    <strong>1199€</strong>
-                </div>
+        <div class="product-item">
 
-                <div class="product-item">
-                    <span>Xiaomi 14</span>
-                    <strong>699€</strong>
-                </div>
+            <span>
+                <?php echo htmlspecialchars($telefon['product_name']); ?>
+            </span>
 
-                <div class="product-item">
-                    <span>Google Pixel 8</span>
-                    <strong>799€</strong>
-                </div>
+            <strong>
+                <?php echo htmlspecialchars($telefon['price']); ?>€
+            </strong>
 
-            </div>
+        </div>
 
-            <a href="#" class="show-more">
+    <?php endforeach; ?>
+
+</div>
+
+            <a href="/UEB2_Projekti_Grupi36/pages/telefona.php" class="show-more">
                 Shiko të gjitha telefonat →
             </a>
 
@@ -162,29 +279,25 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
 
             <div class="product-list">
 
-                <div class="product-item">
-                    <span>MacBook Air M2</span>
-                    <strong>1399€</strong>
-                </div>
+    <?php foreach($laptopat as $laptop): ?>
 
-                <div class="product-item">
-                    <span>Dell XPS 13</span>
-                    <strong>1299€</strong>
-                </div>
+        <div class="product-item">
 
-                <div class="product-item">
-                    <span>Lenovo ThinkPad X1</span>
-                    <strong>1399€</strong>
-                </div>
+            <span>
+                <?php echo htmlspecialchars($laptop['product_name']); ?>
+            </span>
 
-                <div class="product-item">
-                    <span>ASUS ROG Zephyrus</span>
-                    <strong>1799€</strong>
-                </div>
+            <strong>
+                <?php echo htmlspecialchars($laptop['price']); ?>€
+            </strong>
 
-            </div>
+        </div>
 
-            <a href="#" class="show-more">
+    <?php endforeach; ?>
+
+</div>
+
+            <a href="/UEB2_Projekti_Grupi36/pages/laptopa.php" class="show-more">
                 Shiko të gjitha laptopët →
             </a>
 
@@ -201,29 +314,25 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
 
             <div class="product-list">
 
-                <div class="product-item">
-                    <span>TP-Link Archer AX1800</span>
-                    <strong>119€</strong>
-                </div>
+    <?php foreach($routerat as $router): ?>
 
-                <div class="product-item">
-                    <span>Huawei WiFi AX3</span>
-                    <strong>89€</strong>
-                </div>
+        <div class="product-item">
 
-                <div class="product-item">
-                    <span>ASUS RT-AX86U</span>
-                    <strong>229€</strong>
-                </div>
+            <span>
+                <?php echo htmlspecialchars($router['product_name']); ?>
+            </span>
 
-                <div class="product-item">
-                    <span>Netgear Nighthawk</span>
-                    <strong>299€</strong>
-                </div>
+            <strong>
+                <?php echo htmlspecialchars($router['price']); ?>€
+            </strong>
 
-            </div>
+        </div>
 
-            <a href="#" class="show-more">
+    <?php endforeach; ?>
+
+</div>
+
+            <a href="/UEB2_Projekti_Grupi36/pages/routera.php" class="show-more">
                 Shiko të gjitha routerat →
             </a>
 
@@ -240,29 +349,25 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
 
             <div class="product-list">
 
-                <div class="product-item">
-                    <span>Samsung QLED 65"</span>
-                    <strong>1299€</strong>
-                </div>
+    <?php foreach($tv as $televizor): ?>
 
-                <div class="product-item">
-                    <span>LG OLED 55"</span>
-                    <strong>1099€</strong>
-                </div>
+        <div class="product-item">
 
-                <div class="product-item">
-                    <span>Sony Bravia 4K</span>
-                    <strong>999€</strong>
-                </div>
+            <span>
+                <?php echo htmlspecialchars($televizor['product_name']); ?>
+            </span>
 
-                <div class="product-item">
-                    <span>Philips Ambilight</span>
-                    <strong>899€</strong>
-                </div>
+            <strong>
+                <?php echo htmlspecialchars($televizor['price']); ?>€
+            </strong>
 
-            </div>
+        </div>
 
-            <a href="#" class="show-more">
+    <?php endforeach; ?>
+
+</div>
+
+            <a href="/UEB2_Projekti_Grupi36/pages/televizora.php" class="show-more">
                 Shiko të gjitha televizorët →
             </a>
 
