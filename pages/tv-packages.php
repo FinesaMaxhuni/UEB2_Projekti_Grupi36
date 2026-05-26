@@ -4,18 +4,18 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 $gabime = [];
 $sukses = null;
 
+$stmt = $pdo->query("
+    SELECT id, package_name, price, channels_count, description
+    FROM tv_packages
+    ORDER BY id ASC
+");
+$tvPackages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emri = $_POST["emri"] ?? "";
     $email = $_POST["email"] ?? "";
     $telefon = $_POST["telefon"] ?? "";
-    $pako = $_POST["pako"] ?? "";
-
-    $pakotTv = [
-        "economy" => "TV Economy",
-        "premium" => "TV Premium",
-        "sport" => "TV Sport",
-        "custom" => "TV Custom"
-    ];
+    $pako = (int)($_POST["pako"] ?? 0);
 
     if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
         $gabime[] = "Emri nuk është valid.";
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gabime[] = "Duhet te kycesh per ta aktivizuar pakon.";
     }
 
-    if (!isset($pakotTv[$pako])) {
+    if ($pako <= 0) {
         $gabime[] = "Zgjedh nje pako valide.";
     }
 
@@ -41,9 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("
             SELECT id
             FROM tv_packages
-            WHERE package_name = ?
+            WHERE id = ?
         ");
-        $stmt->execute([$pakotTv[$pako]]);
+        $stmt->execute([$pako]);
         $tvPackageId = $stmt->fetchColumn();
 
         if ($tvPackageId) {
@@ -81,6 +81,22 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
 
             <div class="packages-grid">
 
+                <?php foreach ($tvPackages as $index => $package): ?>
+                    <div class="package-card <?php echo $index === 2 ? 'featured' : ''; ?>">
+                        <h3 class="package-name"><?php echo htmlspecialchars($package['package_name']); ?></h3>
+                        <div class="package-price"><?php echo htmlspecialchars($package['price']); ?>&euro;</div>
+                        <div class="package-period">/muaj</div>
+                        <div class="package-channels"><?php echo (int)$package['channels_count']; ?>+ Kanale</div>
+                        <ul class="package-features">
+                            <li><?php echo (int)$package['channels_count']; ?>+ kanale</li>
+                            <?php if (!empty($package['description'])): ?>
+                                <li><?php echo htmlspecialchars($package['description']); ?></li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+
+                <?php if (false): ?>
                 <!-- Economy Package -->
                 <div class="package-card">
                     <h3 class="package-name">TV Economy</h3>
@@ -139,6 +155,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
                         <li>Fleksibilitet maksimal</li>
                     </ul>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -170,10 +187,19 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
           <input type="tel" name="telefon" placeholder="Numri i telefonit" required>
             <select id="packageSelect" name="pako" required>
                 <option value="">Zgjidh pakon...</option>
+                <?php foreach ($tvPackages as $package): ?>
+                    <option
+                        value="<?php echo (int)$package['id']; ?>"
+                        data-custom="<?php echo stripos($package['package_name'], 'custom') !== false ? '1' : '0'; ?>">
+                        <?php echo htmlspecialchars($package['package_name']); ?> - <?php echo htmlspecialchars($package['price']); ?>&euro;
+                    </option>
+                <?php endforeach; ?>
+                <?php if (false): ?>
                 <option value="economy">TV Economy - 8.90€</option>
                 <option value="premium">TV Premium - 15.50€</option>
                 <option value="sport">TV Sport - 23.90€</option>
                 <option value="custom">TV Custom - Nga 12€</option>
+                <?php endif; ?>
             </select>
 
             <!-- Perzgjedhja e kanaleve per pakon custom -->

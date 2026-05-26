@@ -544,7 +544,7 @@ $addPackageType = $filter == 'tv_internet' ? 'tv_internet' : 'tv';
 
             <div class="tv-stat-content">
                 <h3>Paketat TV<br>Total</h3>
-                <span><?php echo $totalTvPackages; ?></span>
+                <span id="total-tv-packages"><?php echo $totalTvPackages; ?></span>
             </div>
         </div>
 
@@ -555,7 +555,7 @@ $addPackageType = $filter == 'tv_internet' ? 'tv_internet' : 'tv';
 
             <div class="tv-stat-content">
                 <h3>Paketat TV + Internet<br>Total</h3>
-                <span><?php echo $totalTvInternetPackages; ?></span>
+                <span id="total-tv-internet-packages"><?php echo $totalTvInternetPackages; ?></span>
             </div>
         </div>
 
@@ -584,7 +584,7 @@ $addPackageType = $filter == 'tv_internet' ? 'tv_internet' : 'tv';
                 </tr>
 
                 <?php foreach($tvPackages as $package): ?>
-                <tr>
+                <tr id="summary-row-tv-<?php echo (int)$package['id']; ?>">
                     <td><?php echo htmlspecialchars($package['package_name']); ?></td>
                     <td>
                         <div class="channel-tags">
@@ -610,7 +610,7 @@ $addPackageType = $filter == 'tv_internet' ? 'tv_internet' : 'tv';
                 </tr>
 
                 <?php foreach($tvInternetPackages as $package): ?>
-                <tr>
+                <tr id="summary-row-tv_internet-<?php echo (int)$package['id']; ?>">
                     <td><?php echo htmlspecialchars($package['package_name']); ?></td>
                     <td>
                         <div class="channel-tags">
@@ -656,7 +656,7 @@ $addPackageType = $filter == 'tv_internet' ? 'tv_internet' : 'tv';
             </tr>
 
             <?php foreach($visiblePackages as $package): ?>
-                <tr id="package-row-<?php echo $package['id']; ?>">
+                <tr id="package-row-<?php echo $package['type_key']; ?>-<?php echo $package['id']; ?>">
                     <td><?php echo htmlspecialchars($package['id']); ?></td>
                     <td><?php echo htmlspecialchars($package['name']); ?></td>
                     <td><?php echo htmlspecialchars($package['type']); ?></td>

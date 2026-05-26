@@ -1,5 +1,15 @@
 const deleteButtons = document.querySelectorAll('.delete-package-btn');
 
+function decrementCounter(counterId) {
+    const counter = document.getElementById(counterId);
+    if (!counter) return;
+
+    const currentValue = parseInt(counter.textContent, 10);
+    if (Number.isNaN(currentValue)) return;
+
+    counter.textContent = Math.max(currentValue - 1, 0);
+}
+
 deleteButtons.forEach(button => {
 
     button.addEventListener('click', function(){
@@ -30,9 +40,19 @@ deleteButtons.forEach(button => {
 
             if(data.success){
 
-                document
-                    .getElementById('package-row-' + packageId)
-                    .remove();
+                const packageRow = document.getElementById('package-row-' + packageType + '-' + packageId);
+                if (packageRow) packageRow.remove();
+
+                const summaryRow = document.getElementById('summary-row-' + packageType + '-' + packageId);
+                if (summaryRow) summaryRow.remove();
+
+                if (packageType === 'tv') {
+                    decrementCounter('total-tv-packages');
+                }
+
+                if (packageType === 'tv_internet') {
+                    decrementCounter('total-tv-internet-packages');
+                }
 
             }else{
 

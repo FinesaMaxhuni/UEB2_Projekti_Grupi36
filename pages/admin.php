@@ -20,6 +20,17 @@ FROM aktivizo
 WHERE tv_package_id IS NOT NULL
    OR tv_internet_package_id IS NOT NULL
 ")->fetchColumn();
+
+// TOTAL ORDERS ESHOP
+
+$stmt = $pdo->prepare("
+    SELECT COUNT(*)
+    FROM orders
+");
+
+$stmt->execute();
+
+$totalOrders = $stmt->fetchColumn();
 ?>
 
 
@@ -81,15 +92,13 @@ WHERE tv_package_id IS NOT NULL
                 <div class="stat-number"><?php echo $totalSoldTvPackages; ?></div>
             </div>
 
-            <div class="stat-box">
-                <h4>Telefoni Fikse</h4>
-                <div class="stat-number">212</div>
-            </div>
 
             <div class="stat-box">
-                <h4>E-Shop Shitje</h4>
-                <div class="stat-number">€14,520</div>
-            </div>
+    <h4>E-Shop Shitje</h4>
+    <div class="stat-number">
+        <?php echo $totalOrders; ?>
+    </div>
+</div>
 
         </div>
 
