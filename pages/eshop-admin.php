@@ -173,6 +173,27 @@ if(isset($_GET['delete_order'])){
     exit();
 }
 
+
+// ======================
+// FSHI PRODUKTIN
+// ======================
+
+if(isset($_GET['delete_product'])){
+
+    $product_id = $_GET['delete_product'];
+
+    $stmt = $pdo->prepare("
+        DELETE FROM eshop_products
+        WHERE id = ?
+    ");
+
+    $stmt->execute([$product_id]);
+
+    header("Location: eshop-admin.php");
+
+    exit();
+}
+
 $stmt = $pdo->prepare("
     SELECT *
     FROM eshop_products
@@ -589,12 +610,15 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <td class="action-buttons">
 
-                        <a href="#" class="edit-btn">
-                            Edito
-                        </a>
+                        <a
+    href="/UEB2_Projekti_Grupi36/pages/edit-product.php?id=<?php echo $product['id']; ?>"
+    class="edit-btn"
+>
+    Edito
+</a>
 
                         <a
-                            href="eshop-admin.php?delete_product=<?php echo $product['id']; ?>"
+                            href="/UEB2_Projekti_Grupi36/pages/eshop-admin.php?delete_product=<?php echo $product['id']; ?>"
                             class="delete-btn"
                             onclick="return confirm('A dëshironi ta fshini produktin?');"
                         >
