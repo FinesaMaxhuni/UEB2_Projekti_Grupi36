@@ -1,6 +1,9 @@
 <?php
 $pageCSS = "5G.css";
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/internet_package_tables.php';
+ensureInternetPackageTables($pdo);
+
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/header.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php';
 
@@ -16,7 +19,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <h1>NetWave 5G Internet</h1>
       <p>Lidhje pa kufij me shpejtësi të pabesueshme dhe stabilitet që e ndjen në çdo klikim.</p>
       <a href="pages/5G.php#planet5g" class="btn btn-primary">Shiko paketat 5G</a>
-      
+
     </div>
   </section>
 
