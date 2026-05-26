@@ -51,11 +51,6 @@ WHERE tv_package_id IS NOT NULL
         </a>
     </li>
 
-    <li>
-        <a href="">
-            <span>☎️</span> Telefonia Fikse <span>›</span>
-        </a>
-    </li>
 
     <li>
         <a href="/UEB2_Projekti_Grupi36/pages/perdoruesit.php">
