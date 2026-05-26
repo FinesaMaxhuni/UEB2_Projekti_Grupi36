@@ -75,7 +75,8 @@
 }
 
 .table-card,
-.subscriptions-card{
+.subscriptions-card,
+.package-form-card{
     background:#fff;
     border-radius:24px;
     padding:30px;
@@ -209,6 +210,73 @@ td{
 }
 
 /* ========================= */
+/* PACKAGE FORM */
+/* ========================= */
+
+.internet-package-form{
+    display:grid;
+    gap:18px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+}
+
+.form-group{
+    display:grid;
+    gap:8px;
+}
+
+.form-group label{
+    color:#1e293b;
+    font-weight:700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    padding:12px 14px;
+    font-size:15px;
+    color:#0f172a;
+    background:white;
+}
+
+.form-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.form-actions button{
+    border:none;
+    cursor:pointer;
+}
+
+.cancel-link{
+    color:#475569;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.form-errors{
+    background:#fee2e2;
+    color:#991b1b;
+    border-radius:12px;
+    padding:12px 14px;
+    margin-bottom:18px;
+    font-weight:700;
+}
+
+.form-errors p{
+    margin:4px 0;
+}
+
+/* ========================= */
 /* RESPONSIVE */
 /* ========================= */
 
@@ -239,6 +307,10 @@ td{
     .table-header h2,
     .subscription-top h2{
         font-size:28px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
     }
 
 }
