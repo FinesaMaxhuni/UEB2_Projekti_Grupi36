@@ -6,11 +6,17 @@
 <base href="/UEB2_Projekti_Grupi36/">
 <title>NetWave - Operator Telekomunikacioni</title>
 
-<link rel="stylesheet" href="/UEB2_Projekti_Grupi36/assets/css/telecomoperator.css">
+<?php
+$mainCssPath = $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/assets/css/telecomoperator.css';
+$mainCssVersion = file_exists($mainCssPath) ? filemtime($mainCssPath) : time();
+?>
+<link rel="stylesheet" href="/UEB2_Projekti_Grupi36/assets/css/telecomoperator.css?v=<?php echo $mainCssVersion; ?>">
 
 <?php
 if(isset($pageCSS)){
-    echo '<link rel="stylesheet" href="/UEB2_Projekti_Grupi36/assets/css/' . $pageCSS . '">';
+    $pageCssPath = $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/assets/css/' . $pageCSS;
+    $pageCssVersion = file_exists($pageCssPath) ? filemtime($pageCssPath) : time();
+    echo '<link rel="stylesheet" href="/UEB2_Projekti_Grupi36/assets/css/' . $pageCSS . '?v=' . $pageCssVersion . '">';
 }
 ?>
 </head>

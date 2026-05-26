@@ -385,29 +385,30 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 /* --- SEKSIONI I LAJMEVE NGA API (RREGULLUAR) --- */
 
 .latest-tech-section {
-    max-width: 1200px;
-    margin: 60px auto 40px auto;
-    padding: 0 20px;
+    width: min(1180px, calc(100% - 40px));
+    margin: 70px auto 50px;
+    padding: 0;
     clear: both;
 }
 
-.section-header {
+.latest-tech-section .section-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
+    align-items: flex-end;
+    margin-bottom: 24px;
 }
 
-.header-left h2 {
+.latest-tech-section .header-left h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: 30px;
+    line-height: 1.15;
     color: #0f172a;
-    font-weight: 700;
+    font-weight: 800;
 }
 
-.header-left p {
-    margin: 5px 0 0 0;
-    font-size: 14px;
+.latest-tech-section .header-left p {
+    margin: 8px 0 0;
+    font-size: 15px;
     color: #64748b;
 }
 
@@ -419,47 +420,55 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 }
 
 /* Kontejneri që i detyron të rrinë 4 krah për krah */
-.api-news-grid {
+.latest-tech-section .api-news-grid {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 20px !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 22px !important;
     width: 100% !important;
+    align-items: stretch !important;
 }
 
-.api-news-card {
+.latest-tech-section .api-news-card {
+    min-width: 0 !important;
+    height: 100% !important;
     background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
     border-radius: 12px !important;
     overflow: hidden !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08) !important;
     display: flex !important;
     flex-direction: column !important;
-    transition: transform 0.2s !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
 }
 
-.api-news-card:hover {
+.latest-tech-section .api-news-card:hover {
     transform: translateY(-5px) !important;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.14) !important;
 }
 
-.card-thumb {
+.latest-tech-section .card-thumb {
     width: 100% !important;
-    height: 160px !important;
+    aspect-ratio: 16 / 10 !important;
+    height: auto !important;
     overflow: hidden !important;
+    background: #dbe5f1 !important;
 }
 
-.card-thumb img {
+.latest-tech-section .card-thumb img {
+    display: block !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
 }
 
-.card-body {
-    padding: 20px !important;
+.latest-tech-section .card-body {
+    padding: 18px !important;
     display: flex !important;
     flex-direction: column !important;
     flex-grow: 1 !important;
 }
 
-.card-tag {
+.latest-tech-section .card-tag {
     font-size: 11px;
     font-weight: 700;
     color: #2563eb;
@@ -467,7 +476,7 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
     margin-bottom: 10px;
 }
 
-.card-heading {
+.latest-tech-section .card-heading {
     font-size: 16px !important;
     line-height: 1.4 !important;
     color: #1e293b !important;
@@ -480,7 +489,7 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
     height: 44px !important; /* Detyron titujt të kenë lartësi të barabartë */
 }
 
-.card-footer-meta {
+.latest-tech-section .card-footer-meta {
     margin-top: auto !important;
     display: flex !important;
     justify-content: space-between !important;
@@ -502,16 +511,16 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 }
 
 /* Heq nënvizimin dhe ngjyrën e kaltër të linkut të kartës */
-.api-news-link {
+.latest-tech-section .api-news-link {
     text-decoration: none !important;
     color: inherit !important;
     display: block !important;
+    min-width: 0 !important;
 }
 
-.api-news-link:hover {
+.latest-tech-section .api-news-link:hover {
     text-decoration: none !important;
 }
-
 /* per pjesen contact  */
 /* --- STILIMI I MODAL POP-UP (DARK THEME) --- */
 
