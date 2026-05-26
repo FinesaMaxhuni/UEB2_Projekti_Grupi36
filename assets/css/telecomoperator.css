@@ -385,30 +385,29 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 /* --- SEKSIONI I LAJMEVE NGA API (RREGULLUAR) --- */
 
 .latest-tech-section {
-    width: min(1180px, calc(100% - 40px));
-    margin: 70px auto 50px;
-    padding: 0;
+    max-width: 1200px;
+    margin: 60px auto 40px auto;
+    padding: 0 20px;
     clear: both;
 }
 
-.latest-tech-section .section-header {
+.section-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 24px;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-.latest-tech-section .header-left h2 {
+.header-left h2 {
     margin: 0;
-    font-size: 30px;
-    line-height: 1.15;
+    font-size: 24px;
     color: #0f172a;
-    font-weight: 800;
+    font-weight: 700;
 }
 
-.latest-tech-section .header-left p {
-    margin: 8px 0 0;
-    font-size: 15px;
+.header-left p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
     color: #64748b;
 }
 
@@ -420,55 +419,47 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 }
 
 /* Kontejneri që i detyron të rrinë 4 krah për krah */
-.latest-tech-section .api-news-grid {
+.api-news-grid {
     display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 22px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
     width: 100% !important;
-    align-items: stretch !important;
 }
 
-.latest-tech-section .api-news-card {
-    min-width: 0 !important;
-    height: 100% !important;
+.api-news-card {
     background: #ffffff !important;
-    border: 1px solid rgba(15, 23, 42, 0.08) !important;
     border-radius: 12px !important;
     overflow: hidden !important;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
     display: flex !important;
     flex-direction: column !important;
-    transition: transform 0.2s, box-shadow 0.2s !important;
+    transition: transform 0.2s !important;
 }
 
-.latest-tech-section .api-news-card:hover {
+.api-news-card:hover {
     transform: translateY(-5px) !important;
-    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.14) !important;
 }
 
-.latest-tech-section .card-thumb {
+.card-thumb {
     width: 100% !important;
-    aspect-ratio: 16 / 10 !important;
-    height: auto !important;
+    height: 160px !important;
     overflow: hidden !important;
-    background: #dbe5f1 !important;
 }
 
-.latest-tech-section .card-thumb img {
-    display: block !important;
+.card-thumb img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
 }
 
-.latest-tech-section .card-body {
-    padding: 18px !important;
+.card-body {
+    padding: 20px !important;
     display: flex !important;
     flex-direction: column !important;
     flex-grow: 1 !important;
 }
 
-.latest-tech-section .card-tag {
+.card-tag {
     font-size: 11px;
     font-weight: 700;
     color: #2563eb;
@@ -476,7 +467,7 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
     margin-bottom: 10px;
 }
 
-.latest-tech-section .card-heading {
+.card-heading {
     font-size: 16px !important;
     line-height: 1.4 !important;
     color: #1e293b !important;
@@ -489,7 +480,7 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
     height: 44px !important; /* Detyron titujt të kenë lartësi të barabartë */
 }
 
-.latest-tech-section .card-footer-meta {
+.card-footer-meta {
     margin-top: auto !important;
     display: flex !important;
     justify-content: space-between !important;
@@ -511,16 +502,16 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 }
 
 /* Heq nënvizimin dhe ngjyrën e kaltër të linkut të kartës */
-.latest-tech-section .api-news-link {
+.api-news-link {
     text-decoration: none !important;
     color: inherit !important;
     display: block !important;
-    min-width: 0 !important;
 }
 
-.latest-tech-section .api-news-link:hover {
+.api-news-link:hover {
     text-decoration: none !important;
 }
+
 /* per pjesen contact  */
 /* --- STILIMI I MODAL POP-UP (DARK THEME) --- */
 
@@ -669,4 +660,23 @@ body {font-family: var(--font-primary); font-size: var(--font-size-base); font-w
 
 .contact-submit-btn:hover {
     background-color: #1d4ed8;
+}
+/* --- ZHDUKJA E SHIRITIT TË BARDHË MES SEKSIONEVE (I RREGULLUAR) --- */
+
+/* 1. Forcojmë trupin e faqes që në atë zonë të jetë i errët */
+body {
+    background-color: #0b1329 !important; 
+}
+
+/* 2. Në vend të 'div', kapim vetëm seksionin e misionit ose hapësirat e mëdha fundore të faqeve */
+.about-mission, section:last-of-type, main > div:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 40px !important; /* Siguron që të mos ngjitet teksti me vijën e footerit */
+}
+
+/* 3. Sigurohemi që footeri të mos ketë asnjë hapësirë boshe sipër tij */
+.footer {
+    margin-top: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important; 
+    background-color: #0c152b !important;
 }
