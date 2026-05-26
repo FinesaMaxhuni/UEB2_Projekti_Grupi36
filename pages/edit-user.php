@@ -62,119 +62,81 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <section class="edit-user-page">
 
-<div class="edit-user-container">
+    <div class="edit-user-container">
 
-    <div class="edit-user-card">
+        <div class="edit-user-card">
 
-        <div class="edit-header">
+            <div class="edit-header">
+                <h1>Edit User</h1>
+                <p>Menaxho informacionet e përdoruesit</p>
+            </div>
 
-            <h1>Edit User</h1>
+            <form method="POST" class="edit-form">
 
-            <p>
-                Menaxho informacionet e përdoruesit
-            </p>
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    value="<?php echo htmlspecialchars($user['fullname']); ?>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="<?php echo htmlspecialchars($user['email']); ?>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="Mashkull" <?php if($user['gender']=="Mashkull") echo "selected"; ?>>
+                            Mashkull
+                        </option>
+                        <option value="Femër" <?php if($user['gender']=="Femër") echo "selected"; ?>>
+                            Femër
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    value="<?php echo htmlspecialchars($user['city']); ?>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role">
+                        <option value="user" <?php if($user['role']=="user") echo "selected"; ?>>
+                            User
+                        </option>
+                        <option value="admin" <?php if($user['role']=="admin") echo "selected"; ?>>
+                            Admin
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="save-btn">Update User</button>
+                    <a href="/UEB2_Projekti_Grupi36/pages/perdoruesit.php" class="cancel-btn">Cancel</a>
+                </div>
+
+            </form>
 
         </div>
 
-        <form method="POST" class="edit-form">
-
-            <div class="form-group">
-
-                <label>Full Name</label>
-
-                <input
-                type="text"
-                name="fullname"
-                value="<?php echo htmlspecialchars($user['fullname']); ?>"
-                required>
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Email</label>
-
-                <input
-                type="email"
-                name="email"
-                value="<?php echo htmlspecialchars($user['email']); ?>"
-                required>
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Gender</label>
-
-                <select name="gender">
-
-                    <option value="Mashkull"
-                    <?php if($user['gender']=="Mashkull") echo "selected"; ?>>
-                    Mashkull
-                    </option>
-
-                    <option value="Femër"
-                    <?php if($user['gender']=="Femër") echo "selected"; ?>>
-                    Femër
-                    </option>
-
-                </select>
-
-            </div>
-
-            <div class="form-group">
-
-                <label>City</label>
-
-                <input
-                type="text"
-                name="city"
-                value="<?php echo htmlspecialchars($user['city']); ?>"
-                required>
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Role</label>
-
-                <select name="role">
-
-                    <option value="user"
-                    <?php if($user['role']=="user") echo "selected"; ?>>
-                    User
-                    </option>
-
-                    <option value="admin"
-                    <?php if($user['role']=="admin") echo "selected"; ?>>
-                    Admin
-                    </option>
-
-                </select>
-
-            </div>
-
-            <div class="form-buttons">
-
-                <button type="submit" class="save-btn">
-
-                    Update User
-
-                </button>
-
-                <a href="/UEB2_Projekti_Grupi36/pages/perdoruesit.php" class="cancel-btn">
-
-                    Cancel
-
-                </a>
-
-            </div>
-
-        </form>
-
     </div>
-
-</div>
 
 </section>
 
