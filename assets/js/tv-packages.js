@@ -13,13 +13,15 @@ function updateSelected() {
     if (!form || !pkgSelect || !countEl) return;
 
     const picked = checkboxes().filter(c => c.checked).map(c => c.value);
+    const selectedOption = pkgSelect.options[pkgSelect.selectedIndex];
+    const isCustomPackage = selectedOption && selectedOption.dataset.custom === '1';
     countEl.textContent = picked.length;
     localStorage.setItem('selectedChannels', JSON.stringify(picked));
 
     const submitBtn = form.querySelector('button[type="submit"]');
     if (!submitBtn) return;
 
-    if (pkgSelect.value === 'custom' && picked.length === 0) {
+    if (isCustomPackage && picked.length === 0) {
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.5';
         submitBtn.style.cursor = 'not-allowed';
@@ -32,7 +34,10 @@ function updateSelected() {
 
 if (pkgSelect && channelSel) {
     pkgSelect.addEventListener('change', () => {
-        if (pkgSelect.value === 'custom') {
+        const selectedOption = pkgSelect.options[pkgSelect.selectedIndex];
+        const isCustomPackage = selectedOption && selectedOption.dataset.custom === '1';
+
+        if (isCustomPackage) {
             channelSel.style.display = 'block';
             try {
                 const saved = JSON.parse(localStorage.getItem('selectedChannels') || '[]');

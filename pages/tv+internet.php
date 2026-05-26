@@ -4,19 +4,19 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/config.php';
 $gabime = [];
 $sukses = null;
 
+$stmt = $pdo->query("
+    SELECT id, package_name, internet_speed, price, channels_count, description
+    FROM tv_internet_packages
+    ORDER BY id ASC
+");
+$tvInternetPackages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $emri = trim($_POST["emri"] ?? "");
     $email = trim($_POST["email"] ?? "");
     $telefon = trim($_POST["telefon"] ?? "");
-    $pako = $_POST["pako"] ?? "";
-
-    $pakotCombo = [
-        "combo-basic" => "Combo Basic",
-        "combo-plus" => "Combo Plus",
-        "combo-sport" => "Combo Sport",
-        "combo-ultra" => "Combo Ultra"
-    ];
+    $pako = (int)($_POST["pako"] ?? 0);
 
     if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,}$/u", $emri)) {
         $gabime[] = "Emri duhet të përmbajë vetëm shkronja dhe të ketë të paktën 2 karaktere.";
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gabime[] = "Duhet te kycesh per ta aktivizuar pakon.";
     }
 
-    if (!isset($pakotCombo[$pako])) {
+    if ($pako <= 0) {
         $gabime[] = "Zgjedh nje pako valide.";
     }
 
@@ -42,9 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("
             SELECT id
             FROM tv_internet_packages
-            WHERE package_name = ?
+            WHERE id = ?
         ");
-        $stmt->execute([$pakotCombo[$pako]]);
+        $stmt->execute([$pako]);
         $tvInternetPackageId = $stmt->fetchColumn();
 
         if ($tvInternetPackageId) {
@@ -81,6 +81,25 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
             <ul><a href="javascript:void(0);" class="package-btn">Aktivizo Pakon</a></ul>
             <div class="packages-grid">
 
+                <?php foreach ($tvInternetPackages as $index => $package): ?>
+                    <div class="package-card <?php echo $index === 2 ? 'featured' : ''; ?>">
+                        <h3 class="package-name"><?php echo htmlspecialchars($package['package_name']); ?></h3>
+                        <div class="package-price"><?php echo htmlspecialchars($package['price']); ?>&euro;</div>
+                        <div class="package-period">/muaj</div>
+                        <div class="package-channels">
+                            <?php echo htmlspecialchars($package['internet_speed']); ?> + <?php echo (int)$package['channels_count']; ?>+ Kanale
+                        </div>
+                        <ul class="package-features">
+                            <li><?php echo htmlspecialchars($package['internet_speed']); ?> Internet</li>
+                            <li><?php echo (int)$package['channels_count']; ?>+ kanale TV</li>
+                            <?php if (!empty($package['description'])): ?>
+                                <li><?php echo htmlspecialchars($package['description']); ?></li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+
+                <?php if (false): ?>
                 <!-- Combo Basic -->
                 <div class="package-card">
                     <h3 class="package-name">Combo Basic</h3>
@@ -141,6 +160,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
                     </ul>
                 </div>
                 
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -176,10 +196,17 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
            <input type="tel" name="telefon" placeholder="Numri i telefonit" value="<?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? htmlspecialchars($telefon) : ''; ?>" required>
             <select id="packageSelect" name="pako" required>
                 <option value="">Zgjidh pakon...</option>
+                <?php foreach ($tvInternetPackages as $package): ?>
+                    <option value="<?php echo (int)$package['id']; ?>">
+                        <?php echo htmlspecialchars($package['package_name']); ?> - <?php echo htmlspecialchars($package['price']); ?>&euro;
+                    </option>
+                <?php endforeach; ?>
+                <?php if (false): ?>
                 <option value="combo-basic">Combo Basic - 14.90€</option>
                 <option value="combo-plus">Combo Plus - 20.90€</option>
                 <option value="combo-sport">Combo Sport - 29.90€</option>
                 <option value="combo-ultra">Combo Ultra - 39.90€</option>
+                <?php endif; ?>
             </select>
             <button type="submit" class="modal-btn">Përfundo</button>
         </form>
