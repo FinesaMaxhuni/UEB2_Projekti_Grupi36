@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="success-message server-success">
             <h3>Faleminderit për abonimin tuaj!</h3>
             <p>Kërkesa jote u dërgua me sukses. Do të kontaktohesh nga ekipi NetWave.</p>
-            <a href="fiber_internet.php" class="back-link">← Kthehu në faqen kryesore</a>
+            <a href="/UEB2_Projekti_Grupi36/pages/fiber_internet.php" class="back-link">← Kthehu në faqen kryesore</a>
           </div>
         <?php endif; ?>
 
