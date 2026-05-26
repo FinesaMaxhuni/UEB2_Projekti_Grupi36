@@ -550,7 +550,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p>Lista e të gjitha produkteve në webshop</p>
         </div>
 
-        <a href="#" class="add-product-btn">
+            <a
+href="/UEB2_Projekti_Grupi36/pages/add-product.php"
+class="add-product-btn"
+>
             + Shto Produkt
         </a>
 
