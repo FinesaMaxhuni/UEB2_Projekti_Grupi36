@@ -16,60 +16,95 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
 
 <main class="eshop-admin">
 
-    <section class="dashboard-header">
-        <div>
-            <h1>E-Shop</h1>
-            <p>Menaxho produktet e dyqanit</p>
-        </div>
+<section class="top-header">
 
-        <button class="add-btn">
-            + Shto Produkt
-        </button>
-    </section>
+    <div class="header-left">
+        <h1>E-Shop</h1>
+        <p>Menaxho produktet e dyqanit</p>
+    </div>
+
+    <a href="#" class="add-product-btn">
+        + Shto Produkt
+    </a>
+
+</section>
 
     <!-- STATISTIKAT -->
 
-    <section class="stats-grid">
+    <div class="stats-grid">
 
-        <div class="stat-card">
-            <div class="icon blue">📱</div>
+    <div class="stat-card">
 
-            <div>
-                <h3>Telefona Total</h3>
-                <span>15</span>
-                <a href="#">Shiko më shumë →</a>
+        <div class="stat-icon blue">
+            📱
+        </div>
+
+        <div class="stat-info">
+            <h3>Telefona Total</h3>
+
+            <div class="stat-bottom">
+                <span class="stat-number">15</span>
+
+    
             </div>
         </div>
 
-        <div class="stat-card">
-            <div class="icon green">💻</div>
+    </div>
 
-            <div>
-                <h3>Laptopa Total</h3>
-                <span>14</span>
-                <a href="#">Shiko më shumë →</a>
+    <div class="stat-card">
+
+        <div class="stat-icon green">
+            💻
+        </div>
+
+        <div class="stat-info">
+            <h3>Laptopa Total</h3>
+
+            <div class="stat-bottom">
+                <span class="stat-number">14</span>
+
             </div>
         </div>
 
-        <div class="stat-card">
-            <div class="icon purple">📶</div>
+    </div>
 
-            <div>
-                <h3>Routera Total</h3>
-                <span>15</span>
-                <a href="#">Shiko më shumë →</a>
+    <div class="stat-card">
+
+        <div class="stat-icon purple">
+            📶
+        </div>
+
+        <div class="stat-info">
+            <h3>Routera Total</h3>
+
+            <div class="stat-bottom">
+                <span class="stat-number">15</span>
+
             </div>
         </div>
 
-        <div class="stat-card">
-            <div class="icon orange">📺</div>
+    </div>
 
-            <div>
-                <h3>Televizora Total</h3>
-                <span>16</span>
-                <a href="#">Shiko më shumë →</a>
+    <div class="stat-card">
+
+        <div class="stat-icon orange">
+            📺
+        </div>
+
+        <div class="stat-info">
+            <h3>Televizora Total</h3>
+
+            <div class="stat-bottom">
+                <span class="stat-number">16</span>
+
             </div>
         </div>
+
+    </div>
+
+</div>
+
+</div>
 
     </section>
 
@@ -258,7 +293,6 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
                         <th>Çmimi</th>
                         <th>Sasia</th>
                         <th>Data e Blerjes</th>
-                        <th>Statusi</th>
                         <th>Veprimet</th>
                     </tr>
 
@@ -275,11 +309,6 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
                         <td>1</td>
                         <td>20/05/2025</td>
                         <td>
-                            <span class="status success">
-                                Përfunduar
-                            </span>
-                        </td>
-                        <td>
                             <button class="view-btn">👁</button>
                         </td>
                     </tr>
@@ -293,10 +322,6 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
                         <td>1</td>
                         <td>19/05/2025</td>
                         <td>
-                            <span class="status pending">
-                                Përpunim
-                            </span>
-                        </td>
                         <td>
                             <button class="view-btn">👁</button>
                         </td>
@@ -310,11 +335,6 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "admin"){
                         <td>119€</td>
                         <td>2</td>
                         <td>18/05/2025</td>
-                        <td>
-                            <span class="status success">
-                                Përfunduar
-                            </span>
-                        </td>
                         <td>
                             <button class="view-btn">👁</button>
                         </td>
