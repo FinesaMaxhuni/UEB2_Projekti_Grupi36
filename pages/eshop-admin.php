@@ -153,6 +153,35 @@ $stmt->execute();
 
 $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// ======================
+// FSHI POROSINE
+// ======================
+
+if(isset($_GET['delete_order'])){
+
+    $order_id = $_GET['delete_order'];
+
+    $stmt = $pdo->prepare("
+        DELETE FROM orders
+        WHERE id = ?
+    ");
+
+    $stmt->execute([$order_id]);
+
+    header("Location: eshop-admin.php");
+
+    exit();
+}
+
+$stmt = $pdo->prepare("
+    SELECT *
+    FROM eshop_products
+");
+
+$stmt->execute();
+
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 ?>
@@ -165,10 +194,6 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1>E-Shop</h1>
         <p>Menaxho produktet e dyqanit</p>
     </div>
-
-    <a href="#" class="add-product-btn">
-        + Shto Produkt
-    </a>
 
 </section>
 
@@ -469,9 +494,17 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ); ?>
     </td>
 
-    <td>
-        <button class="view-btn">👁</button>
-    </td>
+   <td>
+
+    <a
+        href="/UEB2_Projekti_Grupi36/pages/eshop-admin.php?delete_order=<?php echo $order['id']; ?>"
+        onclick="return confirm('A dëshiron ta anulosh porosinë?');"
+        class="cancel-order-btn"
+    >
+        Anulo Porosinë
+    </a>
+
+</td>
 
 </tr>
 
@@ -484,6 +517,103 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
     </section>
+
+    <!-- MENAXHO PRODUKTET -->
+
+<section class="manage-products-section">
+
+    <div class="products-header">
+
+        <div>
+            <h2>Menaxho Produktet</h2>
+            <p>Lista e të gjitha produkteve në webshop</p>
+        </div>
+
+        <a href="#" class="add-product-btn">
+            + Shto Produkt
+        </a>
+
+    </div>
+
+    <div class="products-table-container">
+
+        <table class="products-table">
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Produkti</th>
+                    <th>Kategoria</th>
+                    <th>Çmimi</th>
+                    <th>Përshkrimi</th>
+                    <th>Veprimet</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <?php foreach($products as $product): ?>
+
+                <tr>
+
+                    <td>
+                        #<?php echo $product['id']; ?>
+                    </td>
+
+                    <td class="product-info">
+
+                        <img
+                            src="<?php echo htmlspecialchars($product['image']); ?>"
+                            alt=""
+                        >
+
+                        <span>
+                            <?php echo htmlspecialchars($product['product_name']); ?>
+                        </span>
+
+                    </td>
+
+                    <td>
+                        <?php echo htmlspecialchars($product['category']); ?>
+                    </td>
+
+                    <td>
+                        <?php echo htmlspecialchars($product['price']); ?>€
+                    </td>
+
+                    <td class="description-cell">
+                        <?php echo htmlspecialchars($product['description']); ?>
+                    </td>
+
+                    <td class="action-buttons">
+
+                        <a href="#" class="edit-btn">
+                            Edito
+                        </a>
+
+                        <a
+                            href="eshop-admin.php?delete_product=<?php echo $product['id']; ?>"
+                            class="delete-btn"
+                            onclick="return confirm('A dëshironi ta fshini produktin?');"
+                        >
+                            Fshi
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                <?php endforeach; ?>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
 
 </main>
 
