@@ -102,39 +102,6 @@ $totalOrders = $stmt->fetchColumn();
 
         </div>
 
-        <table class="admin-table">
-            <tr>
-                <th>Shërbimi</th>
-                <th>Statusi</th>
-                <th>Rritja</th>
-            </tr>
-
-            <tr>
-                <td>TV Paketa</td>
-                <td><span class="badge green">Aktive</span></td>
-                <td>+24%</td>
-            </tr>
-
-            <tr>
-                <td>Internet Fiber</td>
-                <td><span class="badge blue">Stabile</span></td>
-                <td>+18%</td>
-            </tr>
-
-            <tr>
-                <td>E-Shop</td>
-                <td><span class="badge green">Shitje të mira</span></td>
-                <td>+31%</td>
-            </tr>
-
-            <tr>
-                <td>Telefonia Fikse</td>
-                <td><span class="badge red">Rënie</span></td>
-                <td>-8%</td>
-            </tr>
-
-        </table>
-
     </div>
 
 </div>
