@@ -96,66 +96,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/UEB2_Projekti_Grupi36/includes/navbar.php'
                     </div>
                 <?php endforeach; ?>
 
-                <?php if (false): ?>
-                <!-- Economy Package -->
-                <div class="package-card">
-                    <h3 class="package-name">TV Economy</h3>
-                    <div class="package-price">8.90€</div>
-                    <div class="package-period">/muaj</div>
-                    <div class="package-channels">90+ Kanale</div>
-                    <ul class="package-features">
-                        <li>90+ kanale në HD</li>
-                        <li>Kanale kombëtare (Kosovë/Shqipëri)</li>
-                        <li>Lajme 24/7</li>
-                        <li>Filma & seriale</li>
-                        <li>Muzikë</li>
-                    </ul>
-                </div>
-
-                <!-- Premium Package -->
-                <div class="package-card">
-                    <h3 class="package-name">TV Premium</h3>
-                    <div class="package-price">15.50€</div>
-                    <div class="package-period">/muaj</div>
-                    <div class="package-channels">150+ Kanale</div>
-                    <ul class="package-features">
-                        <li>150+ kanale në HD/4K</li>
-                        <li>Filma & Seriale premium</li>
-                        <li>Dokumentarë ekskluzivë</li>
-                        <li>Entertainment për gjithë familjen</li>
-                        <li>Catch-up 5 ditë</li>
-                    </ul>
-                </div>
-
-                <!-- Sport Package -->
-                <div class="package-card featured">
-                    <h3 class="package-name">TV Sport</h3>
-                    <div class="package-price">23.90€</div>
-                    <div class="package-period">/muaj</div>
-                    <div class="package-channels">200+ Kanale</div>
-                    <ul class="package-features">
-                        <li>200+ kanale HD/4K</li>
-                        <li>Premier League, La Liga, Serie A, Bundesliga, Ligue 1</li>
-                        <li>Champions League, Europa League</li>
-                        <li>Formula 1, MotoGP, UFC, Boxing</li>
-                        <li>Catch-up 7 ditë</li>
-                    </ul>
-                </div>
-
-                <!-- Custom Package -->
-                <div class="package-card">
-                    <h3 class="package-name">TV Custom</h3>
-                    <div class="package-price">Prej 12€</div>
-                    <div class="package-period">/muaj</div>
-                    <div class="package-channels">Përshtate Vetë</div>
-                    <ul class="package-features">
-                        <li>Zgjedh vetëm kanalet që dëshiron</li>
-                        <li>Ndryshim në çdo kohë</li>
-                        <li>Paguaj vetëm për atë që përdor</li>
-                        <li>Fleksibilitet maksimal</li>
-                    </ul>
-                </div>
-                <?php endif; ?>
+               
             </div>
         </div>
     </section>
